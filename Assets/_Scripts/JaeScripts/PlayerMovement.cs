@@ -15,16 +15,14 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody rb;
 
-    Vector2 input;
-
-
-
+    //Vector2 input;
+    
     void Start () {
         rb = GetComponent<Rigidbody>();
 	}
 	
 	void Update () {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         CalculateMovement();
 	}
@@ -33,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (canMove)
         {
+            #region Moving Forward + Backward
             if (Input.GetAxis("Vertical") > 0)
             {
                 if (!movingForward)
@@ -66,6 +65,7 @@ public class PlayerMovement : MonoBehaviour {
                     movingBackward = false;
                 }
             }
+            #endregion
             moveSpeed = Input.GetAxis("Vertical") * speedMultiplier;
             turnSpeed = Input.GetAxis("Horizontal") * turnMultiplier;
 
