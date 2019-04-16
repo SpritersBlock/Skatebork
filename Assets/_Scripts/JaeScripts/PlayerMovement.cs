@@ -16,7 +16,12 @@ public class PlayerMovement : MonoBehaviour {
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
-    private Rigidbody rb;
+    //float velocityY;
+    //float gravity = 14.0f;
+    public float jumpForce;
+
+    [HideInInspector]
+    public Rigidbody rb;
     public Transform cameraT;
 
     Vector2 input;
@@ -78,7 +83,6 @@ public class PlayerMovement : MonoBehaviour {
             turnSpeed = Input.GetAxis("Horizontal") * turnMultiplier * Mathf.Abs(moveSpeed);
 
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            //transform.localEulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0); //Deprecated
             if (Input.GetAxis("Vertical") > 0)
             {
                 float targetRotation = Mathf.Atan2 (input.x, input.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
@@ -89,8 +93,12 @@ public class PlayerMovement : MonoBehaviour {
                 //float targetRotation = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
                 //transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
             }
-            
-            
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                Bounce();
+            }
+
             if ((transform.localEulerAngles.z >= 80 ) || (transform.localEulerAngles.z <= -80))
             {
                 //StartCoroutine(StandUp(transform.localEulerAngles.z, 0, standUpTime)); //Buggy
@@ -111,5 +119,10 @@ public class PlayerMovement : MonoBehaviour {
             lastTime = Time.realtimeSinceStartup;
             yield return null;
         }
+    }
+
+    public void Bounce()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
