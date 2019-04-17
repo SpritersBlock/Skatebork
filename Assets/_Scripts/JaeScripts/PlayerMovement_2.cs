@@ -23,6 +23,7 @@ public class PlayerMovement_2 : MonoBehaviour
     Transform cameraT;
     CharacterController controller;
     public ParticleSystem skidPFX;
+    public ParticleSystem skidPFX2;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class PlayerMovement_2 : MonoBehaviour
     void Update()
     {
         // input
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Vector2 inputDir = input/*.normalized*/;
         bool running = Input.GetKey(KeyCode.LeftShift);
 
@@ -46,13 +47,16 @@ public class PlayerMovement_2 : MonoBehaviour
         }
 
         var em = skidPFX.GetComponent<ParticleSystem>().emission;
+        var em2 = skidPFX2.GetComponent<ParticleSystem>().emission;
         if (controller.isGrounded)
         {
             em.enabled = true;
+            em2.enabled = true;
             //Debug.Log("IS GROUNDED");
         } else if (!controller.isGrounded)
         {
             em.enabled = false;
+            em2.enabled = false;
             //Debug.Log("NOPE");
         }
         // animator
