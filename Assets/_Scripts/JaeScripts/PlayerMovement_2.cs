@@ -22,6 +22,7 @@ public class PlayerMovement_2 : MonoBehaviour
     //Animator animator;
     Transform cameraT;
     CharacterController controller;
+    public ParticleSystem skidPFX;
 
     void Start()
     {
@@ -42,6 +43,17 @@ public class PlayerMovement_2 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Jump();
+        }
+
+        var em = skidPFX.GetComponent<ParticleSystem>().emission;
+        if (controller.isGrounded)
+        {
+            em.enabled = true;
+            //Debug.Log("IS GROUNDED");
+        } else if (!controller.isGrounded)
+        {
+            em.enabled = false;
+            //Debug.Log("NOPE");
         }
         // animator
         //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
