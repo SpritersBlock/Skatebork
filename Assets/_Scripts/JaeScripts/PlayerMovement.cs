@@ -15,19 +15,26 @@ public class PlayerMovement : MonoBehaviour {
     public float standUpTime;
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
+    public float gravity = -12;
+    public float jumpHeight = 1;
+    [Range(0, 1)]
+    public float airControlPercent;
 
-    //float velocityY;
+    float currentSpeed;
+    float velocityY;
     //float gravity = 14.0f;
     public float jumpForce;
 
     [HideInInspector]
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public Transform cameraT;
+    CharacterController controller;
 
     Vector2 input;
     
     void Start () {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
 	}
 	
 	void Update () {
@@ -38,8 +45,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void CalculateMovement()
     {
-        if (canMove)
-        {
+        //if (canMove)
+        //{
             #region Moving Forward + Backward Bools
             if (Input.GetAxis("Vertical") > 0)
             {
@@ -96,13 +103,26 @@ public class PlayerMovement : MonoBehaviour {
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                Bounce();
+                Jump();
             }
 
             if ((transform.localEulerAngles.z >= 80 ) || (transform.localEulerAngles.z <= -80))
             {
                 //StartCoroutine(StandUp(transform.localEulerAngles.z, 0, standUpTime)); //Buggy
             }
+        //}
+
+
+        velocityY += Time.deltaTime * gravity;
+        
+        Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
+
+        controller.Move(velocity * Time.deltaTime);
+        currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
+
+        if (controller.isGrounded)
+        {
+            velocityY = 0;
         }
     }
 
@@ -121,8 +141,13 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    public void Bounce()
+    public void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        if (controller.isGrounded)
+        {
+            float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
+            velocityY = jumpVelocity;
+        }
     }
 }

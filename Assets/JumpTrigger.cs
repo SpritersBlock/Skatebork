@@ -20,8 +20,8 @@ public class JumpTrigger : MonoBehaviour {
     {
         if (other.tag == "Obstacle")
         {
-            player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
-            player.Bounce();
+            //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
+            //player.Bounce();
         }
     }
 }
