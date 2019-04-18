@@ -43,7 +43,10 @@ public class PlayerMovement_2 : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Jump();
+            if (controller.isGrounded)
+            {
+                Jump(1);
+            }
         }
 
         var em = skidPFX.GetComponent<ParticleSystem>().emission;
@@ -89,13 +92,11 @@ public class PlayerMovement_2 : MonoBehaviour
 
     }
 
-    void Jump()
+    public void Jump(float jumpMult)
     {
-        if (controller.isGrounded)
-        {
-            float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
-            velocityY = jumpVelocity;
-        }
+        print("AAHH");
+        float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight * jumpMult);
+        velocityY = jumpVelocity;
     }
 
     float GetModifiedSmoothTime(float smoothTime)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpTrigger : MonoBehaviour {
 
-    public PlayerMovement player;
+    public PlayerMovement_2 player;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +18,10 @@ public class JumpTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Obstacle")
+        if (other.gameObject.tag == "Player")
         {
             //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
-            //player.Bounce();
+            player.Jump(2);
         }
     }
 }
