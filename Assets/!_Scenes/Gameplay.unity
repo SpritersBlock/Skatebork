@@ -982,6 +982,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 775849654}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: poofRing
+      value: 
+      objectReference: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -6634,6 +6640,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 775849654}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: poofRing
+      value: 
+      objectReference: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -6690,6 +6702,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 775849654}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: poofRing
+      value: 
+      objectReference: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -11605,6 +11623,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 775849654}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: poofRing
+      value: 
+      objectReference: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -11771,6 +11795,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 775849654}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: poofRing
+      value: 
+      objectReference: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -13061,7 +13091,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974813987}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.50000006
   m_Height: 1.0000001

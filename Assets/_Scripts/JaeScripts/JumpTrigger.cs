@@ -6,6 +6,7 @@ public class JumpTrigger : MonoBehaviour {
 
     public PlayerMovement_2 player;
     private TrolleyBoyController tb;
+    public GameObject poofRing;
 
     private void Start()
     {
@@ -25,6 +26,8 @@ public class JumpTrigger : MonoBehaviour {
             if (tb != null && !tb.stunned && !player.invincible)
             {
                 StartCoroutine(tb.Stun(2));
+                GameObject poofClone;
+                poofClone = Instantiate(poofRing, transform.position, transform.rotation);
             }
         }
     }
