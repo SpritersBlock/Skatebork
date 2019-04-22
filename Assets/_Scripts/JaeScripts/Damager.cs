@@ -6,12 +6,14 @@ public class Damager : MonoBehaviour {
 
     private Rigidbody rb;
     PlayerMovement_2 player;
+    private CameraShake cameraShake;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovement_2>();
-	}
+        cameraShake = FindObjectOfType<CameraShake>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +25,7 @@ public class Damager : MonoBehaviour {
         if (other.tag == "Player")
         {
             player.TakeDamage();
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
         }
     }
 }

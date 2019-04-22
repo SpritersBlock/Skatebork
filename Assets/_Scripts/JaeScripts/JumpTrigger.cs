@@ -5,23 +5,27 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour {
 
     public PlayerMovement_2 player;
+    private TrolleyBoyController tb;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+        tb = gameObject.transform.parent.GetComponentInParent<TrolleyBoyController>();
+        if (tb == null)
+        {
+            return;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "PlayerJump")
         {
             //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
             player.Jump(2);
+            if (tb != null && !tb.stunned)
+            {
+                StartCoroutine(tb.Stun(2));
+            }
         }
     }
 }
