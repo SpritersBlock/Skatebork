@@ -1259,7 +1259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 50143a9d769d6c44193a03dd53b43cc0, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 50143a9d769d6c44193a03dd53b43cc0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6532,12 +6532,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4271085210156412, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1995444895905396, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_Name
       value: TrolleyBoyNull (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 775849653}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775849654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -6578,12 +6588,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4271085210156412, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1995444895905396, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_Name
       value: TrolleyBoyNull (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 775849653}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775849654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -11483,12 +11503,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4271085210156412, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1995444895905396, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_Name
       value: TrolleyBoyNull (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 775849653}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775849654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -11529,12 +11559,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4271085210156412, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1995444895905396, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
       propertyPath: m_Name
       value: TrolleyBoyNull (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 775849653}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775849654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
