@@ -10,6 +10,8 @@ public class PlayerMovement_2 : MonoBehaviour
     public float jumpHeight = 1;
     [Range(0, 1)]
     public float airControlPercent;
+    public int health;
+    public bool invincible;
 
     public float turnSmoothTime = 0.2f;
     float turnSmoothVelocity;
@@ -18,18 +20,22 @@ public class PlayerMovement_2 : MonoBehaviour
     float speedSmoothVelocity;
     float currentSpeed;
     float velocityY;
+    public float iFramesDuration;
 
     //Animator animator;
     Transform cameraT;
     CharacterController controller;
     public ParticleSystem skidPFX;
     public ParticleSystem skidPFX2;
+    public GameObject playerGeo;
+    private Animator anim;
 
     void Start()
     {
         //animator = GetComponent<Animator>();
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
+        anim = playerGeo.GetComponent<Animator>();
     }
 
     void Update()
@@ -66,6 +72,10 @@ public class PlayerMovement_2 : MonoBehaviour
         //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
         //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TakeDamage();
+        }
     }
 
     void Move(Vector2 inputDir)
@@ -94,7 +104,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
     public void Jump(float jumpMult)
     {
-        print("AAHH");
+        //print("AAHH");
         float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight * jumpMult);
         velocityY = jumpVelocity;
     }
@@ -111,5 +121,36 @@ public class PlayerMovement_2 : MonoBehaviour
             return float.MaxValue;
         }
         return smoothTime / airControlPercent;
+    }
+
+    public void TakeDamage()
+    {
+        if (!invincible)
+        {
+            health--;
+        }
+        StartCoroutine("IFrames", iFramesDuration);
+    }
+
+    IEnumerator IFrames(float time)
+    {
+        invincible = true;
+        anim.SetTrigger("TakeDamage");
+        float lastTime = Time.realtimeSinceStartup;
+        float timer = 0.0f;
+
+        while (timer < time)
+        {
+            timer += (Time.realtimeSinceStartup - lastTime);
+            lastTime = Time.realtimeSinceStartup;
+            yield return null;
+        }
+
+        if (timer >= time)
+        {
+            invincible = false;
+            anim.SetTrigger("IFramesFinish");
+            yield return null;
+        }
     }
 }
