@@ -9,7 +9,7 @@ public class JumpTrigger : MonoBehaviour {
 
     private void Start()
     {
-        tb = gameObject.transform.parent.GetComponentInParent<TrolleyBoyController>();
+        tb = gameObject.transform.parent.parent.GetComponentInParent<TrolleyBoyController>();
         if (tb == null)
         {
             return;

@@ -11,10 +11,13 @@ public class TrolleyBoyController : MonoBehaviour {
 
     public bool stunned;
 
+    private Animator anim;
+
 	// Use this for initialization
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         Invoke("LockOn", 1f);
+        anim = GetComponentInChildren<Animator>();
     }
 	
 	// Update is called once per frame
@@ -33,6 +36,7 @@ public class TrolleyBoyController : MonoBehaviour {
     {
         agent.speed = 0;
         stunned = true;
+        anim.SetBool("Stunned", true);
         // Animator code for squished enemy
         float lastTime = Time.realtimeSinceStartup;
         float timer = 0.0f;
@@ -48,6 +52,7 @@ public class TrolleyBoyController : MonoBehaviour {
         {
             agent.speed = 27;
             stunned = false;
+            anim.SetBool("Stunned", false);
             yield return null;
         }
     }
