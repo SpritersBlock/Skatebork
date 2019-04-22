@@ -128,14 +128,22 @@ public class PlayerMovement_2 : MonoBehaviour
         if (!invincible)
         {
             health--;
+            if (health > 0)
+            {
+                StartCoroutine("IFrames", iFramesDuration);
+            }
+            else
+            {
+                //Whatever happens when the player dies. Leaving the below line for DEBUG PURPOSES ONLY
+                StartCoroutine("IFrames", iFramesDuration);
+            }
         }
-        StartCoroutine("IFrames", iFramesDuration);
     }
 
     IEnumerator IFrames(float time)
     {
         invincible = true;
-        anim.SetTrigger("TakeDamage");
+        anim.SetBool("Invincible", true);
         float lastTime = Time.realtimeSinceStartup;
         float timer = 0.0f;
 
@@ -149,7 +157,7 @@ public class PlayerMovement_2 : MonoBehaviour
         if (timer >= time)
         {
             invincible = false;
-            anim.SetTrigger("IFramesFinish");
+            anim.SetBool("Invincible", false);
             yield return null;
         }
     }
