@@ -12,15 +12,13 @@ public class TrolleyBoyController : MonoBehaviour {
     public bool stunned;
 
     private Animator anim;
-
-	// Use this for initialization
+    
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         Invoke("LockOn", 1f);
         anim = GetComponentInChildren<Animator>();
     }
 	
-	// Update is called once per frame
 	void Update () {
         LockOn();
 	}
