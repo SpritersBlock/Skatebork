@@ -25,7 +25,10 @@ public class Damager : MonoBehaviour {
         if (other.tag == "Player")
         {
             player.TakeDamage();
-            StartCoroutine(cameraShake.Shake(.15f, .4f));
+            if (!player.invincible)
+            {
+                StartCoroutine(cameraShake.Shake(.15f, .4f));
+            }
         }
     }
 }

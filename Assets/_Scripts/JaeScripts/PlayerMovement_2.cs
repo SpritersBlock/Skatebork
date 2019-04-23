@@ -10,7 +10,7 @@ public class PlayerMovement_2 : MonoBehaviour
     public float jumpHeight = 1;
     [Range(0, 1)]
     public float airControlPercent;
-    public int health;
+    //public int health;
     public bool invincible;
 
     public float turnSmoothTime = 0.2f;
@@ -24,8 +24,10 @@ public class PlayerMovement_2 : MonoBehaviour
     public float iFramesDuration;
 
     //Animator animator;
+    public JaeGameManager gm;
     Transform cameraT;
-    CharacterController controller;
+    [HideInInspector]
+    public CharacterController controller;
     public ParticleSystem skidPFX;
     public ParticleSystem skidPFX2;
     public GameObject playerAnimNull;
@@ -135,8 +137,10 @@ public class PlayerMovement_2 : MonoBehaviour
     {
         if (!invincible)
         {
-            health--;
-            if (health > 0)
+            //health--;
+            gm.playerHealth--;
+            gm.UpdateHealth();
+            if (gm.playerHealth > 0)
             {
                 StartCoroutine("IFrames", iFramesDuration);
             }

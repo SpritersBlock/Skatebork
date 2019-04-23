@@ -8,7 +8,6 @@ public class ItemController : MonoBehaviour {
     GameObject target;
     GameObject child;
     Rigidbody rb;
-    public GameObject fireDir;
 
     bool isHeld;
     public bool beingFired;
@@ -45,7 +44,7 @@ public class ItemController : MonoBehaviour {
             //clone = Instantiate(child, target.transform);
             //clone.transform.position = Vector3.zero;
             //clone.GetComponent<Rigidbody>().isKinematic = true;
-            if (!beingFired)
+            if (!beingFired && !player.hasFood)
             {
                 player.hasFood = true;
                 isHeld = true;
@@ -71,10 +70,16 @@ public class ItemController : MonoBehaviour {
         beingFired = true;
         isHeld = false;
         rb.isKinematic = false;
+        player.hasFood = false;
         Vector3 aimForce;
-        //aimForce = Camera.main.transform.parent.forward * throwForce;
-        aimForce = fireDir.transform.forward * throwForce;
-        aimForce.y += upBoost;
+        aimForce = Camera.main.transform.parent.forward * throwForce;
+        if (player.controller.isGrounded)
+        {
+            aimForce.y += upBoost;
+        } else
+        {
+            aimForce.y = Camera.main.transform.parent.forward.y;
+        }
         rb.velocity = aimForce;
 
     }

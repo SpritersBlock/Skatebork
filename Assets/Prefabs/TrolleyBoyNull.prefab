@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 95997967132867908}
   m_Layer: 10
   m_Name: TrolleyBoyAnimNull
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4169015245081334}
   m_Layer: 10
   m_Name: Trolley
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 95949172625417758}
   m_Layer: 10
   m_Name: EnemyGeo
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,6 +1240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   poofRing: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3, type: 2}
+  itemArray:
+  - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
+  itemSpawnSpeed: 2
 --- !u!114 &114811812604090254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1325,7 +1328,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 27
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180
