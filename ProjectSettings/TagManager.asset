@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Trolley
   - PlayerJump
+  - Boss
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -22,9 +22,10 @@ public class JumpTrigger : MonoBehaviour {
         if (other.gameObject.tag == "PlayerJump")
         {
             //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
-            player.Jump(2);
+            
             if (tb != null && !tb.stunned && !player.invincible)
             {
+                player.Jump(2);
                 StartCoroutine(tb.Stun(2));
                 GameObject poofClone;
                 poofClone = Instantiate(poofRing, transform.position, transform.rotation);

@@ -15,6 +15,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
     public float turnSmoothTime = 0.2f;
     float turnSmoothVelocity;
+    public bool hasFood;
 
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
@@ -27,7 +28,7 @@ public class PlayerMovement_2 : MonoBehaviour
     CharacterController controller;
     public ParticleSystem skidPFX;
     public ParticleSystem skidPFX2;
-    public GameObject playerGeo;
+    public GameObject playerAnimNull;
     private Animator anim;
 
     void Start()
@@ -35,7 +36,7 @@ public class PlayerMovement_2 : MonoBehaviour
         //animator = GetComponent<Animator>();
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
-        anim = playerGeo.GetComponent<Animator>();
+        anim = playerAnimNull.GetComponent<Animator>();
     }
 
     void Update()
@@ -74,7 +75,14 @@ public class PlayerMovement_2 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            TakeDamage();
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
         }
     }
 
