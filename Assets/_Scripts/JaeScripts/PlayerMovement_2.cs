@@ -50,6 +50,8 @@ public class PlayerMovement_2 : MonoBehaviour
 
         Move(inputDir);
 
+        
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             if (controller.isGrounded)
@@ -64,11 +66,26 @@ public class PlayerMovement_2 : MonoBehaviour
         {
             em.enabled = true;
             em2.enabled = true;
+            
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (controller.isGrounded)
+                {
+                    if (anim.GetFloat("Crouch") != 1)
+                    {
+                        anim.SetFloat("Crouch", 1);
+                    }
+                }
+            }
             //Debug.Log("IS GROUNDED");
         } else if (!controller.isGrounded)
         {
             em.enabled = false;
             em2.enabled = false;
+            if (anim.GetFloat("Crouch") != 0)
+            {
+                anim.SetFloat("Crouch", 0);
+            }
             //Debug.Log("NOPE");
         }
         // animator

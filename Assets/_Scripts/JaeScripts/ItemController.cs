@@ -8,6 +8,8 @@ public class ItemController : MonoBehaviour {
     GameObject target;
     GameObject child;
     Rigidbody rb;
+    FoodLauncher launcher;
+    public GameObject pfxPrefab;
 
     bool isHeld;
     public bool beingFired;
@@ -20,6 +22,7 @@ public class ItemController : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Respawn");
         child = gameObject.transform.GetChild(0).gameObject;
         rb = GetComponent<Rigidbody>();
+        launcher = FindObjectOfType<FoodLauncher>();
 	}
 	
 	// Update is called once per frame
@@ -40,26 +43,32 @@ public class ItemController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            //GameObject clone;
-            //clone = Instantiate(child, target.transform);
-            //clone.transform.position = Vector3.zero;
-            //clone.GetComponent<Rigidbody>().isKinematic = true;
             if (!beingFired && !player.hasFood)
             {
                 player.hasFood = true;
                 isHeld = true;
+                //rb.useGravity = false;
                 rb.isKinematic = true;
             }
+            //GameObject clone;
+            //clone = Instantiate(child, target.transform);
+            //clone.transform.position = Vector3.zero;
+            //clone.GetComponent<Rigidbody>().isKinematic = true;
             //Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //print(collision.gameObject.name);
         if (beingFired)
         {
             if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
             {
+                //Instantiate UNPARENTED PFX
+                GameObject pfxClone;
+                pfxClone = Instantiate(pfxPrefab);
+                pfxClone.transform.position = transform.position;
                 Destroy(gameObject);
             }
         }
@@ -69,18 +78,12 @@ public class ItemController : MonoBehaviour {
     {
         beingFired = true;
         isHeld = false;
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
         player.hasFood = false;
-        Vector3 aimForce;
-        aimForce = Camera.main.transform.parent.forward * throwForce;
-        if (player.controller.isGrounded)
-        {
-            aimForce.y += upBoost;
-        } else
-        {
-            aimForce.y = Camera.main.transform.parent.forward.y;
-        }
-        rb.velocity = aimForce;
-
+        //Vector3 aimForce;
+        //aimForce = Camera.main.transform.parent.forward * throwForce;
+        //rb.velocity = aimForce;
+        launcher.Launch();
+        Destroy(gameObject);
     }
 }

@@ -7,8 +7,6 @@ public class JumpTrigger : MonoBehaviour {
     public PlayerMovement_2 player;
     private TrolleyBoyController tb;
     public GameObject poofRing;
-    public GameObject[] itemArray;
-    public float itemSpawnSpeed;
 
     private void Start()
     {
@@ -31,9 +29,6 @@ public class JumpTrigger : MonoBehaviour {
                 StartCoroutine(tb.Stun(2));
                 GameObject poofClone;
                 poofClone = Instantiate(poofRing, transform.position, transform.rotation);
-                GameObject itemClone;
-                itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], transform.position, transform.rotation);
-                itemClone.GetComponent<Rigidbody>().velocity += Vector3.up * itemSpawnSpeed;
             }
         }
     }

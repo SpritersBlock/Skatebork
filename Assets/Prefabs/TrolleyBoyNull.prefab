@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 136194108162458392}
   m_Layer: 10
   m_Name: Wheel2 (1)
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 65793127315959862}
   m_Layer: 10
   m_Name: TrolleyWall
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114811812604090254}
   m_Layer: 10
   m_Name: DamageTrig
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 65856524305317442}
   m_Layer: 10
   m_Name: TrolleyWall
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 65060544611876604}
   m_Layer: 10
   m_Name: TrolleyWall
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 65413666175685810}
   m_Layer: 10
   m_Name: TrolleyBottom
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 65149597959804264}
   m_Layer: 10
   m_Name: TrolleyHandle
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 65547579231341008}
   m_Layer: 10
   m_Name: TrolleyWall
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 136776087322341686}
   m_Layer: 10
   m_Name: Wheel1 (1)
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 136907181251476300}
   m_Layer: 10
   m_Name: Wheel3 (1)
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 136253782182389212}
   m_Layer: 10
   m_Name: Wheel4 (1)
-  m_TagString: Untagged
+  m_TagString: Trolley
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,13 +355,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426794605796016}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0.10739884, y: -0, z: -0, w: 0.994216}
+  m_LocalPosition: {x: 0, y: 0.81, z: 0.49}
+  m_LocalScale: {x: 1, y: 0.5, z: 1.6063}
   m_Children: []
   m_Father: {fileID: 4338031445467714}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.331, y: 0, z: 0}
 --- !u!4 &4271085210156412
 Transform:
   m_ObjectHideFlags: 1
@@ -1227,6 +1227,9 @@ MonoBehaviour:
   agent: {fileID: 0}
   targetTransform: {fileID: 0}
   stunned: 0
+  itemArray:
+  - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
+  itemSpawnSpeed: 2
 --- !u!114 &114752549475303508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1240,9 +1243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   poofRing: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3, type: 2}
-  itemArray:
-  - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
-  itemSpawnSpeed: 2
 --- !u!114 &114811812604090254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1328,7 +1328,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
+  m_Speed: 27
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180

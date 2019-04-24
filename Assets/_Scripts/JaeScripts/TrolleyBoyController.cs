@@ -12,10 +12,12 @@ public class TrolleyBoyController : MonoBehaviour {
     public bool stunned;
 
     private Animator anim;
-    
-	void Start () {
+
+    public GameObject[] itemArray;
+    public float itemSpawnSpeed;
+
+    void Start () {
         agent = GetComponent<NavMeshAgent>();
-        Invoke("LockOn", 1f);
         anim = GetComponentInChildren<Animator>();
     }
 	
@@ -32,6 +34,12 @@ public class TrolleyBoyController : MonoBehaviour {
 
     public IEnumerator Stun(float stunTime)
     {
+        GameObject itemClone;
+        itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], transform.position, transform.rotation);
+        Rigidbody rb = itemClone.GetComponent<Rigidbody>();
+        rb.velocity += (Vector3.up * itemSpawnSpeed);
+        //rb.velocity += new Vector3(Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2), 0, Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2));
+
         agent.speed = 0;
         stunned = true;
         anim.SetBool("Stunned", true);

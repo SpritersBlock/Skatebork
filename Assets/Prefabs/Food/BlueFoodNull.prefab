@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4909408439879090}
   - component: {fileID: 33240740674751260}
   - component: {fileID: 23437342399427854}
+  - component: {fileID: 65617756903919950}
   m_Layer: 0
-  m_Name: FoodGeo
+  m_Name: BlueFoodGeo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,9 +40,9 @@ GameObject:
   - component: {fileID: 54939141718717152}
   - component: {fileID: 114762768974253662}
   - component: {fileID: 65686744748079694}
-  - component: {fileID: 65094434770037562}
+  - component: {fileID: 114016067647511850}
   m_Layer: 0
-  m_Name: FoodNull
+  m_Name: BlueFoodNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,14 +132,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &65094434770037562
+--- !u!65 &65617756903919950
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1810700295182030}
+  m_GameObject: {fileID: 1596851445485720}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -150,11 +151,23 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810700295182030}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114016067647511850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810700295182030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca6bf61552658b4bbe456c0818af60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yLevelKill: -20
 --- !u!114 &114762768974253662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a555379dd9ee3f48abf9793a59d2dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDir: {fileID: 0}
+  pfxPrefab: {fileID: 1962571587479850, guid: 0d5950948b6286f46baf3459c7aee525, type: 2}
   beingFired: 0
-  throwForce: 50
+  throwForce: 100
   upBoost: 5
