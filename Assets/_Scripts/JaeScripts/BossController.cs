@@ -11,6 +11,8 @@ public class BossController : MonoBehaviour {
 
     private CameraShake cameraShake;
 
+    public int bossHealth;
+
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         cameraShake = FindObjectOfType<CameraShake>();
@@ -22,12 +24,12 @@ public class BossController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ItemController>() != null)
-        {
-            if (other.GetComponent<ItemController>().beingFired)
-            {
-                StartCoroutine(cameraShake.Shake(.15f, .4f));
-            }
-        }
+
+    }
+
+    public void BossHit()
+    {
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
+        bossHealth--;
     }
 }

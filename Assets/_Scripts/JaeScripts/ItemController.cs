@@ -71,6 +71,10 @@ public class ItemController : MonoBehaviour {
                 pfxClone.transform.position = transform.position;
                 Destroy(gameObject);
             }
+            if (collision.gameObject.tag == "Boss")
+            {
+                FindObjectOfType<BossController>().BossHit();
+            }
         }
     }
 
