@@ -7,17 +7,20 @@ public class ButtonScripts : MonoBehaviour {
 
     public SceneTransition st;
 
-    //public GameObject buttonNull;
-    //public GameObject confirmPanel;
+    public GameObject buttonNull;
+    public GameObject confirmPanel;
 
     public MenuTransitions mt;
 
     private void Start()
     {
-        //buttonNull.SetActive(true);
-        //confirmPanel.SetActive(false);
-        mt.buttonNullAnim.SetBool("OnScreen", true);
-        mt.quitConfirmAnim.SetBool("OnScreen", false);
+        if (buttonNull != null)
+        {
+            buttonNull.SetActive(true);
+            confirmPanel.SetActive(false);
+        }
+        //mt.buttonNullAnim.SetBool("OnScreen", true);
+        //mt.quitConfirmAnim.SetBool("OnScreen", false);
     }
 
     public void MoveToGame()
@@ -37,18 +40,18 @@ public class ButtonScripts : MonoBehaviour {
 
     public void QuitConfirmOpen()
     {
-        //buttonNull.SetActive(false);
-        //confirmPanel.SetActive(true);
-        mt.buttonNullAnim.SetBool("OnScreen", false);
-        mt.quitConfirmAnim.SetBool("OnScreen", true);
+        buttonNull.SetActive(false);
+        confirmPanel.SetActive(true);
+        //mt.buttonNullAnim.SetBool("OnScreen", false);
+        //mt.quitConfirmAnim.SetBool("OnScreen", true);
     }
 
     public void QuitConfirmClose()
     {
-        //buttonNull.SetActive(true);
-        //confirmPanel.SetActive(false);
-        mt.buttonNullAnim.SetBool("OnScreen", true);
-        mt.quitConfirmAnim.SetBool("OnScreen", false);
+        buttonNull.SetActive(true);
+        confirmPanel.SetActive(false);
+        //mt.buttonNullAnim.SetBool("OnScreen", true);
+        //mt.quitConfirmAnim.SetBool("OnScreen", false);
     }
 
     public void QuitGame()

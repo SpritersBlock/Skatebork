@@ -182,4 +182,4 @@ MonoBehaviour:
   pfxPrefab: {fileID: 1962571587479850, guid: 0d5950948b6286f46baf3459c7aee525, type: 2}
   beingFired: 0
   throwForce: 75
-  upBoost: 5
+  upBoost: 7

@@ -103,6 +103,15 @@ public class PlayerMovement_2 : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ButtonScripts bs;
+            bs = FindObjectOfType<ButtonScripts>();
+            bs.MoveToGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void Move(Vector2 inputDir)

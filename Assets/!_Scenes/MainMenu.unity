@@ -461,7 +461,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 472976936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e20a55f51a7986446ad0f952f42ffc03, type: 2}
   m_CullingMode: 0
@@ -571,23 +571,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 223190531272752464, guid: bb0dc7627552d724d8c0a84144005c56,
         type: 2}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223190531272752464, guid: bb0dc7627552d724d8c0a84144005c56,
-        type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1444173089}
-    - target: {fileID: 224531712782055808, guid: bb0dc7627552d724d8c0a84144005c56,
+    - target: {fileID: 114261910201017786, guid: bb0dc7627552d724d8c0a84144005c56,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -1616.8999
+      propertyPath: sceneName
+      value: Gameplay
       objectReference: {fileID: 0}
-    - target: {fileID: 224531712782055808, guid: bb0dc7627552d724d8c0a84144005c56,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: -491
+    - target: {fileID: 1887672387390544, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059798845139686, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
@@ -1186,7 +1184,7 @@ Canvas:
   m_GameObject: {fileID: 985757970}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1444173089}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1318,7 +1316,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208796187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c02ddd420ead5144298176df2a943419, type: 2}
   m_CullingMode: 0
@@ -1964,6 +1962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   st: {fileID: 993174352}
+  buttonNull: {fileID: 1208796187}
+  confirmPanel: {fileID: 472976936}
   mt: {fileID: 1764243708}
 --- !u!4 &1764243707
 Transform:
