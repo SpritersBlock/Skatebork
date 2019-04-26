@@ -7,14 +7,17 @@ public class ButtonScripts : MonoBehaviour {
 
     public SceneTransition st;
 
-    public GameObject confirmPanel;
+    //public GameObject buttonNull;
+    //public GameObject confirmPanel;
 
     public MenuTransitions mt;
 
     private void Start()
     {
-        confirmPanel.SetActive(false);
+        //buttonNull.SetActive(true);
+        //confirmPanel.SetActive(false);
         mt.buttonNullAnim.SetBool("OnScreen", true);
+        mt.quitConfirmAnim.SetBool("OnScreen", false);
     }
 
     public void MoveToGame()
@@ -34,14 +37,18 @@ public class ButtonScripts : MonoBehaviour {
 
     public void QuitConfirmOpen()
     {
-        confirmPanel.SetActive(true);
+        //buttonNull.SetActive(false);
+        //confirmPanel.SetActive(true);
         mt.buttonNullAnim.SetBool("OnScreen", false);
+        mt.quitConfirmAnim.SetBool("OnScreen", true);
     }
 
     public void QuitConfirmClose()
     {
-        confirmPanel.SetActive(false);
+        //buttonNull.SetActive(true);
+        //confirmPanel.SetActive(false);
         mt.buttonNullAnim.SetBool("OnScreen", true);
+        mt.quitConfirmAnim.SetBool("OnScreen", false);
     }
 
     public void QuitGame()
