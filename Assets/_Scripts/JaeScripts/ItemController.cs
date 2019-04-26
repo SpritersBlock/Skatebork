@@ -47,7 +47,7 @@ public class ItemController : MonoBehaviour {
             {
                 player.hasFood = true;
                 isHeld = true;
-                //rb.useGravity = false;
+                rb.useGravity = false;
                 rb.isKinematic = true;
             }
             //GameObject clone;
@@ -82,12 +82,14 @@ public class ItemController : MonoBehaviour {
     {
         beingFired = true;
         isHeld = false;
-        //rb.isKinematic = false;
+        //rb.useGravity = false;
+        rb.isKinematic = false;
         player.hasFood = false;
-        //Vector3 aimForce;
-        //aimForce = Camera.main.transform.parent.forward * throwForce;
-        //rb.velocity = aimForce;
-        launcher.Launch();
-        Destroy(gameObject);
+        Vector3 aimForce;
+        aimForce = Camera.main.transform.parent.forward * throwForce;
+        aimForce += new Vector3(0, upBoost, 0);
+        rb.velocity = aimForce;
+        //launcher.Launch();
+        //Destroy(gameObject);
     }
 }

@@ -17,9 +17,11 @@ public class OOBKill : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        if (transform.position.y <= -3)
+        if (transform.position.y <= -4)
         {
-            transform.position += new Vector3 (0,3,0);
+            //transform.position += new Vector3 (0,3,0);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.position = Vector3.zero;
         }
 	}
 }

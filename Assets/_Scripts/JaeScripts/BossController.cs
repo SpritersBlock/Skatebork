@@ -13,9 +13,19 @@ public class BossController : MonoBehaviour {
 
     public int bossHealth;
 
+    //public Vector2 xBounds;
+    //public Vector2 yBounds;
+
+    public Transform[] waypointArray;
+
+    float refreshTime;
+    public float refreshMin;
+    public float refreshMax;
+
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         cameraShake = FindObjectOfType<CameraShake>();
+        StartCoroutine("RefreshWaypoint");
     }
 	
 	void Update () {
@@ -25,6 +35,33 @@ public class BossController : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
+    }
+
+    void RandomTime()
+    {
+        refreshTime = Random.Range(refreshMin, refreshMax);
+    }
+
+    IEnumerator RefreshWaypoint()
+    {
+        RandomTime();
+        agent.SetDestination(waypointArray[Random.Range(0, waypointArray.Length)].position);
+        float lastTime = Time.realtimeSinceStartup;
+        float timer = 0.0f;
+
+        while (timer < refreshTime)
+        {
+            timer += (Time.realtimeSinceStartup - lastTime);
+            lastTime = Time.realtimeSinceStartup;
+            yield return null;
+        }
+
+        if (timer >= refreshTime)
+        {
+            StartCoroutine("RefreshWaypoint");
+            //print("Reset");
+            yield return null;
+        }
     }
 
     public void BossHit()
