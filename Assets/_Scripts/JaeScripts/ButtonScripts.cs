@@ -7,10 +7,18 @@ public class ButtonScripts : MonoBehaviour {
 
     public SceneTransition st;
 
-	public void MoveToGame()
+    public GameObject confirmPanel;
+
+    public MenuTransitions mt;
+
+    private void Start()
     {
-        //Do whatever animation thing is to be done here
-        //SceneManager.LoadScene("Gameplay");
+        confirmPanel.SetActive(false);
+        mt.buttonNullAnim.SetBool("OnScreen", true);
+    }
+
+    public void MoveToGame()
+    {
         StartCoroutine(st.LoadScene());
     }
 
@@ -26,11 +34,18 @@ public class ButtonScripts : MonoBehaviour {
 
     public void QuitConfirmOpen()
     {
-
+        confirmPanel.SetActive(true);
+        mt.buttonNullAnim.SetBool("OnScreen", false);
     }
 
     public void QuitConfirmClose()
     {
+        confirmPanel.SetActive(false);
+        mt.buttonNullAnim.SetBool("OnScreen", true);
+    }
 
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
