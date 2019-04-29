@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class BossController : MonoBehaviour {
 
     public NavMeshAgent agent;
+    public BossHealthDisplayer bhd;
 
     public Transform targetTransform;
 
@@ -68,5 +69,15 @@ public class BossController : MonoBehaviour {
     {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
         bossHealth--;
+        bhd.UpdateHealthText(bossHealth);
+        if (bossHealth <= 0)
+        {
+            BossDie();
+        }
+    }
+
+    public void BossDie()
+    {
+        Destroy(gameObject);
     }
 }
