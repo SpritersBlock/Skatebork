@@ -104,14 +104,7 @@ public class PlayerMovement_2 : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ButtonScripts bs;
-            bs = FindObjectOfType<ButtonScripts>();
-            bs.MoveToGame();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        
     }
 
     void Move(Vector2 inputDir)
@@ -143,6 +136,7 @@ public class PlayerMovement_2 : MonoBehaviour
         //print("AAHH");
         float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight * jumpMult);
         velocityY = jumpVelocity;
+        //print(jumpVelocity);
     }
 
     float GetModifiedSmoothTime(float smoothTime)
@@ -173,7 +167,8 @@ public class PlayerMovement_2 : MonoBehaviour
             else
             {
                 //Whatever happens when the player dies. Leaving the below line for DEBUG PURPOSES ONLY
-                StartCoroutine("IFrames", iFramesDuration);
+                PlayerDie();
+                //StartCoroutine("IFrames", iFramesDuration);
             }
         }
     }
@@ -198,5 +193,22 @@ public class PlayerMovement_2 : MonoBehaviour
             anim.SetBool("Invincible", false);
             yield return null;
         }
+    }
+
+    public void PlayerDie()
+    {
+        invincible = true;
+        //walkSpeed = 0;
+        Rigidbody rb = playerAnimNull.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        GameObject playerClone;
+        Vector3 deathPos;
+        deathPos = transform.position;
+        playerClone = Instantiate(playerAnimNull, deathPos, transform.rotation);
+        playerClone.GetComponent<Rigidbody>().velocity += new Vector3(0, 10, 0);
+
+        FindObjectOfType<CameraFollow>().target = playerClone.transform;
+        gameObject.SetActive(false);
     }
 }

@@ -16,8 +16,15 @@ public class JaeGameManager : MonoBehaviour {
 	}
 	
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ButtonScripts bs;
+            bs = FindObjectOfType<ButtonScripts>();
+            bs.MoveToGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
 
     public void UpdateHealth()
     {
