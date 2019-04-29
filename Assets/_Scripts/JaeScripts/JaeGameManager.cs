@@ -9,11 +9,16 @@ public class JaeGameManager : MonoBehaviour {
     private CameraShake cameraShake;
 
     public Slider hpBar;
+    public TrolleyBoyController[] trolleyBoys;
 
     public int playerHealth = 3;
+    public bool gameOn = true;
+
+    public GameObject boss;
 
 	void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
+        trolleyBoys = FindObjectsOfType <TrolleyBoyController>();
     }
 	
 	void Update () {
@@ -25,12 +30,23 @@ public class JaeGameManager : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+        //if (playerHealth < 1)
+        //{
+        //    gameOn = false;
+        //}
+    }
+
+    public void ChangeTrolleyTargetsToBoss()
+    {
+        for (int i = 0; i < trolleyBoys.Length; i++)
+        {
+            trolleyBoys[i].targetTransform = boss.transform;
+        }
     }
 
     public void UpdateHealth()
     {
         hpBar.value = playerHealth;
-        
     }
 
     public void CameraShake()

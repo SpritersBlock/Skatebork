@@ -178,6 +178,7 @@ public class PlayerMovement_2 : MonoBehaviour
             else
             {
                 //Whatever happens when the player dies. Leaving the below line for DEBUG PURPOSES ONLY
+                gm.ChangeTrolleyTargetsToBoss();
                 PlayerDie();
                 //StartCoroutine("IFrames", iFramesDuration);
             }

@@ -6,19 +6,20 @@ using UnityEngine.AI;
 public class TrolleyBoyController : MonoBehaviour {
 
     public NavMeshAgent agent;
+    //private JaeGameManager gm;
+    private Animator anim;
 
     public Transform targetTransform;
 
     public bool stunned;
-
-    private Animator anim;
-
+    
     public GameObject[] itemArray;
     public float itemSpawnSpeed;
 
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+        //gm = FindObjectOfType<JaeGameManager>();
     }
 	
 	void Update () {

@@ -14972,7 +14972,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 775849654}
   hpBar: {fileID: 1224693733}
+  trolleyBoys: []
   playerHealth: 3
+  gameOn: 1
+  boss: {fileID: 1515226390}
 --- !u!4 &2137369251
 Transform:
   m_ObjectHideFlags: 0
