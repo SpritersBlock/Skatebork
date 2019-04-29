@@ -7,7 +7,10 @@ public class PlayerMovement_2 : MonoBehaviour
     public float walkSpeed = 2;
     //public float runSpeed = 6;
     public float gravity = -12;
-    public float jumpHeight = 1;
+    float jumpHeight;
+    public float jumpHeightMin;
+    public float jumpHeightMax;
+    public float jumpHeightIncrement;
     [Range(0, 1)]
     public float airControlPercent;
     //public int health;
@@ -39,6 +42,7 @@ public class PlayerMovement_2 : MonoBehaviour
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = playerAnimNull.GetComponent<Animator>();
+        jumpHeight = jumpHeightMin;
     }
 
     void Update()
@@ -57,6 +61,7 @@ public class PlayerMovement_2 : MonoBehaviour
             if (controller.isGrounded)
             {
                 Jump(1);
+                jumpHeight = jumpHeightMin;
             }
         }
 
@@ -74,6 +79,14 @@ public class PlayerMovement_2 : MonoBehaviour
                     if (anim.GetFloat("Crouch") != 1)
                     {
                         anim.SetFloat("Crouch", 1);
+                    }
+                    if (jumpHeight < jumpHeightMax)
+                    {
+                        jumpHeight += jumpHeightIncrement;
+                    }
+                    if (jumpHeight > jumpHeightMax)
+                    {
+                        jumpHeight = jumpHeightMax;
                     }
                 }
             }
@@ -103,8 +116,6 @@ public class PlayerMovement_2 : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
-
-        
     }
 
     void Move(Vector2 inputDir)
@@ -198,17 +209,24 @@ public class PlayerMovement_2 : MonoBehaviour
     public void PlayerDie()
     {
         invincible = true;
-        //walkSpeed = 0;
-        Rigidbody rb = playerAnimNull.GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        rb.useGravity = true;
-        GameObject playerClone;
-        Vector3 deathPos;
-        deathPos = transform.position;
-        playerClone = Instantiate(playerAnimNull, deathPos, transform.rotation);
-        playerClone.GetComponent<Rigidbody>().velocity += new Vector3(0, 10, 0);
 
-        FindObjectOfType<CameraFollow>().target = playerClone.transform;
+        //walkSpeed = 0;
+        //Rigidbody rb = playerAnimNull.GetComponent<Rigidbody>();
+        //Destroy(skidPFX);
+        //Destroy(skidPFX2);
+        //if (anim.GetFloat("Crouch") != 0)
+        //{
+        //    anim.SetFloat("Crouch", 0);
+        //}
+        //rb.isKinematic = false;
+        //rb.useGravity = true;
+        //GameObject playerClone;
+        //Vector3 deathPos;
+        //deathPos = transform.position;
+        //playerClone = Instantiate(playerAnimNull, deathPos, transform.rotation);
+        //playerClone.GetComponent<Rigidbody>().velocity = new Vector3(0, 20, 0);
+
+        //FindObjectOfType<CameraFollow>().target = playerClone.transform;
         gameObject.SetActive(false);
     }
 }

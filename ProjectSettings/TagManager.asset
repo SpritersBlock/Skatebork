@@ -8,6 +8,7 @@ TagManager:
   - PlayerJump
   - Boss
   - Obstacle
+  - PlayerHurt
   layers:
   - Default
   - TransparentFX

@@ -6,13 +6,13 @@ public class Damager : MonoBehaviour {
 
     private Rigidbody rb;
     PlayerMovement_2 player;
-    private CameraShake cameraShake;
+    JaeGameManager gm;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovement_2>();
-        cameraShake = FindObjectOfType<CameraShake>();
+        gm = FindObjectOfType<JaeGameManager>();
     }
 	
 	// Update is called once per frame
@@ -22,12 +22,12 @@ public class Damager : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "PlayerHurt")
         {
             player.TakeDamage();
             if (!player.invincible)
             {
-                StartCoroutine(cameraShake.Shake(.15f, .4f));
+                gm.CameraShake();
             }
         }
     }
