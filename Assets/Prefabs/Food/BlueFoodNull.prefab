@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114762768974253662}
   - component: {fileID: 65686744748079694}
   - component: {fileID: 114016067647511850}
+  - component: {fileID: 114505355128539484}
   m_Layer: 0
   m_Name: BlueFoodNull
   m_TagString: Untagged
@@ -168,6 +169,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yLevelKill: -20
+--- !u!114 &114505355128539484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810700295182030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: ItemOutOfBounds
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 0
 --- !u!114 &114762768974253662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a555379dd9ee3f48abf9793a59d2dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   pfxPrefab: {fileID: 1962571587479850, guid: 0d5950948b6286f46baf3459c7aee525, type: 2}
+  isHeld: 0
   beingFired: 0
   throwForce: 75
   upBoost: 7
