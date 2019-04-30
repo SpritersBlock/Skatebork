@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class ItemSpawner : MonoBehaviour {
 
     public GameObject[] itemArray;
     public float itemSpawnSpeed;
     public JaeGameManager gm;
+
+    public AnalyticsTracker itemsSpawned;
+    public AnalyticsTracker itemMaxMet;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +31,7 @@ public class ItemSpawner : MonoBehaviour {
             Rigidbody rb = itemClone.GetComponent<Rigidbody>();
             rb.velocity += (Vector3.up * itemSpawnSpeed);
             gm.foodCount++;
+            itemsSpawned.TriggerEvent();
         }
     }
 }
