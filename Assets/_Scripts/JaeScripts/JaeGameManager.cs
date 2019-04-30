@@ -7,6 +7,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public PlayerMovement_2 player;
     private CameraShake cameraShake;
+    //public TutorialManager tutMan;
 
     public Slider hpBar;
     public TrolleyBoyController[] trolleyBoys;

@@ -7,12 +7,14 @@ public class BossController : MonoBehaviour {
 
     public NavMeshAgent agent;
     public BossHealthDisplayer bhd;
+    public TutorialManager tutMan;
 
     public Transform targetTransform;
 
     private CameraShake cameraShake;
 
     public int bossHealth;
+    public bool fullHealth = true;
 
     //public Vector2 xBounds;
     //public Vector2 yBounds;
@@ -67,12 +69,20 @@ public class BossController : MonoBehaviour {
 
     public void BossHit()
     {
+        if (fullHealth)
+        {
+            fullHealth = false;
+        }
         StartCoroutine(cameraShake.Shake(.15f, .4f));
         bossHealth--;
         bhd.UpdateHealthText(bossHealth);
         if (bossHealth <= 0)
         {
             BossDie();
+        }
+        if (!fullHealth)
+        {
+            tutMan.TurnOffThrow();
         }
     }
 

@@ -8,6 +8,9 @@ public class ItemSpawner : MonoBehaviour {
     public GameObject[] itemArray;
     public float itemSpawnSpeed;
     public JaeGameManager gm;
+    public TutorialManager tutMan;
+
+    bool firstSpawn = true;
 
     public AnalyticsTracker itemsSpawned;
     public AnalyticsTracker itemMaxMet;
@@ -26,6 +29,11 @@ public class ItemSpawner : MonoBehaviour {
     {
         if (gm.foodCount < gm.foodMax)
         {
+            if (firstSpawn)
+            {
+                firstSpawn = false;
+                tutMan.TurnOffJump();
+            }
             GameObject itemClone;
             itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], trolleyTransform.position, trolleyTransform.rotation);
             Rigidbody rb = itemClone.GetComponent<Rigidbody>();

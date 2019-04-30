@@ -1076,6 +1076,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338596150}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &339287228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362295183692808, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 400352115}
 --- !u!1 &349189965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1296,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1330598963}
   m_Script: {fileID: 11500000, guid: 92300e5a869554d4ba7fd7bce4997f58, type: 3}
+--- !u!1 &494428108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362295183692808, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1037230971}
 --- !u!1 &497369347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2085,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.59, z: 0}
+--- !u!1 &815446610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362295183692808, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333574401}
 --- !u!1 &879883716
 GameObject:
   m_ObjectHideFlags: 0
@@ -12578,6 +12593,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1309234931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362295183692808, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1311798564}
 --- !u!1001 &1311798564
 Prefab:
   m_ObjectHideFlags: 0
@@ -13527,8 +13547,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   bhd: {fileID: 2137369253}
+  tutMan: {fileID: 2137369257}
   targetTransform: {fileID: 0}
   bossHealth: 10
+  fullHealth: 1
   waypointArray:
   - {fileID: 562951244}
   - {fileID: 1022713622}
@@ -13725,7 +13747,7 @@ GameObject:
   - component: {fileID: 1589360863}
   - component: {fileID: 1589360862}
   m_Layer: 10
-  m_Name: JumpText (1)
+  m_Name: ThrowText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15067,6 +15089,7 @@ GameObject:
   - component: {fileID: 2137369254}
   - component: {fileID: 2137369256}
   - component: {fileID: 2137369255}
+  - component: {fileID: 2137369257}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -15148,6 +15171,7 @@ MonoBehaviour:
   - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
   itemSpawnSpeed: 2
   gm: {fileID: 2137369250}
+  tutMan: {fileID: 2137369257}
   itemsSpawned: {fileID: 2137369256}
   itemMaxMet: {fileID: 2137369255}
 --- !u!114 &2137369255
@@ -15180,3 +15204,26 @@ MonoBehaviour:
   m_TrackableProperty:
     m_Fields: []
   m_Trigger: 0
+--- !u!114 &2137369257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137369249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9caa22399717e4697c0da2d21b2b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpTexts:
+  - {fileID: 2140951943}
+  - {fileID: 815446610}
+  - {fileID: 1309234931}
+  - {fileID: 339287228}
+  - {fileID: 494428108}
+  throwText: {fileID: 1589360860}
+--- !u!1 &2140951943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362295183692808, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1015533597}
