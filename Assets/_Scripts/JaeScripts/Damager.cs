@@ -20,13 +20,13 @@ public class Damager : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "PlayerHurt")
         {
-            player.TakeDamage();
             if (!player.invincible)
             {
+                player.TakeDamage();
                 gm.CameraShake();
             }
         }
