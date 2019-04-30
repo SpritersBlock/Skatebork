@@ -12,6 +12,7 @@ public class ItemController : MonoBehaviour {
     FoodLauncher launcher;
     public GameObject pfxPrefab;
     public JaeGameManager gm;
+    TrailRenderer trail;
 
     [HideInInspector]
     public bool isHeld;
@@ -27,6 +28,8 @@ public class ItemController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         launcher = FindObjectOfType<FoodLauncher>();
         gm = FindObjectOfType<JaeGameManager>();
+        trail = GetComponent<TrailRenderer>();
+        trail.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -87,6 +90,7 @@ public class ItemController : MonoBehaviour {
     {
         beingFired = true;
         isHeld = false;
+        trail.enabled = true;
         //rb.useGravity = false;
         rb.isKinematic = false;
         player.hasFood = false;
