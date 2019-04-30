@@ -19,6 +19,7 @@ public class OOBKill : MonoBehaviour {
 		if (transform.position.y <= yLevelKill)
         {
             Destroy(gameObject);
+            FindObjectOfType<JaeGameManager>().foodCount--;
         }
         if (transform.position.y <= -4)
         {

@@ -16,6 +16,9 @@ public class JaeGameManager : MonoBehaviour {
 
     public GameObject boss;
 
+    public int foodCount;
+    public int foodMax;
+
 	void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
         trolleyBoys = FindObjectsOfType <TrolleyBoyController>();

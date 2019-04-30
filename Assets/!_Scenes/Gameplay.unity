@@ -14994,9 +14994,11 @@ MonoBehaviour:
   player: {fileID: 775849654}
   hpBar: {fileID: 1224693733}
   trolleyBoys: []
-  playerHealth: 3
+  playerHealth: 50
   gameOn: 1
   boss: {fileID: 1515226390}
+  foodCount: 0
+  foodMax: 8
 --- !u!4 &2137369251
 Transform:
   m_ObjectHideFlags: 0
@@ -15051,3 +15053,4 @@ MonoBehaviour:
   itemArray:
   - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
   itemSpawnSpeed: 2
+  gm: {fileID: 2137369250}

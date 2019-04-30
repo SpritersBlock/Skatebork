@@ -6,6 +6,7 @@ public class ItemSpawner : MonoBehaviour {
 
     public GameObject[] itemArray;
     public float itemSpawnSpeed;
+    public JaeGameManager gm;
 
     // Use this for initialization
     void Start () {
@@ -19,9 +20,13 @@ public class ItemSpawner : MonoBehaviour {
 
     public void SpawnItem(Transform trolleyTransform)
     {
-        GameObject itemClone;
-        itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], trolleyTransform.position, trolleyTransform.rotation);
-        Rigidbody rb = itemClone.GetComponent<Rigidbody>();
-        rb.velocity += (Vector3.up * itemSpawnSpeed);
+        if (gm.foodCount < gm.foodMax)
+        {
+            GameObject itemClone;
+            itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], trolleyTransform.position, trolleyTransform.rotation);
+            Rigidbody rb = itemClone.GetComponent<Rigidbody>();
+            rb.velocity += (Vector3.up * itemSpawnSpeed);
+            gm.foodCount++;
+        }
     }
 }

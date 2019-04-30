@@ -11,6 +11,7 @@ public class ItemController : MonoBehaviour {
     public Rigidbody rb;
     FoodLauncher launcher;
     public GameObject pfxPrefab;
+    public JaeGameManager gm;
 
     [HideInInspector]
     public bool isHeld;
@@ -25,7 +26,8 @@ public class ItemController : MonoBehaviour {
         child = gameObject.transform.GetChild(0).gameObject;
         rb = GetComponent<Rigidbody>();
         launcher = FindObjectOfType<FoodLauncher>();
-	}
+        gm = FindObjectOfType<JaeGameManager>();
+    }
 	
 	// Update is called once per frame
 	void LateUpdate () {
@@ -72,6 +74,7 @@ public class ItemController : MonoBehaviour {
                 pfxClone = Instantiate(pfxPrefab);
                 pfxClone.transform.position = transform.position;
                 Destroy(gameObject);
+                gm.foodCount--;
             }
             if (collision.gameObject.tag == "Boss")
             {
