@@ -7,11 +7,13 @@ public class ItemController : MonoBehaviour {
     PlayerMovement_2 player;
     GameObject target;
     GameObject child;
-    Rigidbody rb;
+    [HideInInspector]
+    public Rigidbody rb;
     FoodLauncher launcher;
     public GameObject pfxPrefab;
 
-    bool isHeld;
+    [HideInInspector]
+    public bool isHeld;
     public bool beingFired;
     public float throwForce;
     public float upBoost;

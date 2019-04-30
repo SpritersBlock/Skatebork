@@ -6,6 +6,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
     public float walkSpeed = 2;
     //public float runSpeed = 6;
+    [HideInInspector]
     public float gravity = -12;
     float jumpHeight;
     public float jumpHeightMin;
@@ -14,6 +15,7 @@ public class PlayerMovement_2 : MonoBehaviour
     [Range(0, 1)]
     public float airControlPercent;
     //public int health;
+    [HideInInspector]
     public bool invincible;
 
     public float turnSmoothTime = 0.2f;
@@ -210,6 +212,22 @@ public class PlayerMovement_2 : MonoBehaviour
     public void PlayerDie()
     {
         invincible = true;
+        
+        ItemController[] foodInScene;
+        foodInScene = FindObjectsOfType<ItemController>();
+
+        if (hasFood)
+        {
+            for (int i = 0; i < foodInScene.Length; i++)
+            {
+                if (foodInScene[i].isHeld == true)
+                {
+                    foodInScene[i].isHeld = false;
+                    foodInScene[i].rb.isKinematic = false;
+                    foodInScene[i].rb.useGravity = true;
+                }
+            }
+        }
 
         //walkSpeed = 0;
         //Rigidbody rb = playerAnimNull.GetComponent<Rigidbody>();

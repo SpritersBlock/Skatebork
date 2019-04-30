@@ -1200,26 +1200,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 775849654}
-    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
-        type: 2}
-      propertyPath: targetTransform
-      value: 
-      objectReference: {fileID: 775849653}
     - target: {fileID: 95949172625417758, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
         type: 2}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ab216acc1b8d44649967385513cc387f, type: 2}
-    - target: {fileID: 195253888654602976, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
         type: 2}
-      propertyPath: m_Speed
-      value: 27
-      objectReference: {fileID: 0}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 775849653}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2137369254}
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775849654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -7226,6 +7226,11 @@ Prefab:
       propertyPath: itemSpawnSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2137369254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -7427,6 +7432,11 @@ Prefab:
       propertyPath: itemSpawnSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2137369254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -12649,6 +12659,11 @@ Prefab:
       propertyPath: itemSpawnSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2137369254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -12914,6 +12929,11 @@ Prefab:
       propertyPath: itemSpawnSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+        type: 2}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2137369254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0
@@ -14952,6 +14972,7 @@ GameObject:
   - component: {fileID: 2137369250}
   - component: {fileID: 2137369252}
   - component: {fileID: 2137369253}
+  - component: {fileID: 2137369254}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -15016,3 +15037,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 220446110}
+--- !u!114 &2137369254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137369249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db30b0dbec2597047958911bf5f09da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemArray:
+  - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
+  itemSpawnSpeed: 2

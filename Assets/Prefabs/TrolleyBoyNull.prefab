@@ -436,8 +436,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297085442616708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.159, z: 0.931}
-  m_LocalScale: {x: 1.2, y: 0.529928, z: 2.3351898}
+  m_LocalPosition: {x: 0, y: 0.36, z: 1.066}
+  m_LocalScale: {x: 2.46444, y: 0.93076557, z: 3.3109233}
   m_Children: []
   m_Father: {fileID: 4036935804587796}
   m_RootOrder: 2
@@ -1227,9 +1227,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   targetTransform: {fileID: 0}
   stunned: 0
-  itemArray:
-  - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
-  itemSpawnSpeed: 2
+  spawner: {fileID: 0}
 --- !u!114 &114752549475303508
 MonoBehaviour:
   m_ObjectHideFlags: 1
