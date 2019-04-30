@@ -23,7 +23,7 @@ public class JumpTrigger : MonoBehaviour {
         {
             //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
             
-            if (tb != null && !tb.stunned && !player.invincible)
+            if (tb != null && !tb.stunned/* && !player.invincible*/)
             {
                 player.Jump(2);
                 StartCoroutine(tb.Stun(2));
