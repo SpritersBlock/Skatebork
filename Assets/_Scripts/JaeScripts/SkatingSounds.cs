@@ -17,7 +17,7 @@ public class SkatingSounds : MonoBehaviour {
 	void Update () {
 		if (player.controller.isGrounded && Input.GetAxis("Vertical") != 0)
         {
-            skateSound.volume = 1;
+            skateSound.volume = 0.7f;
         }
         else
         {
