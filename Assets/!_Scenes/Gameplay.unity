@@ -28082,8 +28082,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 535391803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.621, z: -0.0000008841}
-  m_LocalScale: {x: 4.673675, y: 4.673675, z: 4.673675}
+  m_LocalPosition: {x: 0, y: 0.621, z: -0.00000030505}
+  m_LocalScale: {x: 3.9312148, y: 3.9312148, z: 3.9312148}
   m_Children: []
   m_Father: {fileID: 1707327180}
   m_RootOrder: 1
@@ -70902,7 +70902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Jump
   clip: {fileID: 8300000, guid: 72c21a9c1b677764994f9e0c887664da, type: 3}
-  volume: 0.77
+  volume: 0.57
   pitch: 1
   source: {fileID: 0}
 --- !u!4 &1410086648
