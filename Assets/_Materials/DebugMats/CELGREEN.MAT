@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CelGreen
+  m_Name: CELGREEN
   m_Shader: {fileID: 4800000, guid: 5297be55c4e378840a2fa51366026b32, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
