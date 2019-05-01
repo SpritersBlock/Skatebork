@@ -76,6 +76,7 @@ public class BossController : MonoBehaviour {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
         bossHealth--;
         bhd.UpdateHealthText(bossHealth);
+        FindObjectOfType<AudioPlayer>().Play("Squeal");
         if (bossHealth <= 0)
         {
             BossDie();

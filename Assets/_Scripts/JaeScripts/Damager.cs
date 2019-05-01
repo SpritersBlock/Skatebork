@@ -28,6 +28,7 @@ public class Damager : MonoBehaviour {
             {
                 player.TakeDamage();
                 gm.CameraShake();
+                FindObjectOfType<AudioPlayer>().Play("Punch");
             }
         }
     }

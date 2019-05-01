@@ -35,6 +35,7 @@ public class TrolleyBoyController : MonoBehaviour {
     public IEnumerator Stun(float stunTime)
     {
         spawner.SpawnItem(transform);
+        //FindObjectOfType<AudioPlayer>().Play("Stun");
         //rb.velocity += new Vector3(Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2), 0, Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2));
 
         agent.speed = 0;

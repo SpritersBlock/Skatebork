@@ -149,6 +149,15 @@ public class PlayerMovement_2 : MonoBehaviour
         //print("AAHH");
         float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight * jumpMult);
         velocityY = jumpVelocity;
+        if (jumpMult != 1)
+        {
+            FindObjectOfType<AudioPlayer>().Play("Stun");
+        }
+        else
+        {
+            FindObjectOfType<AudioPlayer>().Play("Jump");
+        }
+        
         //print(jumpVelocity);
     }
 

@@ -56,6 +56,7 @@ public class ItemController : MonoBehaviour {
                 isHeld = true;
                 rb.useGravity = false;
                 rb.isKinematic = true;
+                FindObjectOfType<AudioPlayer>().Play("Pop");
             }
             //GameObject clone;
             //clone = Instantiate(child, target.transform);
@@ -72,6 +73,7 @@ public class ItemController : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
             {
+                FindObjectOfType<AudioPlayer>().Play("Splat");
                 //Instantiate UNPARENTED PFX
                 GameObject pfxClone;
                 pfxClone = Instantiate(pfxPrefab);
@@ -98,6 +100,7 @@ public class ItemController : MonoBehaviour {
         aimForce = Camera.main.transform.parent.forward * throwForce;
         aimForce += new Vector3(0, upBoost, 0);
         rb.velocity = aimForce;
+        FindObjectOfType<AudioPlayer>().Play("Throw");
         //launcher.Launch();
         //Destroy(gameObject);
     }
