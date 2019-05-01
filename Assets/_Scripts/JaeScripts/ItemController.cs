@@ -54,7 +54,7 @@ public class ItemController : MonoBehaviour {
             {
                 player.hasFood = true;
                 isHeld = true;
-                rb.useGravity = false;
+                //rb.useGravity = false;
                 rb.isKinematic = true;
                 FindObjectOfType<AudioPlayer>().Play("Pop");
             }
