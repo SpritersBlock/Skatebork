@@ -73,7 +73,7 @@ public class ItemController : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
             {
-                FindObjectOfType<AudioPlayer>().Play("Splat");
+                //FindObjectOfType<AudioPlayer>().Play("Splat");
                 //Instantiate UNPARENTED PFX
                 GameObject pfxClone;
                 pfxClone = Instantiate(pfxPrefab);
