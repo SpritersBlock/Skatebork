@@ -15,7 +15,7 @@ public class JaeGameManager : MonoBehaviour {
     public int playerHealth = 3;
     public bool gameOn = true;
 
-    public GameObject boss;
+    public GameObject finalTarget;
 
     public int foodCount;
     public int foodMax;
@@ -44,7 +44,7 @@ public class JaeGameManager : MonoBehaviour {
         trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
         for (int i = 0; i < trolleyBoys.Length; i++)
         {
-            trolleyBoys[i].targetTransform = boss.transform;
+            trolleyBoys[i].targetTransform = finalTarget.transform;
         }
     }
 
