@@ -14,7 +14,8 @@ public class BossController : MonoBehaviour {
     private CameraShake cameraShake;
 
     public int bossHealth;
-    public bool fullHealth = true;
+    bool fullHealth = true;
+    public GameObject bossClone;
 
     //public Vector2 xBounds;
     //public Vector2 yBounds;
@@ -89,6 +90,20 @@ public class BossController : MonoBehaviour {
 
     public void BossDie()
     {
+        StartCoroutine("BossDeathProcess");
+    }
+
+    public IEnumerator BossDeathProcess()
+    {
+        agent.speed = 0;
+
+        bossClone = Instantiate(bossClone, null);
+        bossClone.transform.position = transform.position;
+        bossClone.transform.rotation = transform.rotation;
+        //bossClone.GetComponent<Rigidbody>().AddForce(new Vector3(5, 5, 5), ForceMode.Impulse);
+        
+        //yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        yield return null;
     }
 }

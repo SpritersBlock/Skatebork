@@ -22,7 +22,6 @@ public class JaeGameManager : MonoBehaviour {
 
 	void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
-        trolleyBoys = FindObjectsOfType <TrolleyBoyController>();
     }
 	
 	void Update () {
@@ -42,6 +41,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public void ChangeTrolleyTargetsToBoss()
     {
+        trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
         for (int i = 0; i < trolleyBoys.Length; i++)
         {
             trolleyBoys[i].targetTransform = boss.transform;
