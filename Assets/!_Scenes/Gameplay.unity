@@ -9004,7 +9004,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.27
@@ -80829,6 +80829,51 @@ Transform:
   m_Father: {fileID: 2048039925}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -15.891001, z: 0}
+--- !u!1 &1607799319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607799320}
+  - component: {fileID: 1607799321}
+  m_Layer: 0
+  m_Name: SquealFast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607799320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607799319}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1896734208}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607799321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607799319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0715b2154b79f04782ba62a7659c1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: SquealFast
+  clip: {fileID: 8300000, guid: 8da2a748d3d91f34f898f1f5a85b52ec, type: 3}
+  volume: 1
+  pitch: 2.17
+  source: {fileID: 0}
 --- !u!1 &1608362283
 GameObject:
   m_ObjectHideFlags: 0
@@ -95140,6 +95185,7 @@ MonoBehaviour:
   - {fileID: 1848384933}
   - {fileID: 1410086647}
   - {fileID: 1934912622}
+  - {fileID: 1607799321}
 --- !u!4 &1896734208
 Transform:
   m_ObjectHideFlags: 0
@@ -95157,6 +95203,7 @@ Transform:
   - {fileID: 1848384934}
   - {fileID: 1410086648}
   - {fileID: 1934912623}
+  - {fileID: 1607799320}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

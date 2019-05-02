@@ -152,6 +152,8 @@ public class PlayerMovement_2 : MonoBehaviour
         if (jumpMult != 1)
         {
             FindObjectOfType<AudioPlayer>().Play("Stun");
+            FindObjectOfType<AudioPlayer>().Play("SquealFast");
+            FindObjectOfType<AudioPlayer>().Play("Splat");
         }
         else
         {
