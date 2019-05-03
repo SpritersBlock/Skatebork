@@ -10,6 +10,8 @@ public class JaeGameManager : MonoBehaviour {
     //public TutorialManager tutMan;
 
     public Slider hpBar;
+    public GameObject deathCanvas;
+    public GameObject aimReticle;
     public TrolleyBoyController[] trolleyBoys;
 
     public int playerHealth = 3;
@@ -22,6 +24,7 @@ public class JaeGameManager : MonoBehaviour {
 
 	void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
+        deathCanvas.SetActive(false);
     }
 	
 	void Update () {
@@ -29,6 +32,7 @@ public class JaeGameManager : MonoBehaviour {
         {
             ButtonScripts bs;
             bs = FindObjectOfType<ButtonScripts>();
+            bs.st.sceneName = "MainMenu";
             bs.MoveToGame();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -51,6 +55,13 @@ public class JaeGameManager : MonoBehaviour {
     public void UpdateHealth()
     {
         hpBar.value = playerHealth;
+        if (playerHealth <= 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            deathCanvas.SetActive(true);
+            aimReticle.SetActive(false);
+        }
     }
 
     public void CameraShake()
