@@ -50,72 +50,76 @@ public class PlayerMovement_2 : MonoBehaviour
     void Update()
     {
         // input
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector2 inputDir = input/*.normalized*/;
-        bool running = Input.GetKey(KeyCode.LeftShift);
-
-        Move(inputDir);
-
-        
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (gm.gameOn)
         {
-            if (controller.isGrounded)
-            {
-                Jump(1);
-                jumpHeight = jumpHeightMin;
-            }
-        }
+            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Vector2 inputDir = input/*.normalized*/;
+            //bool running = Input.GetKey(KeyCode.LeftShift);
 
-        var em = skidPFX.GetComponent<ParticleSystem>().emission;
-        var em2 = skidPFX2.GetComponent<ParticleSystem>().emission;
-        if (controller.isGrounded)
-        {
-            em.enabled = true;
-            em2.enabled = true;
-            
-            if (Input.GetKey(KeyCode.Space))
+            Move(inputDir);
+
+
+
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 if (controller.isGrounded)
                 {
-                    if (anim.GetFloat("Crouch") != 1)
-                    {
-                        anim.SetFloat("Crouch", 1);
-                    }
-                    if (jumpHeight < jumpHeightMax)
-                    {
-                        jumpHeight += jumpHeightIncrement;
-                    }
-                    if (jumpHeight > jumpHeightMax)
-                    {
-                        jumpHeight = jumpHeightMax;
-                    }
+                    Jump(1);
+                    jumpHeight = jumpHeightMin;
                 }
             }
-            //Debug.Log("IS GROUNDED");
-        } else if (!controller.isGrounded)
-        {
-            em.enabled = false;
-            em2.enabled = false;
-            if (anim.GetFloat("Crouch") != 0)
-            {
-                anim.SetFloat("Crouch", 0);
-            }
-            //Debug.Log("NOPE");
-        }
-        // animator
-        //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
-        //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (Time.timeScale == 0)
+            var em = skidPFX.GetComponent<ParticleSystem>().emission;
+            var em2 = skidPFX2.GetComponent<ParticleSystem>().emission;
+            if (controller.isGrounded)
             {
-                Time.timeScale = 1;
+                em.enabled = true;
+                em2.enabled = true;
+
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    if (controller.isGrounded)
+                    {
+                        if (anim.GetFloat("Crouch") != 1)
+                        {
+                            anim.SetFloat("Crouch", 1);
+                        }
+                        if (jumpHeight < jumpHeightMax)
+                        {
+                            jumpHeight += jumpHeightIncrement;
+                        }
+                        if (jumpHeight > jumpHeightMax)
+                        {
+                            jumpHeight = jumpHeightMax;
+                        }
+                    }
+                }
+                //Debug.Log("IS GROUNDED");
             }
-            else
+            else if (!controller.isGrounded)
             {
-                Time.timeScale = 0;
+                em.enabled = false;
+                em2.enabled = false;
+                if (anim.GetFloat("Crouch") != 0)
+                {
+                    anim.SetFloat("Crouch", 0);
+                }
+                //Debug.Log("NOPE");
+            }
+            // animator
+            //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
+            //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                }
+                else
+                {
+                    Time.timeScale = 0;
+                }
             }
         }
     }

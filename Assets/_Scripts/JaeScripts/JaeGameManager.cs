@@ -12,6 +12,8 @@ public class JaeGameManager : MonoBehaviour {
 
     public Slider hpBar;
     public GameObject deathCanvas;
+    public GameObject winCanvas;
+    public GameObject qToMenuText;
     public GameObject aimReticle;
     public TrolleyBoyController[] trolleyBoys;
 
@@ -26,17 +28,13 @@ public class JaeGameManager : MonoBehaviour {
 	void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
         deathCanvas.SetActive(false);
+        winCanvas.SetActive(false);
     }
 	
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ButtonScripts bs;
-            bs = FindObjectOfType<ButtonScripts>();
-            bs.st.sceneName = "MainMenu";
-            bs.MoveToGame();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            BackToMainMenu();
         }
         //if (playerHealth < 1)
         //{
@@ -63,11 +61,43 @@ public class JaeGameManager : MonoBehaviour {
             deathCanvas.SetActive(true);
             aimReticle.SetActive(false);
             camFollow.mouseSensitivity = 0;
+            qToMenuText.SetActive(false);
+            gameOn = false;
         }
     }
 
     public void CameraShake()
     {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
+    }
+
+    public void BossIsNowDead()
+    {
+        player.invincible = true;
+        gameOn = false;
+        ChangeTrolleyTargetsToBoss();
+        Invoke("DisplayWinCanvas", 1);
+    }
+
+    public void DisplayWinCanvas()
+    {
+        winCanvas.SetActive(true);
+        qToMenuText.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        camFollow.mouseSensitivity = 0;
+        //player.walkSpeed = 0;
+        //player.turnSmoothTime = 0;
+        //player.speedSmoothTime = 0;
+    }
+
+    public void BackToMainMenu()
+    {
+        ButtonScripts bs;
+        bs = FindObjectOfType<ButtonScripts>();
+        bs.st.sceneName = "MainMenu";
+        bs.MoveToGame();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

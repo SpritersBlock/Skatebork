@@ -13,7 +13,7 @@ public class MusicManager : MonoBehaviour {
     public bool musicCanPlay;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         if (!mmExists)
         {
             mmExists = true;
