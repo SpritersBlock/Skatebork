@@ -7,6 +7,7 @@ public class ItemSpawner : MonoBehaviour {
 
     public GameObject[] itemArray;
     public float itemSpawnSpeed;
+    public float itemLaunchSpeed;
     public JaeGameManager gm;
     public TutorialManager tutMan;
 
@@ -38,6 +39,7 @@ public class ItemSpawner : MonoBehaviour {
             itemClone = Instantiate(itemArray[Random.Range(0, itemArray.Length)], trolleyTransform.position, trolleyTransform.rotation);
             Rigidbody rb = itemClone.GetComponent<Rigidbody>();
             rb.velocity += (Vector3.up * itemSpawnSpeed);
+            rb.velocity += new Vector3(Random.Range(-itemLaunchSpeed, itemLaunchSpeed) * itemSpawnSpeed, 0, Random.Range(-itemLaunchSpeed, itemLaunchSpeed) * itemSpawnSpeed);
             gm.foodCount++;
             itemsSpawned.TriggerEvent();
         }
