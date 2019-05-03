@@ -11,9 +11,14 @@ public class TrolleyBoyController : MonoBehaviour {
 
 
     public NavMeshAgent agent;
-    //private JaeGameManager gm;
+    private JaeGameManager gm;
     private Animator anim;
 
+    public PlayerMovement_2 player;
+    public float distanceToPlayer;
+    public float distanceToWaypoint;
+
+    public Transform[] waypointArray;
     public Transform targetTransform;
 
     public bool stunned;
@@ -23,12 +28,33 @@ public class TrolleyBoyController : MonoBehaviour {
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        //gm = FindObjectOfType<JaeGameManager>();
+        gm = FindObjectOfType<JaeGameManager>();
     }
 	
 	void Update () {
+        if (targetTransform != gm.finalTarget.transform)
+        {
+            if (Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position) < distanceToPlayer)
+            {
+                if (targetTransform != player.transform)
+                {
+                    targetTransform = player.transform;
+                }
+            }
+            else
+            {
+                if (targetTransform == player.transform)
+                {
+                    targetTransform = waypointArray[Random.Range(0, waypointArray.Length)];
+                }
+                if (Vector3.Distance(gameObject.transform.position, targetTransform.position) < distanceToWaypoint)
+                {
+                    targetTransform = waypointArray[Random.Range(0, waypointArray.Length)];
+                }
+            }
+        }
         LockOn();
-	}
+    }
 
     void LockOn()
     {
