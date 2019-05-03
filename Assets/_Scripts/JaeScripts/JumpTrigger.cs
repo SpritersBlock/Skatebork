@@ -26,7 +26,7 @@ public class JumpTrigger : MonoBehaviour {
             if (tb != null && !tb.stunned/* && !player.invincible*/)
             {
                 player.Jump(2);
-                StartCoroutine(tb.Stun(2));
+                StartCoroutine(tb.Stun(5));
                 GameObject poofClone;
                 poofClone = Instantiate(poofRing, transform.position, transform.rotation);
             }
