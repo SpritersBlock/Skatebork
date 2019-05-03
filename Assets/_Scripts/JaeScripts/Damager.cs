@@ -14,7 +14,7 @@ public class Damager : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovement_2>();
         gm = FindObjectOfType<JaeGameManager>();
-        trolley = GetComponent<TrolleyBoyController>();
+        trolley = transform.parent.GetComponentInParent<TrolleyBoyController>();
         if (trolley == null)
         {
             return;
