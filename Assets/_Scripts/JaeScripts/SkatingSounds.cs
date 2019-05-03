@@ -6,6 +6,8 @@ public class SkatingSounds : MonoBehaviour {
 
     public PlayerMovement_2 player;
 
+    float currentSpeed;
+
     public AudioSource skateSound;
 
 	// Use this for initialization
@@ -15,9 +17,10 @@ public class SkatingSounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.controller.isGrounded && Input.GetAxis("Vertical") != 0)
+        currentSpeed = new Vector2(player.controller.velocity.x, player.controller.velocity.z).magnitude;
+        if (player.controller.isGrounded)
         {
-            skateSound.volume = 0.7f;
+            skateSound.volume = (currentSpeed / 20);
         }
         else
         {
