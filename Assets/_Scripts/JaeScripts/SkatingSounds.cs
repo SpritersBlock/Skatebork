@@ -18,7 +18,7 @@ public class SkatingSounds : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currentSpeed = new Vector2(player.controller.velocity.x, player.controller.velocity.z).magnitude;
-        if (player.controller.isGrounded)
+        if (player.controller.isGrounded && player.gm.playerHealth > 0)
         {
             skateSound.volume = (currentSpeed / 20);
         }

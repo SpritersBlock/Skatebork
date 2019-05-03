@@ -7,6 +7,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public PlayerMovement_2 player;
     private CameraShake cameraShake;
+    public CameraFollow camFollow;
     //public TutorialManager tutMan;
 
     public Slider hpBar;
@@ -61,6 +62,7 @@ public class JaeGameManager : MonoBehaviour {
             Cursor.visible = true;
             deathCanvas.SetActive(true);
             aimReticle.SetActive(false);
+            camFollow.mouseSensitivity = 0;
         }
     }
 
