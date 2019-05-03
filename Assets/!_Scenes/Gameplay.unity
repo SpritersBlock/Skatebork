@@ -108643,6 +108643,7 @@ MonoBehaviour:
   itemArray:
   - {fileID: 1810700295182030, guid: 2b093b0cdcbb9b14f86254c9b7731c30, type: 2}
   - {fileID: 1810700295182030, guid: 7355c7fec2d5a9344ba0ec0030ffe1e1, type: 2}
+  - {fileID: 1810700295182030, guid: 27aaacb0d9827984f88adcfa88823f7b, type: 2}
   itemSpawnSpeed: 4
   itemLaunchSpeed: 5
   gm: {fileID: 2137369250}

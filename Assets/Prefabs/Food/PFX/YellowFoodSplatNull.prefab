@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198991411528202810}
   - component: {fileID: 199507232295583244}
   m_Layer: 0
-  m_Name: GreenFoodSplatPFX
+  m_Name: YellowFoodSplatPFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114246326609035616}
   - component: {fileID: 82815142914178700}
   m_Layer: 0
-  m_Name: GreenFoodSplatNull
+  m_Name: YellowFoodSplatNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.33078435, g: 0.83137256, b: 0.27058825, a: 1}
+      maxColor: {r: 0.83137256, g: 0.7466396, b: 0.27058825, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
