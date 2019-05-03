@@ -78035,6 +78035,8 @@ GameObject:
   - component: {fileID: 1515226391}
   - component: {fileID: 1515226392}
   - component: {fileID: 1515226393}
+  - component: {fileID: 1515226395}
+  - component: {fileID: 1515226394}
   m_Layer: 11
   m_Name: BossNull
   m_TagString: Boss
@@ -78099,6 +78101,38 @@ MonoBehaviour:
   - {fileID: 1022713622}
   refreshMin: 3
   refreshMax: 8
+  bossHitAT: {fileID: 1515226395}
+  bossDieAT: {fileID: 1515226394}
+--- !u!114 &1515226394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515226390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: BossDeath
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 0
+--- !u!114 &1515226395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515226390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: BossHit
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 0
 --- !u!1 &1515550724
 GameObject:
   m_ObjectHideFlags: 0
@@ -108984,6 +109018,7 @@ GameObject:
   - component: {fileID: 2137369256}
   - component: {fileID: 2137369255}
   - component: {fileID: 2137369257}
+  - component: {fileID: 2137369258}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -109004,6 +109039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 775849654}
   camFollow: {fileID: 1679561359}
+  playerDeathAT: {fileID: 2137369258}
   hpBar: {fileID: 1224693733}
   deathCanvas: {fileID: 983061662}
   winCanvas: {fileID: 1648374416}
@@ -109124,6 +109160,21 @@ MonoBehaviour:
   - {fileID: 339287228}
   - {fileID: 494428108}
   throwText: {fileID: 1589360860}
+--- !u!114 &2137369258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137369249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: Player Death
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 0
 --- !u!1 &2137854100
 GameObject:
   m_ObjectHideFlags: 0

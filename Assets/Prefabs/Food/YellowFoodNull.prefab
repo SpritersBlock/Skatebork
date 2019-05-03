@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114016067647511850}
   - component: {fileID: 114505355128539484}
   - component: {fileID: 96762488063180320}
+  - component: {fileID: 114352316867303214}
   m_Layer: 0
   m_Name: YellowFoodNull
   m_TagString: Untagged
@@ -281,6 +282,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yLevelKill: -20
   at: {fileID: 114505355128539484}
+--- !u!114 &114352316867303214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810700295182030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: Item Fired
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 0
 --- !u!114 &114505355128539484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,3 +330,4 @@ MonoBehaviour:
   beingFired: 0
   throwForce: 75
   upBoost: 7
+  firedAT: {fileID: 114352316867303214}

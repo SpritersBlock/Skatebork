@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Analytics;
 
 public class BossController : MonoBehaviour {
 
@@ -25,6 +26,9 @@ public class BossController : MonoBehaviour {
     float refreshTime;
     public float refreshMin;
     public float refreshMax;
+
+    public AnalyticsTracker bossHitAT;
+    public AnalyticsTracker bossDieAT;
 
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -78,6 +82,7 @@ public class BossController : MonoBehaviour {
         bossHealth--;
         bhd.UpdateHealthText(bossHealth);
         FindObjectOfType<AudioPlayer>().Play("Squeal");
+        bossHitAT.TriggerEvent();
         if (bossHealth <= 0)
         {
             BossDie();
@@ -91,6 +96,7 @@ public class BossController : MonoBehaviour {
     public void BossDie()
     {
         StartCoroutine("BossDeathProcess");
+        bossDieAT.TriggerEvent();
     }
 
     public IEnumerator BossDeathProcess()

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class JaeGameManager : MonoBehaviour {
 
     public PlayerMovement_2 player;
     private CameraShake cameraShake;
     public CameraFollow camFollow;
+    public AnalyticsTracker playerDeathAT;
     //public TutorialManager tutMan;
 
     public Slider hpBar;
@@ -63,6 +65,7 @@ public class JaeGameManager : MonoBehaviour {
             camFollow.mouseSensitivity = 0;
             qToMenuText.SetActive(false);
             gameOn = false;
+            playerDeathAT.TriggerEvent();
         }
     }
 

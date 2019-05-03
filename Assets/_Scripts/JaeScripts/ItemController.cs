@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class ItemController : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class ItemController : MonoBehaviour {
     public bool beingFired;
     public float throwForce;
     public float upBoost;
+
+    public AnalyticsTracker firedAT;
 
 	// Use this for initialization
 	void Awake () {
@@ -101,6 +104,7 @@ public class ItemController : MonoBehaviour {
         aimForce += new Vector3(0, upBoost, 0);
         rb.velocity = aimForce;
         FindObjectOfType<AudioPlayer>().Play("Throw");
+        firedAT.TriggerEvent();
         //launcher.Launch();
         //Destroy(gameObject);
     }
