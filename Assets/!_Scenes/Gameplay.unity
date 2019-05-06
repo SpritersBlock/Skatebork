@@ -19863,21 +19863,6 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ab216acc1b8d44649967385513cc387f, type: 2}
-    - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
-        type: 2}
-      propertyPath: distanceToPlayer
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 195253888654602976, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
-        type: 2}
-      propertyPath: m_Speed
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 195253888654602976, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
-        type: 2}
-      propertyPath: m_Acceleration
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0

@@ -776,7 +776,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7acaf28904173aa4791f5c4cfa0be282, type: 2}
+  - {fileID: 2100000, guid: b091a29ac9cfba5428e98198bad56753, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   player: {fileID: 0}
-  distanceToPlayer: 1
+  distanceToPlayer: 35
   distanceToWaypoint: 5
   waypointArray:
   - {fileID: 0}
@@ -1386,8 +1386,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
-  m_Acceleration: 8
+  m_Speed: 16
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 0
