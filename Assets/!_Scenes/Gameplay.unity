@@ -44587,6 +44587,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 82355206320692612, guid: 32b61bb5f36ef3148a0f4329c825e4b1,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 5627f3de5b2a0da4b9fdc6bc03f2ba44,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b61bb5f36ef3148a0f4329c825e4b1, type: 2}
   m_IsPrefabAsset: 0
@@ -96549,6 +96555,7 @@ MonoBehaviour:
   - {fileID: 1934912622}
   - {fileID: 1607799321}
   - {fileID: 1014328356}
+  mixer: {fileID: 24300002, guid: 5627f3de5b2a0da4b9fdc6bc03f2ba44, type: 2}
 --- !u!4 &1896734208
 Transform:
   m_ObjectHideFlags: 0
@@ -96579,7 +96586,8 @@ AudioSource:
   m_GameObject: {fileID: 1896734206}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5627f3de5b2a0da4b9fdc6bc03f2ba44,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: bccf90a9d0d87cd489b3bfbc035a4f63, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -107887,6 +107895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   st: {fileID: 491106169}
   buttonNull: {fileID: 0}
+  optionsPanel: {fileID: 0}
   confirmPanel: {fileID: 0}
   mt: {fileID: 0}
 --- !u!114 &2137369253

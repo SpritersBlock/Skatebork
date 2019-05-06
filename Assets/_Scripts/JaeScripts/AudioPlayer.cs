@@ -5,13 +5,15 @@ using UnityEngine.Audio;
 public class AudioPlayer : MonoBehaviour {
 
     public Sound[] sounds;
+    public AudioMixerGroup mixer;
 
 	// Use this for initialization
 	void Awake () {
 		foreach (Sound s in sounds)
         {
-           s.source =  gameObject.AddComponent<AudioSource>();
+            s.source =  gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+            s.source.outputAudioMixerGroup = mixer;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;

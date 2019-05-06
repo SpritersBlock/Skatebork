@@ -8,6 +8,7 @@ public class ButtonScripts : MonoBehaviour {
     public SceneTransition st;
 
     public GameObject buttonNull;
+    public GameObject optionsPanel;
     public GameObject confirmPanel;
 
     public MenuTransitions mt;
@@ -17,6 +18,7 @@ public class ButtonScripts : MonoBehaviour {
         if (buttonNull != null)
         {
             buttonNull.SetActive(true);
+            optionsPanel.SetActive(false);
             confirmPanel.SetActive(false);
         }
         //mt.buttonNullAnim.SetBool("OnScreen", true);
@@ -30,12 +32,14 @@ public class ButtonScripts : MonoBehaviour {
 
     public void OptionsOpen()
     {
-
+        buttonNull.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
     public void OptionsClose()
     {
-
+        optionsPanel.SetActive(false);
+        buttonNull.SetActive(true);
     }
 
     public void QuitConfirmOpen()
