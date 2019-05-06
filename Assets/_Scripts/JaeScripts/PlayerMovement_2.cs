@@ -21,6 +21,7 @@ public class PlayerMovement_2 : MonoBehaviour
     public float turnSmoothTime = 0.2f;
     float turnSmoothVelocity;
     public bool hasFood;
+    bool doubleJumpOn;
 
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
@@ -69,12 +70,27 @@ public class PlayerMovement_2 : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (doubleJumpOn)
+                {
+                    Jump(2);
+                    jumpHeight = jumpHeightMax;
+                }
+            }
+
             var em = skidPFX.GetComponent<ParticleSystem>().emission;
             var em2 = skidPFX2.GetComponent<ParticleSystem>().emission;
             if (controller.isGrounded)
             {
                 em.enabled = true;
                 em2.enabled = true;
+
+                if (doubleJumpOn)
+                {
+                    doubleJumpOn = false;
+                    print(doubleJumpOn);
+                }
 
                 if (Input.GetKey(KeyCode.Space))
                 {
@@ -155,9 +171,19 @@ public class PlayerMovement_2 : MonoBehaviour
         velocityY = jumpVelocity;
         if (jumpMult != 1)
         {
-            FindObjectOfType<AudioPlayer>().Play("Stun");
-            FindObjectOfType<AudioPlayer>().Play("SquealFast");
-            FindObjectOfType<AudioPlayer>().Play("Splat");
+            if (doubleJumpOn)
+            {
+                doubleJumpOn = false;
+                FindObjectOfType<AudioPlayer>().Play("Jump");
+            }
+            else
+            {
+                FindObjectOfType<AudioPlayer>().Play("Stun");
+                FindObjectOfType<AudioPlayer>().Play("SquealFast");
+                FindObjectOfType<AudioPlayer>().Play("Splat");
+                doubleJumpOn = true;
+                print(doubleJumpOn);
+            }
         }
         else
         {
