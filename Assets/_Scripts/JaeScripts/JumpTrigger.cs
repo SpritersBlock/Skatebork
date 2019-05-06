@@ -11,7 +11,7 @@ public class JumpTrigger : MonoBehaviour {
     private void Start()
     {
         tb = gameObject.transform.parent.parent.GetComponentInParent<TrolleyBoyController>();
-        if (tb == null)
+        if (tb == null) // This is just in case we want to put a jump trigger on something other than a trolley boy.
         {
             return;
         }
@@ -21,14 +21,14 @@ public class JumpTrigger : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlayerJump")
         {
-            //player.rb.velocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
-            
+            // Originally, you couldn't jump on enemies if you were invincible. This has since been changed.
             if (tb != null && !tb.stunned/* && !player.invincible*/)
             {
                 player.Jump(2);
                 StartCoroutine(tb.Stun(5));
                 GameObject poofClone;
                 poofClone = Instantiate(poofRing, transform.position, transform.rotation);
+                // We should probably make this particle system its own script but for now, it's part of this one.
             }
         }
     }

@@ -4,12 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class TrolleyBoyController : MonoBehaviour {
-
-    //HEY HEY YOU
-    //Trolley Boys mill around their half of the stage until you come into range
-
-
-
+    
     public NavMeshAgent agent;
     private JaeGameManager gm;
     private Animator anim;

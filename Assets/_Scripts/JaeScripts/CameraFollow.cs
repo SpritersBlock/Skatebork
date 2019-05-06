@@ -37,6 +37,7 @@ public class CameraFollow : MonoBehaviour {
         //transform.position = smoothedPosition;
 
         //transform.LookAt(target);
+        // ^^^ This stuff is all outdated, keeping in case we need it later or something?
 
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
