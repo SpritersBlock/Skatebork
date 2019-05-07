@@ -6,6 +6,7 @@ public class TutorialManager : MonoBehaviour {
 
     public GameObject[] jumpTexts;
     public GameObject throwText;
+    public TextDisplayer txtDp;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class TutorialManager : MonoBehaviour {
             jumpTexts[i].SetActive(false);
         }
         TurnOnThrow();
+        txtDp.ShowText("Double Jump Off Enemies!");
     }
 
     void TurnOnThrow()

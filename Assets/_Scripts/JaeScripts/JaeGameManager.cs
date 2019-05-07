@@ -10,6 +10,7 @@ public class JaeGameManager : MonoBehaviour {
     private CameraShake cameraShake;
     public CameraFollow camFollow;
     public AnalyticsTracker playerDeathAT;
+    public TextDisplayer txtDp;
     //public TutorialManager tutMan;
 
     public Slider hpBar;
