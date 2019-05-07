@@ -19,6 +19,7 @@ public class PlayerMovement_2 : MonoBehaviour
     float turnSmoothVelocity;
     public bool hasFood;
     bool doubleJumpOn;
+    bool canCancelJump = true;
 
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
@@ -67,9 +68,12 @@ public class PlayerMovement_2 : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Space) && velocityY > 0)
+            if (Input.GetKeyUp(KeyCode.Space) && velocityY > 0 && canCancelJump)
             {
-                velocityY = 0;
+                if (!doubleJumpOn)
+                {
+                    velocityY = 0;
+                }
             }
 
             var em = skidPFX.GetComponent<ParticleSystem>().emission;
@@ -78,46 +82,22 @@ public class PlayerMovement_2 : MonoBehaviour
             {
                 em.enabled = true;
                 em2.enabled = true;
-
+                if (!canCancelJump)
+                {
+                    canCancelJump = true;
+                }
                 if (doubleJumpOn)
                 {
                     doubleJumpOn = false;
                     //print(doubleJumpOn);
                 }
-
-                //if (Input.GetKey(KeyCode.Space))
-                //{
-                //    if (controller.isGrounded)
-                //    {
-                //        if (anim.GetFloat("Crouch") != 1)
-                //        {
-                //            anim.SetFloat("Crouch", 1);
-                //        }
-                //        if (jumpHeight < jumpHeightMax)
-                //        {
-                //            jumpHeight += jumpHeightIncrement;
-                //        }
-                //        if (jumpHeight > jumpHeightMax)
-                //        {
-                //            jumpHeight = jumpHeightMax;
-                //        }
-                //    }
-                //}
                 //Debug.Log("IS GROUNDED");
             }
             else if (!controller.isGrounded)
             {
                 em.enabled = false;
                 em2.enabled = false;
-                //if (anim.GetFloat("Crouch") != 0)
-                //{
-                //    anim.SetFloat("Crouch", 0);
-                //}
-                //Debug.Log("NOPE");
             }
-            // animator
-            //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
-            //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -167,10 +147,12 @@ public class PlayerMovement_2 : MonoBehaviour
             if (doubleJumpOn)
             {
                 doubleJumpOn = false;
+                canCancelJump = false;
                 FindObjectOfType<AudioPlayer>().Play("Jump");
             }
             else
             {
+                canCancelJump = false;
                 FindObjectOfType<AudioPlayer>().Play("Stun");
                 FindObjectOfType<AudioPlayer>().Play("SquealFast");
                 FindObjectOfType<AudioPlayer>().Play("Splat");
@@ -262,24 +244,7 @@ public class PlayerMovement_2 : MonoBehaviour
                 }
             }
         }
-
-        //walkSpeed = 0;
-        //Rigidbody rb = playerAnimNull.GetComponent<Rigidbody>();
-        //Destroy(skidPFX);
-        //Destroy(skidPFX2);
-        //if (anim.GetFloat("Crouch") != 0)
-        //{
-        //    anim.SetFloat("Crouch", 0);
-        //}
-        //rb.isKinematic = false;
-        //rb.useGravity = true;
-        //GameObject playerClone;
-        //Vector3 deathPos;
-        //deathPos = transform.position;
-        //playerClone = Instantiate(playerAnimNull, deathPos, transform.rotation);
-        //playerClone.GetComponent<Rigidbody>().velocity = new Vector3(0, 20, 0);
-
-        //FindObjectOfType<CameraFollow>().target = playerClone.transform;
+        
         gameObject.SetActive(false);
     }
 }
