@@ -64,7 +64,7 @@ public class PlayerMovement_2 : MonoBehaviour
                 }
                 else if (doubleJumpOn)
                 {
-                    Jump(2);
+                    Jump(1.3f);
                     jumpHeight = jumpHeightMax;
                 }
             }
