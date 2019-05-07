@@ -24,8 +24,8 @@ public class JumpTrigger : MonoBehaviour {
             // Originally, you couldn't jump on enemies if you were invincible. This has since been changed.
             if (tb != null && !tb.stunned/* && !player.invincible*/)
             {
-                player.Jump(2);
-                StartCoroutine(tb.Stun(5));
+                player.Jump(1.5f);
+                StartCoroutine(tb.Stun(8));
                 GameObject poofClone;
                 poofClone = Instantiate(poofRing, transform.position, transform.rotation);
                 // We should probably make this particle system its own script but for now, it's part of this one.

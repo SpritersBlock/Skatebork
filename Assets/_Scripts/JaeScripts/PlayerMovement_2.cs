@@ -35,6 +35,7 @@ public class PlayerMovement_2 : MonoBehaviour
     public ParticleSystem skidPFX2;
     public GameObject playerAnimNull;
     private Animator anim;
+    public PoofSpawner poofSpawner;
 
     void Start()
     {
@@ -148,7 +149,8 @@ public class PlayerMovement_2 : MonoBehaviour
             {
                 doubleJumpOn = false;
                 canCancelJump = false;
-                FindObjectOfType<AudioPlayer>().Play("Jump");
+                FindObjectOfType<AudioPlayer>().Play("DJump");
+                poofSpawner.SpawnPoofRing(transform.position, gameObject.transform);
             }
             else
             {
