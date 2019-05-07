@@ -3,18 +3,15 @@ using System.Collections;
 
 public class PlayerMovement_2 : MonoBehaviour
 {
-
     public float walkSpeed = 2;
-    //public float runSpeed = 6;
     [HideInInspector]
     public float gravity = -12;
     float jumpHeight;
     public float jumpHeightMin;
     public float jumpHeightMax;
-    public float jumpHeightIncrement;
+    //public float jumpHeightIncrement;
     [Range(0, 1)]
     public float airControlPercent;
-    //public int health;
     [HideInInspector]
     public bool invincible;
 
@@ -28,8 +25,7 @@ public class PlayerMovement_2 : MonoBehaviour
     float currentSpeed;
     float velocityY;
     public float iFramesDuration;
-
-    //Animator animator;
+    
     public JaeGameManager gm;
     Transform cameraT;
     [HideInInspector]
@@ -41,7 +37,6 @@ public class PlayerMovement_2 : MonoBehaviour
 
     void Start()
     {
-        //animator = GetComponent<Animator>();
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = playerAnimNull.GetComponent<Animator>();
@@ -55,20 +50,8 @@ public class PlayerMovement_2 : MonoBehaviour
         {
             Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             Vector2 inputDir = input/*.normalized*/;
-            //bool running = Input.GetKey(KeyCode.LeftShift);
 
             Move(inputDir);
-
-
-
-            //if (Input.GetKeyUp(KeyCode.Space))
-            //{
-            //    if (controller.isGrounded)
-            //    {
-            //        Jump(1);
-            //        jumpHeight = jumpHeightMin;
-            //    }
-            //}
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -82,6 +65,11 @@ public class PlayerMovement_2 : MonoBehaviour
                     Jump(2);
                     jumpHeight = jumpHeightMax;
                 }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space) && velocityY > 0)
+            {
+                velocityY = 0;
             }
 
             var em = skidPFX.GetComponent<ParticleSystem>().emission;

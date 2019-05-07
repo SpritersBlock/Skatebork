@@ -935,7 +935,6 @@ MonoBehaviour:
   gravity: -15
   jumpHeightMin: 1
   jumpHeightMax: 3
-  jumpHeightIncrement: 0.1
   airControlPercent: 0.3
   invincible: 0
   turnSmoothTime: 0.3
@@ -1041,7 +1040,7 @@ CharacterController:
   m_Height: 1.74
   m_Radius: 0.73
   m_SlopeLimit: 45
-  m_StepOffset: 0.1
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.59, z: 0}

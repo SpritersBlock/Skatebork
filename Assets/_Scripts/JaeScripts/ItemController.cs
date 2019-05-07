@@ -41,7 +41,7 @@ public class ItemController : MonoBehaviour {
         {
             transform.position = target.transform.position;
             transform.rotation = target.transform.rotation;
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0) && Time.timeScale > 0)
             {
                 //Destroy(gameObject);
                 Fire();
