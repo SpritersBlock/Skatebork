@@ -9,15 +9,23 @@ public class OptionsMenu : MonoBehaviour {
     public AudioMixer audioMixer;
     public Image volumeBar;
     public int localVolume;
+    public Toggle fsToggle;
 
     public float volMin = -80;
     public float volMax = 0;
 
     public void Awake()
     {
-        //volBarFillAmount = 1;
         audioMixer.SetFloat("Volume", volMax);
         //I can't figure out how to get the volume bar to stay consistent when you exit/enter scenes so for now I'm just resetting the volume. Bluh.
+        if (Screen.fullScreen)
+        {
+            fsToggle.isOn = true;
+        } else
+        {
+            fsToggle.isOn = false;
+        }
+        
     }
 
     public void AddVolume (int volume)

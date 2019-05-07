@@ -2699,6 +2699,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 5627f3de5b2a0da4b9fdc6bc03f2ba44, type: 2}
   volumeBar: {fileID: 176768178}
   localVolume: 0
+  fsToggle: {fileID: 1864305845}
   volMin: -80
   volMax: 0
 --- !u!1 &1667536331
@@ -3495,7 +3496,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &1864305846
 MonoBehaviour:
   m_ObjectHideFlags: 0
