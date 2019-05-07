@@ -30,7 +30,7 @@ public class OOBKill : MonoBehaviour {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             //Analytics.CustomEvent("Item Respawned", new Dictionary<string, int> { {"Sew Time", variable } });
             at.TriggerEvent();
-            print("RESPAWN");
+            //print("RESPAWN");
         }
 	}
 }

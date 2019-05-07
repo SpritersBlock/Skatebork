@@ -17,6 +17,7 @@ public class TrolleyBoyController : MonoBehaviour {
     public Transform targetTransform;
 
     public bool stunned;
+    float origSpeed;
 
     public ItemSpawner spawner;
 
@@ -24,6 +25,7 @@ public class TrolleyBoyController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         gm = FindObjectOfType<JaeGameManager>();
+        origSpeed = agent.speed;
     }
 	
 	void Update () {
@@ -80,7 +82,7 @@ public class TrolleyBoyController : MonoBehaviour {
 
         if (timer >= stunTime)
         {
-            agent.speed = 27;
+            agent.speed = origSpeed;
             stunned = false;
             anim.SetBool("Stunned", false);
             yield return null;

@@ -45,7 +45,7 @@ public class PlayerMovement_2 : MonoBehaviour
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = playerAnimNull.GetComponent<Animator>();
-        jumpHeight = jumpHeightMin;
+        jumpHeight = jumpHeightMax;
     }
 
     void Update()
@@ -61,18 +61,23 @@ public class PlayerMovement_2 : MonoBehaviour
 
 
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            //if (Input.GetKeyUp(KeyCode.Space))
+            //{
+            //    if (controller.isGrounded)
+            //    {
+            //        Jump(1);
+            //        jumpHeight = jumpHeightMin;
+            //    }
+            //}
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (controller.isGrounded)
                 {
                     Jump(1);
-                    jumpHeight = jumpHeightMin;
+                    jumpHeight = jumpHeightMax;
                 }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (doubleJumpOn)
+                else if (doubleJumpOn)
                 {
                     Jump(2);
                     jumpHeight = jumpHeightMax;
@@ -89,37 +94,37 @@ public class PlayerMovement_2 : MonoBehaviour
                 if (doubleJumpOn)
                 {
                     doubleJumpOn = false;
-                    print(doubleJumpOn);
+                    //print(doubleJumpOn);
                 }
 
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    if (controller.isGrounded)
-                    {
-                        if (anim.GetFloat("Crouch") != 1)
-                        {
-                            anim.SetFloat("Crouch", 1);
-                        }
-                        if (jumpHeight < jumpHeightMax)
-                        {
-                            jumpHeight += jumpHeightIncrement;
-                        }
-                        if (jumpHeight > jumpHeightMax)
-                        {
-                            jumpHeight = jumpHeightMax;
-                        }
-                    }
-                }
+                //if (Input.GetKey(KeyCode.Space))
+                //{
+                //    if (controller.isGrounded)
+                //    {
+                //        if (anim.GetFloat("Crouch") != 1)
+                //        {
+                //            anim.SetFloat("Crouch", 1);
+                //        }
+                //        if (jumpHeight < jumpHeightMax)
+                //        {
+                //            jumpHeight += jumpHeightIncrement;
+                //        }
+                //        if (jumpHeight > jumpHeightMax)
+                //        {
+                //            jumpHeight = jumpHeightMax;
+                //        }
+                //    }
+                //}
                 //Debug.Log("IS GROUNDED");
             }
             else if (!controller.isGrounded)
             {
                 em.enabled = false;
                 em2.enabled = false;
-                if (anim.GetFloat("Crouch") != 0)
-                {
-                    anim.SetFloat("Crouch", 0);
-                }
+                //if (anim.GetFloat("Crouch") != 0)
+                //{
+                //    anim.SetFloat("Crouch", 0);
+                //}
                 //Debug.Log("NOPE");
             }
             // animator
@@ -182,7 +187,7 @@ public class PlayerMovement_2 : MonoBehaviour
                 FindObjectOfType<AudioPlayer>().Play("SquealFast");
                 FindObjectOfType<AudioPlayer>().Play("Splat");
                 doubleJumpOn = true;
-                print(doubleJumpOn);
+                //print(doubleJumpOn);
             }
         }
         else
