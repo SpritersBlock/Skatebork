@@ -39,4 +39,9 @@ public class OptionsMenu : MonoBehaviour {
             volumeBar.fillAmount -= 0.0625f;
         }
     }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
 }
