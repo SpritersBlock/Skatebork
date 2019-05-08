@@ -28,6 +28,11 @@ public class TutorialManager : MonoBehaviour {
         txtDp.ShowText("Double Jump Off Enemies!");
     }
 
+    public void ItemThrowTut()
+    {
+        txtDp.ShowText("Knock Him Off The Roof!");
+    }
+
     void TurnOnThrow()
     {
         throwText.SetActive(true);

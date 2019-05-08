@@ -75,9 +75,13 @@ public class JaeGameManager : MonoBehaviour {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
     }
 
-    public void BossIsNowDead()
+    public void BossJustDied()
     {
         player.invincible = true;
+    }
+
+    public void BossIsNowDead()
+    {
         gameOn = false;
         ChangeTrolleyTargetsToBoss();
         Invoke("DisplayWinCanvas", 1);

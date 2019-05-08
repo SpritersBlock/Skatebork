@@ -19,6 +19,7 @@ public class BossCloneDeath : MonoBehaviour
         //rb.AddExplosionForce(100, transform.position += new Vector3(-10, -3, 0), 20);
         StartCoroutine("BossDie", killTime);
         gm = FindObjectOfType<JaeGameManager>();
+        gm.BossJustDied();
     }
 
     public IEnumerator BossDie(float killTime)
