@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fxText: {fileID: 1566517342}
+  anim: {fileID: 0}
 --- !u!114 &756319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85168,7 +85169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 1
-  mouseSensitivity: 5
+  mouseSensitivity: 3
   target: {fileID: 1420031977}
   dstFromTarget: 5
   pitchMinMax: {x: -25, y: 85}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TextDisplayer : MonoBehaviour {
 
     public Text fxText;
-    Animator anim;
+    public Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -17,5 +17,12 @@ public class TextDisplayer : MonoBehaviour {
     {
         fxText.text = flavourText;
         anim.SetTrigger("ShowText");
+        anim.SetBool("ShowingText", true);
+        Invoke("TurnShowingTextOff", 2f);
+    }
+
+    public void TurnShowingTextOff()
+    {
+        anim.SetBool("ShowingText", false);
     }
 }

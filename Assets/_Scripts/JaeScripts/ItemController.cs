@@ -60,6 +60,12 @@ public class ItemController : MonoBehaviour {
                 //rb.useGravity = false;
                 rb.isKinematic = true;
                 FindObjectOfType<AudioPlayer>().Play("Pop");
+                if (player.firstFood)
+                {
+                    TutorialManager tutMan = FindObjectOfType<TutorialManager>();
+                    tutMan.ItemThrowTut();
+                    player.firstFood = false;
+                }
             }
         }
     }

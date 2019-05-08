@@ -20,6 +20,8 @@ public class PlayerMovement_2 : MonoBehaviour
     public bool hasFood;
     bool doubleJumpOn;
     bool canCancelJump = true;
+    [HideInInspector]
+    public bool firstFood = true;
 
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
