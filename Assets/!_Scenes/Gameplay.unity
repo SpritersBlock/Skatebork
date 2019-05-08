@@ -93817,6 +93817,7 @@ GameObject:
   - component: {fileID: 1861678736}
   - component: {fileID: 1861678738}
   - component: {fileID: 1861678737}
+  - component: {fileID: 1861678739}
   m_Layer: 5
   m_Name: AimingReticle
   m_TagString: Untagged
@@ -93854,7 +93855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45882353, g: 0.8784314, b: 0.46449694, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -93876,6 +93877,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861678735}
   m_CullTransparentMesh: 0
+--- !u!114 &1861678739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1861678735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a3cc490b83fb49918895249b14510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticle: {fileID: 1861678737}
+  reticleActive: {r: 0.45882356, g: 0.87843144, b: 0.46274513, a: 1}
+  reticleInactive: {r: 0.6981132, g: 0.30624774, b: 0.30624774, a: 0.7411765}
+  player: {fileID: 775849654}
 --- !u!1 &1861993633
 GameObject:
   m_ObjectHideFlags: 0
