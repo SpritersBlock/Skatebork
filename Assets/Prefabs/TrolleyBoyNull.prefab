@@ -1286,7 +1286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  stunClip: {fileID: 7400000, guid: 3fbd8378af8bd5a49925450e94471f19, type: 2}
   player: {fileID: 0}
   distanceToPlayer: 35
   distanceToWaypoint: 5

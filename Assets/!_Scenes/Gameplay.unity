@@ -67811,7 +67811,7 @@ Prefab:
       objectReference: {fileID: 282840813}
     - target: {fileID: 1028677459538064, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1059798845139686, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
       propertyPath: m_IsActive
@@ -85169,7 +85169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 1
-  mouseSensitivity: 3
+  mouseSensitivity: 5
   target: {fileID: 1420031977}
   dstFromTarget: 5
   pitchMinMax: {x: -25, y: 85}
