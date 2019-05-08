@@ -62,10 +62,11 @@ public class TrolleyBoyController : MonoBehaviour {
 
     public IEnumerator Stun(float stunTime)
     {
+        bool warningOn = false;
         spawner.SpawnItem(transform);
-        //FindObjectOfType<AudioPlayer>().Play("Stun");
-        //rb.velocity += new Vector3(Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2), 0, Random.Range(-itemSpawnSpeed / 2, itemSpawnSpeed / 2));
-
+        float timeBeforeActive;
+        timeBeforeActive = (stunTime/6) * 5;
+        
         agent.speed = 0;
         stunned = true;
         anim.SetBool("Stunned", true);
@@ -73,15 +74,37 @@ public class TrolleyBoyController : MonoBehaviour {
         float lastTime = Time.realtimeSinceStartup;
         float timer = 0.0f;
 
+        Debug.Log("stunTime: " + stunTime + ", timeBeforeActive: " + timeBeforeActive);
+
+        while (timer < timeBeforeActive)
+        {
+            timer += (Time.realtimeSinceStartup - lastTime) * Time.timeScale;
+            lastTime = Time.realtimeSinceStartup;
+            yield return null;
+        }
+
+        if (timer >= timeBeforeActive)
+        {
+            print("Part A");
+            if (!warningOn)
+            {
+                print("Part B");
+                anim.SetTrigger("WarnFlash");
+                warningOn = true;
+            }
+        }
+
         while (timer < stunTime)
         {
-            timer += (Time.realtimeSinceStartup - lastTime);
+            timer += (Time.realtimeSinceStartup - lastTime) * Time.timeScale;
             lastTime = Time.realtimeSinceStartup;
             yield return null;
         }
 
         if (timer >= stunTime)
         {
+            print("Part C");
+            warningOn = false;
             agent.speed = origSpeed;
             stunned = false;
             anim.SetBool("Stunned", false);

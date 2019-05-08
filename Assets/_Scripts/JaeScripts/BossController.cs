@@ -59,7 +59,7 @@ public class BossController : MonoBehaviour {
 
         while (timer < refreshTime)
         {
-            timer += (Time.realtimeSinceStartup - lastTime);
+            timer += (Time.realtimeSinceStartup - lastTime) * Time.timeScale;
             lastTime = Time.realtimeSinceStartup;
             yield return null;
         }
