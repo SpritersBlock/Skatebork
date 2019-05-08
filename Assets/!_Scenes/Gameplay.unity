@@ -10915,7 +10915,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1638335675}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.016039552, y: 0.83457756}
   m_AnchorMax: {x: 0.15888114, y: 0.9057981}
@@ -12240,6 +12240,96 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 245708865}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &247554540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247554541}
+  - component: {fileID: 247554544}
+  - component: {fileID: 247554543}
+  - component: {fileID: 247554542}
+  m_Layer: 5
+  m_Name: PlayerHealthText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &247554541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247554540}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1638335675}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.016094657, y: 0.9070625}
+  m_AnchorMax: {x: 0.15893625, y: 0.978283}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &247554542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247554540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
+--- !u!114 &247554543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247554540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3f0ab1c8d75080449ad9bcf369b9931d, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'YOUR HP: '
+--- !u!222 &247554544
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247554540}
+  m_CullTransparentMesh: 0
 --- !u!1 &248702076
 GameObject:
   m_ObjectHideFlags: 0
@@ -50242,7 +50332,7 @@ RectTransform:
   - {fileID: 1307199361}
   - {fileID: 1883430129}
   m_Father: {fileID: 1638335675}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -56886,7 +56976,7 @@ RectTransform:
   m_Children:
   - {fileID: 805373831}
   m_Father: {fileID: 1638335675}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.87500006, y: 0.692632}
   m_AnchorMax: {x: 0.99099874, y: 0.901228}
@@ -62478,7 +62568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1224693733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67720,7 +67810,7 @@ Prefab:
       objectReference: {fileID: 282840813}
     - target: {fileID: 1028677459538064, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1059798845139686, guid: bb0dc7627552d724d8c0a84144005c56, type: 2}
       propertyPath: m_IsActive
@@ -74887,7 +74977,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -83195,6 +83285,7 @@ RectTransform:
   - {fileID: 1861678736}
   - {fileID: 1224693734}
   - {fileID: 289855934}
+  - {fileID: 247554541}
   - {fileID: 220446109}
   - {fileID: 983061663}
   - {fileID: 1648374417}
@@ -83491,7 +83582,7 @@ RectTransform:
   - {fileID: 881615560}
   - {fileID: 1097788431}
   m_Father: {fileID: 1638335675}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -106648,6 +106739,7 @@ GameObject:
   - component: {fileID: 2137369251}
   - component: {fileID: 2137369250}
   - component: {fileID: 2137369252}
+  - component: {fileID: 2137369259}
   - component: {fileID: 2137369253}
   - component: {fileID: 2137369257}
   - component: {fileID: 2137369254}
@@ -106676,7 +106768,7 @@ MonoBehaviour:
   camFollow: {fileID: 1679561359}
   playerDeathAT: {fileID: 2137369258}
   txtDp: {fileID: 756318}
-  hpBar: {fileID: 1224693733}
+  playerHp: {fileID: 2137369259}
   deathCanvas: {fileID: 983061662}
   winCanvas: {fileID: 1648374416}
   qToMenuText: {fileID: 289855933}
@@ -106813,6 +106905,18 @@ MonoBehaviour:
   m_TrackableProperty:
     m_Fields: []
   m_Trigger: 0
+--- !u!114 &2137369259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137369249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a570b660113a1574eba2fff12991eb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 247554543}
 --- !u!1 &2137854100
 GameObject:
   m_ObjectHideFlags: 0

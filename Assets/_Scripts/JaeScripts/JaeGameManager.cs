@@ -13,7 +13,8 @@ public class JaeGameManager : MonoBehaviour {
     public TextDisplayer txtDp;
     //public TutorialManager tutMan;
 
-    public Slider hpBar;
+    //public Slider hpBar;
+    public PlayerHealthDisplayer playerHp;
     public GameObject deathCanvas;
     public GameObject winCanvas;
     public GameObject qToMenuText;
@@ -56,7 +57,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public void UpdateHealth()
     {
-        hpBar.value = playerHealth;
+        playerHp.UpdateHealthText(playerHealth);
         if (playerHealth <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
