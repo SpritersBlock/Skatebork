@@ -61,11 +61,6 @@ public class ItemController : MonoBehaviour {
                 rb.isKinematic = true;
                 FindObjectOfType<AudioPlayer>().Play("Pop");
             }
-            //GameObject clone;
-            //clone = Instantiate(child, target.transform);
-            //clone.transform.position = Vector3.zero;
-            //clone.GetComponent<Rigidbody>().isKinematic = true;
-            //Destroy(gameObject);
         }
     }
 
@@ -74,7 +69,7 @@ public class ItemController : MonoBehaviour {
         //print(collision.gameObject.name);
         if (beingFired)
         {
-            if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
+            if (/*collision.gameObject.tag == "Trolley" || */collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
             {
                 //FindObjectOfType<AudioPlayer>().Play("Splat");
                 //Instantiate UNPARENTED PFX
@@ -87,6 +82,10 @@ public class ItemController : MonoBehaviour {
             if (collision.gameObject.tag == "Boss")
             {
                 FindObjectOfType<BossController>().BossHit();
+            }
+            if (collision.gameObject.tag == "Trolley")
+            {
+                FindObjectOfType<AudioPlayer>().Play("Stun");
             }
         }
     }
