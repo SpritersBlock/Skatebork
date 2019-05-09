@@ -13,7 +13,7 @@ public class InvincibilityFlash : MonoBehaviour {
     private void Update()
     {
         flashCounter -= Time.deltaTime;
-        if (player.invincible)
+        if (player.invincible && player.gm.gameOn)
         {
             if (flashCounter <= 0)
             {
