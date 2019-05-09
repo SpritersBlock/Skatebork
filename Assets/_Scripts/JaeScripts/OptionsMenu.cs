@@ -13,11 +13,22 @@ public class OptionsMenu : MonoBehaviour {
 
     public float volMin = -80;
     public float volMax = 0;
+    float audioValue;
+    float audioValueIncrement;
 
     public void Awake()
     {
-        audioMixer.SetFloat("Volume", volMax);
-        //I can't figure out how to get the volume bar to stay consistent when you exit/enter scenes so for now I'm just resetting the volume. Bluh.
+        audioValueIncrement = (Mathf.Abs(volMin) / 16);
+        audioMixer.GetFloat("Volume", out audioValue);
+        if (audioValue > -5)
+        {
+            audioMixer.SetFloat("Volume", 0);
+        }
+        volumeBar.fillAmount = 1-(0.0625f * (Mathf.Abs(audioValue) / audioValueIncrement));
+        if (volumeBar.fillAmount > 0.9375)
+        {
+            volumeBar.fillAmount = 1;
+        }
         if (Screen.fullScreen)
         {
             fsToggle.isOn = true;
@@ -35,6 +46,7 @@ public class OptionsMenu : MonoBehaviour {
             audioMixer.SetFloat("Volume", localVolume + volume);
             localVolume += volume;
             volumeBar.fillAmount += 0.0625f;
+            audioMixer.GetFloat("Volume", out audioValue);
         }
     }
 
@@ -45,6 +57,7 @@ public class OptionsMenu : MonoBehaviour {
             audioMixer.SetFloat("Volume", localVolume - volume);
             localVolume -= volume;
             volumeBar.fillAmount -= 0.0625f;
+            audioMixer.GetFloat("Volume", out audioValue);
         }
     }
 
