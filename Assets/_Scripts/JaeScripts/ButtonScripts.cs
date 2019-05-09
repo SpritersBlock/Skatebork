@@ -27,7 +27,7 @@ public class ButtonScripts : MonoBehaviour {
 
     public void MoveToGame()
     {
-        StartCoroutine(st.LoadScene());
+        StartCoroutine(st.LoadScene("Gameplay"));
     }
 
     public void OptionsOpen()

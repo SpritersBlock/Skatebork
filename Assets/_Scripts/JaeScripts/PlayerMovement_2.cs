@@ -101,18 +101,6 @@ public class PlayerMovement_2 : MonoBehaviour
                 em.enabled = false;
                 em2.enabled = false;
             }
-
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                if (Time.timeScale == 0)
-                {
-                    Time.timeScale = 1;
-                }
-                else
-                {
-                    Time.timeScale = 0;
-                }
-            }
         }
     }
 

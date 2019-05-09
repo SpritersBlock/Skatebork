@@ -11,6 +11,7 @@ public class JaeGameManager : MonoBehaviour {
     public CameraFollow camFollow;
     public AnalyticsTracker playerDeathAT;
     public TextDisplayer txtDp;
+    public GameObject pauseCanvas;
     //public TutorialManager tutMan;
 
     //public Slider hpBar;
@@ -33,17 +34,39 @@ public class JaeGameManager : MonoBehaviour {
         cameraShake = FindObjectOfType<CameraShake>();
         deathCanvas.SetActive(false);
         winCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
     }
 	
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            BackToMainMenu();
+            if (Time.timeScale == 0)
+            {
+                PauseMenuOff();
+                gameOn = false;
+            }
+            else
+            {
+                PauseMenuOn();
+                gameOn = true;
+            }
         }
-        //if (playerHealth < 1)
-        //{
-        //    gameOn = false;
-        //}
+    }
+
+    public void PauseMenuOn()
+    {
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        pauseCanvas.SetActive(true);
+    }
+
+    public void PauseMenuOff()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pauseCanvas.SetActive(false);
     }
 
     public void ChangeTrolleyTargetsToBoss()
@@ -102,11 +125,11 @@ public class JaeGameManager : MonoBehaviour {
 
     public void BackToMainMenu()
     {
-        ButtonScripts bs;
-        bs = FindObjectOfType<ButtonScripts>();
-        bs.st.sceneName = "MainMenu";
-        bs.MoveToGame();
+        PauseMenuOff();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        SceneTransition st;
+        st = FindObjectOfType<SceneTransition>();
+        StartCoroutine(st.LoadScene("MainMenu"));
     }
 }

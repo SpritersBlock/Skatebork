@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour {
 
     public Animator anim;
-    public string sceneName;
+    //public string sceneName;
 
-    public IEnumerator LoadScene()
+    public IEnumerator LoadScene(string sceneName)
     {
         anim.SetTrigger("End");
         yield return new WaitForSeconds(1.5f);
