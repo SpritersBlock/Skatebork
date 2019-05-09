@@ -74,7 +74,7 @@ public class TrolleyBoyController : MonoBehaviour {
         float lastTime = Time.realtimeSinceStartup;
         float timer = 0.0f;
 
-        Debug.Log("stunTime: " + stunTime + ", timeBeforeActive: " + timeBeforeActive);
+        //Debug.Log("stunTime: " + stunTime + ", timeBeforeActive: " + timeBeforeActive);
 
         while (timer < timeBeforeActive)
         {
@@ -85,10 +85,10 @@ public class TrolleyBoyController : MonoBehaviour {
 
         if (timer >= timeBeforeActive)
         {
-            print("Part A");
+            //print("Part A");
             if (!warningOn)
             {
-                print("Part B");
+                //print("Part B");
                 anim.SetTrigger("WarnFlash");
                 warningOn = true;
             }
@@ -103,7 +103,7 @@ public class TrolleyBoyController : MonoBehaviour {
 
         if (timer >= stunTime)
         {
-            print("Part C");
+            //print("Part C");
             warningOn = false;
             agent.speed = origSpeed;
             stunned = false;

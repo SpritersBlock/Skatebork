@@ -79,6 +79,8 @@ public class PlayerMovement_2 : MonoBehaviour
                 }
             }
 
+            float groundedFloat = anim.GetFloat("GroundedFloat");
+
             var em = skidPFX.GetComponent<ParticleSystem>().emission;
             var em2 = skidPFX2.GetComponent<ParticleSystem>().emission;
             if (controller.isGrounded)
@@ -94,12 +96,20 @@ public class PlayerMovement_2 : MonoBehaviour
                     doubleJumpOn = false;
                     //print(doubleJumpOn);
                 }
+                if (anim.GetFloat("GroundedFloat") > 0)
+                {
+                    anim.SetFloat("GroundedFloat", groundedFloat -= 10f * Time.deltaTime);
+                }
                 //Debug.Log("IS GROUNDED");
             }
             else if (!controller.isGrounded)
             {
                 em.enabled = false;
                 em2.enabled = false;
+                if (anim.GetFloat("GroundedFloat") < 1)
+                {
+                    anim.SetFloat("GroundedFloat", groundedFloat += 10f * Time.deltaTime);
+                }
             }
         }
     }
@@ -135,12 +145,13 @@ public class PlayerMovement_2 : MonoBehaviour
         velocityY = jumpVelocity;
         if (jumpMult != 1)
         {
-            if (doubleJumpOn)
+            if (doubleJumpOn && jumpMult == 1.3f)
             {
                 doubleJumpOn = false;
                 canCancelJump = false;
                 FindObjectOfType<AudioPlayer>().Play("DJump");
                 poofSpawner.SpawnPoofRing(transform.position, gameObject.transform);
+                anim.SetTrigger("DoubleJump");
             }
             else
             {
@@ -149,12 +160,14 @@ public class PlayerMovement_2 : MonoBehaviour
                 FindObjectOfType<AudioPlayer>().Play("SquealFast");
                 FindObjectOfType<AudioPlayer>().Play("Splat");
                 doubleJumpOn = true;
+                anim.SetTrigger("Jump");
                 //print(doubleJumpOn);
             }
         }
         else
         {
             FindObjectOfType<AudioPlayer>().Play("Jump");
+            anim.SetTrigger("Jump");
         }
         
         //print(jumpVelocity);
