@@ -43,12 +43,12 @@ public class JaeGameManager : MonoBehaviour {
             if (Time.timeScale == 0)
             {
                 PauseMenuOff();
-                gameOn = false;
+                gameOn = true;
             }
             else
             {
                 PauseMenuOn();
-                gameOn = true;
+                gameOn = false;
             }
         }
     }
