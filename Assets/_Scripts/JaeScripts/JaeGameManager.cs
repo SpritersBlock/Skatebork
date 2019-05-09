@@ -43,18 +43,19 @@ public class JaeGameManager : MonoBehaviour {
             if (Time.timeScale == 0)
             {
                 PauseMenuOff();
-                gameOn = true;
+                
             }
             else
             {
                 PauseMenuOn();
-                gameOn = false;
+                
             }
         }
     }
 
     public void PauseMenuOn()
     {
+        gameOn = false;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -63,6 +64,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public void PauseMenuOff()
     {
+        gameOn = true;
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

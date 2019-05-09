@@ -84044,6 +84044,7 @@ MonoBehaviour:
   playerRend: {fileID: 1450340010}
   flashLength: 0.1
   player: {fileID: 775849654}
+  bc: {fileID: 1515226393}
 --- !u!1 &1623354926
 GameObject:
   m_ObjectHideFlags: 0
