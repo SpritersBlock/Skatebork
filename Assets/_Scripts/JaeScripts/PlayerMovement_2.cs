@@ -211,7 +211,7 @@ public class PlayerMovement_2 : MonoBehaviour
     IEnumerator IFrames(float time)
     {
         invincible = true;
-        anim.SetBool("Invincible", true);
+        //anim.SetBool("Invincible", true);
         float lastTime = Time.realtimeSinceStartup;
         float timer = 0.0f;
 
@@ -225,7 +225,7 @@ public class PlayerMovement_2 : MonoBehaviour
         if (timer >= time)
         {
             invincible = false;
-            anim.SetBool("Invincible", false);
+            //anim.SetBool("Invincible", false);
             yield return null;
         }
     }
