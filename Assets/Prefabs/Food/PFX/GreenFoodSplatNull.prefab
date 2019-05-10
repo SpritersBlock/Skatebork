@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4527660657668088}
   - component: {fileID: 198991411528202810}
   - component: {fileID: 199507232295583244}
+  - component: {fileID: 114192243170859702}
   m_Layer: 0
   m_Name: GreenFoodSplatPFX
   m_TagString: Untagged
@@ -36,7 +37,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4040208525413076}
-  - component: {fileID: 114246326609035616}
   - component: {fileID: 82815142914178700}
   m_Layer: 0
   m_Name: GreenFoodSplatNull
@@ -194,17 +194,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114246326609035616
+--- !u!114 &114192243170859702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1962571587479850}
+  m_GameObject: {fileID: 1383572813128596}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92963b51b585edf42a33186a3d9d60c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSys: {fileID: 0}
   poofRing: {fileID: 0}
 --- !u!198 &198991411528202810
 ParticleSystem:

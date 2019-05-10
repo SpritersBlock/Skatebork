@@ -12,6 +12,7 @@ public class JaeGameManager : MonoBehaviour {
     public AnalyticsTracker playerDeathAT;
     public TextDisplayer txtDp;
     public GameObject pauseCanvas;
+    public TutorialManager tutMan;
     //public TutorialManager tutMan;
 
     //public Slider hpBar;
@@ -24,6 +25,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public int playerHealth = 3;
     public bool gameOn = true;
+    public bool jumpTextOff = false;
 
     public GameObject finalTarget;
 
@@ -51,6 +53,11 @@ public class JaeGameManager : MonoBehaviour {
                 
             }
         }
+    }
+
+    public void JumpTextOff()
+    {
+        jumpTextOff = true;
     }
 
     public void PauseMenuOn()

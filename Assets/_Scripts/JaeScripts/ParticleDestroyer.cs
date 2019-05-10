@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ParticleDestroyer : MonoBehaviour {
 
-    public ParticleSystem poofRing;
+    public ParticleSystem particleSys;
 
 	// Use this for initialization
 	void Start () {
-        poofRing = GetComponentInChildren<ParticleSystem>();
+        particleSys = GetComponent<ParticleSystem>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (!poofRing.IsAlive())
+		if (!particleSys.IsAlive())
         {
             Destroy(gameObject);
         }

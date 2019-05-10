@@ -7,6 +7,8 @@ public class TutorialManager : MonoBehaviour {
     public GameObject[] jumpTexts;
     public GameObject throwText;
     public TextDisplayer txtDp;
+    
+    public JaeGameManager gm;
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +22,14 @@ public class TutorialManager : MonoBehaviour {
 
     public void TurnOffJump()
     {
+        jumpTexts = GameObject.FindGameObjectsWithTag("JumpText");
         for (int i = 0; i < jumpTexts.Length; i++)
         {
             jumpTexts[i].SetActive(false);
         }
         TurnOnThrow();
         txtDp.ShowText("Double Jump Off Enemies!");
+        gm.JumpTextOff();
     }
 
     public void ItemThrowTut()

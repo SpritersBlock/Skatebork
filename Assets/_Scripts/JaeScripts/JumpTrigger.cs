@@ -10,6 +10,7 @@ public class JumpTrigger : MonoBehaviour {
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerMovement_2>();
         tb = gameObject.transform.parent.parent.GetComponentInParent<TrolleyBoyController>();
         if (tb == null) // This is just in case we want to put a jump trigger on something other than a trolley boy.
         {

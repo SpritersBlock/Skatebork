@@ -26,6 +26,18 @@ public class TrolleyBoyController : MonoBehaviour {
         anim = GetComponentInChildren<Animator>();
         gm = FindObjectOfType<JaeGameManager>();
         origSpeed = agent.speed;
+        player = FindObjectOfType<PlayerMovement_2>();
+        targetTransform = player.transform;
+        spawner = FindObjectOfType<ItemSpawner>();
+        GameObject[] wpGameObjects = GameObject.FindGameObjectsWithTag("TrolleyWP");
+        for(int i = 0; i < waypointArray.Length; i++)
+        {
+            waypointArray[i] = wpGameObjects[i].transform;
+        }
+        if (gm.jumpTextOff)
+        {
+            GameObject.Find("JumpText").SetActive(false);
+        }
     }
 	
 	void Update () {

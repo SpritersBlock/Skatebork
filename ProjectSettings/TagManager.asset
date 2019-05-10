@@ -9,6 +9,8 @@ TagManager:
   - Boss
   - Obstacle
   - PlayerHurt
+  - TrolleyWP
+  - JumpText
   layers:
   - Default
   - TransparentFX
