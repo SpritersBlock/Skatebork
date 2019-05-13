@@ -39,6 +39,8 @@ public class PlayerMovement_2 : MonoBehaviour
     private Animator anim;
     public PoofSpawner poofSpawner;
 
+    public Vector2 inputDir;
+
     void Start()
     {
         cameraT = Camera.main.transform;
@@ -53,9 +55,9 @@ public class PlayerMovement_2 : MonoBehaviour
         if (gm.gameOn)
         {
             Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            Vector2 inputDir = input/*.normalized*/;
+            inputDir = input/*.normalized*/;
 
-            Move(inputDir);
+            //Move(inputDir);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -114,6 +116,11 @@ public class PlayerMovement_2 : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        Move(inputDir);
+    }
+
     void Move(Vector2 inputDir)
     {
         if (inputDir != Vector2.zero)
@@ -126,6 +133,7 @@ public class PlayerMovement_2 : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
         velocityY += Time.deltaTime * gravity;
+        print(velocityY);
         Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
         controller.Move(velocity * Time.deltaTime);
