@@ -38,14 +38,14 @@ public class Damager : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "PlayerHurt")
-        {
-            if (player.speedSmoothTime > 0.1f)
-            {
-                player.speedSmoothTime = 0.1f;
-            }
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "PlayerHurt")
+    //    {
+    //        if (player.speedSmoothTime > 0.1f)
+    //        {
+    //            player.speedSmoothTime = 0.1f;
+    //        }
+    //    }
+    //}
 }

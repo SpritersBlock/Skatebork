@@ -209,8 +209,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4153928486771330}
-  - component: {fileID: 33365271897867246}
-  - component: {fileID: 23038442066189574}
   - component: {fileID: 65358999028962948}
   - component: {fileID: 54605094020118838}
   - component: {fileID: 114113990381343722}
@@ -513,41 +511,6 @@ Transform:
   m_Father: {fileID: 4241648253033968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23038442066189574
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1817387330246986}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 2c0a6b06a36507642a38d6ea3b577c47, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23075958227897038
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -807,13 +770,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908444152049276}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33365271897867246
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1817387330246986}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33395690851298184
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -964,8 +920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 18
-  gravity: -15
-  jumpHeight: 3
+  gravity: -40
+  jumpHeight: 4
   airControlPercent: 0.3
   invincible: 0
   turnSmoothTime: 0.1
@@ -973,6 +929,9 @@ MonoBehaviour:
   firstFood: 1
   speedSmoothTime: 0.1
   iFramesDuration: 3
+  gravityMin: -9
+  gravityMed: -40
+  gravityMax: -450
   gm: {fileID: 0}
   controller: {fileID: 0}
   skidPFX: {fileID: 198182945911085436}
@@ -1291,7 +1250,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5, g: 0.37300375, b: 0.2712264, a: 0.5529412}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.16862746}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1353,7 +1312,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2316,8 +2275,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0.5529412}
-        key1: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0.5529412}
+        key0: {r: 0.5566038, g: 0.50520647, b: 0.46471164, a: 0.5529412}
+        key1: {r: 0.3962264, g: 0.39099956, b: 0.38688144, a: 0.5529412}
         key2: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5824,7 +5783,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5, g: 0.37300375, b: 0.2712264, a: 0.5529412}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.16862746}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5886,7 +5845,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6849,8 +6808,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0.5529412}
-        key1: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0.5529412}
+        key0: {r: 0.5566038, g: 0.50520647, b: 0.46471164, a: 0.5529412}
+        key1: {r: 0.3962264, g: 0.39099956, b: 0.38688144, a: 0.5529412}
         key2: {r: 0.5019608, g: 0.37254903, b: 0.27058825, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

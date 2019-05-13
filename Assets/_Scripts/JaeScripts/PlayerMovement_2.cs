@@ -26,6 +26,10 @@ public class PlayerMovement_2 : MonoBehaviour
     float currentSpeed;
     float velocityY;
     public float iFramesDuration;
+
+    public float gravityMin;
+    public float gravityMed;
+    public float gravityMax;
     
     public JaeGameManager gm;
     Transform cameraT;
@@ -73,7 +77,11 @@ public class PlayerMovement_2 : MonoBehaviour
             {
                 if (!doubleJumpOn)
                 {
-                    velocityY = -3; //Cuts a jump short.
+                    //velocityY = -3; //Cuts a jump short.
+                    if (gravity != gravityMax)
+                    {
+                        gravity = gravityMax;
+                    }
                 }
             }
 
@@ -98,6 +106,12 @@ public class PlayerMovement_2 : MonoBehaviour
                 {
                     anim.SetFloat("GroundedFloat", groundedFloat -= 10f * Time.deltaTime);
                 }
+                
+                if (gravity != gravityMed)
+                {
+                    gravity = gravityMed;
+                }
+                
                 //Debug.Log("IS GROUNDED");
             }
             else if (!controller.isGrounded)
@@ -119,8 +133,15 @@ public class PlayerMovement_2 : MonoBehaviour
 
         if (velocityY <= 0.3f && velocityY >= -0.3f && !controller.isGrounded) //If the player is around about the apex of their jump.
         {
-            //Debug.Log("WORKING");
-            velocityY = -2;
+            Debug.Log("WORKING");
+            //velocityY = -2;
+            gravity = gravityMin;
+        } else
+        {
+            if (gravity != gravityMed)
+            {
+                gravity = gravityMed;
+            }
         }
     }
 
@@ -146,7 +167,6 @@ public class PlayerMovement_2 : MonoBehaviour
         {
             velocityY = 0;
         }
-
     }
 
     public void Jump(float jumpMult)
