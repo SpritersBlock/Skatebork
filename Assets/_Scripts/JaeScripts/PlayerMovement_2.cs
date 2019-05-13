@@ -7,9 +7,7 @@ public class PlayerMovement_2 : MonoBehaviour
     [HideInInspector]
     public float gravity = -12;
     float jumpHeight;
-    public float jumpHeightMin;
     public float jumpHeightMax;
-    //public float jumpHeightIncrement;
     [Range(0, 1)]
     public float airControlPercent;
     [HideInInspector]
@@ -17,6 +15,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
     public float turnSmoothTime = 0.2f;
     float turnSmoothVelocity;
+    [HideInInspector]
     public bool hasFood;
     bool doubleJumpOn;
     bool canCancelJump = true;
@@ -55,9 +54,9 @@ public class PlayerMovement_2 : MonoBehaviour
         if (gm.gameOn)
         {
             Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            inputDir = input/*.normalized*/;
+            inputDir = input/*.normalized*/; //Commented this out to get that gradual acceleration effect. 
 
-            //Move(inputDir);
+            //Move(inputDir); //Commented this out because it's done in FixedUpdate() instead.
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -77,7 +76,7 @@ public class PlayerMovement_2 : MonoBehaviour
             {
                 if (!doubleJumpOn)
                 {
-                    velocityY = 0;
+                    velocityY = -3; //Cuts a jump short.
                 }
             }
 
@@ -120,6 +119,12 @@ public class PlayerMovement_2 : MonoBehaviour
     private void FixedUpdate()
     {
         Move(inputDir);
+
+        if (velocityY <= 0.3f && velocityY >= -0.3f && !controller.isGrounded) //If the player is around about the apex of their jump.
+        {
+            //Debug.Log("WORKING");
+            velocityY = -2;
+        }
     }
 
     void Move(Vector2 inputDir)
@@ -149,7 +154,7 @@ public class PlayerMovement_2 : MonoBehaviour
     public void Jump(float jumpMult)
     {
         //print("AAHH");
-        float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight * jumpMult);
+        float jumpVelocity = Mathf.Sqrt(-1.6f * gravity * jumpHeight * jumpMult);
         velocityY = jumpVelocity;
         if (jumpMult != 1)
         {
