@@ -35,6 +35,21 @@ public class Damager : MonoBehaviour {
                 player.TakeDamage();
                 gm.CameraShake();
                 FindObjectOfType<AudioPlayer>().Play("Punch");
+                if (player.speedSmoothTime < 1f)
+                {
+                    player.speedSmoothTime = 1;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "PlayerHurt")
+        {
+            if (player.speedSmoothTime > 0.1f)
+            {
+                player.speedSmoothTime = 0.1f;
             }
         }
     }

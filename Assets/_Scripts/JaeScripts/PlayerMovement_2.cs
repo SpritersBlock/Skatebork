@@ -112,6 +112,7 @@ public class PlayerMovement_2 : MonoBehaviour
                 {
                     anim.SetFloat("GroundedFloat", groundedFloat += 10f * Time.deltaTime);
                 }
+                //Debug.Log("IS NOT GROUNDED");
             }
         }
     }
@@ -133,7 +134,6 @@ public class PlayerMovement_2 : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
         velocityY += Time.deltaTime * gravity;
-        print(velocityY);
         Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
         controller.Move(velocity * Time.deltaTime);
