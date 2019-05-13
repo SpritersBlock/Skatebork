@@ -133,7 +133,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
         if (velocityY <= 0.3f && velocityY >= -0.3f && !controller.isGrounded) //If the player is around about the apex of their jump.
         {
-            Debug.Log("WORKING");
+            //Debug.Log("WORKING");
             //velocityY = -2;
             gravity = gravityMin;
         } else
