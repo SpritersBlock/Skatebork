@@ -36,7 +36,7 @@ public class TutorialManager : MonoBehaviour {
     {
         if (txtDp.anim.GetBool("ShowingText"))
         {
-            ItemThrowTut();
+            Invoke("ItemThrowTut", 0.1f);
         } else
         {
             txtDp.ShowText("Knock Him Off The Roof!");
