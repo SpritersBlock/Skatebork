@@ -11,6 +11,7 @@ public class TextDisplayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = fxText.GetComponent<Animator>();
+        ShowText("Hold Space, Bigger Jump");
 	}
 	
 	public void ShowText(string flavourText)
@@ -18,7 +19,7 @@ public class TextDisplayer : MonoBehaviour {
         fxText.text = flavourText;
         anim.SetTrigger("ShowText");
         anim.SetBool("ShowingText", true);
-        Invoke("TurnShowingTextOff", 2f);
+        Invoke("TurnShowingTextOff", 2.5f);
     }
 
     public void TurnShowingTextOff()
