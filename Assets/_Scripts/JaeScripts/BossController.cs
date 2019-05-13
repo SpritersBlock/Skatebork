@@ -9,6 +9,7 @@ public class BossController : MonoBehaviour {
     public NavMeshAgent agent;
     public BossHealthDisplayer bhd;
     public TutorialManager tutMan;
+    public TrolleySpawner trSpawn;
 
     public Transform targetTransform;
 
@@ -90,6 +91,11 @@ public class BossController : MonoBehaviour {
         if (!fullHealth)
         {
             tutMan.TurnOffThrow();
+        }
+        if (bossHealth == 9 || bossHealth == 7 || bossHealth == 5 || bossHealth == 3 || bossHealth == 2 || bossHealth == 1)
+        {
+            trSpawn.SpawnTrolleyBoy();
+            Debug.Log("NEWSPAWN");
         }
     }
 
