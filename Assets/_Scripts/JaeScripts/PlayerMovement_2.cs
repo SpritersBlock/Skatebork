@@ -4,10 +4,9 @@ using System.Collections;
 public class PlayerMovement_2 : MonoBehaviour
 {
     public float walkSpeed = 2;
-    [HideInInspector]
+    //[HideInInspector]
     public float gravity = -12;
-    float jumpHeight;
-    public float jumpHeightMax;
+    public float jumpHeight;
     [Range(0, 1)]
     public float airControlPercent;
     [HideInInspector]
@@ -38,6 +37,7 @@ public class PlayerMovement_2 : MonoBehaviour
     private Animator anim;
     public PoofSpawner poofSpawner;
 
+    [HideInInspector]
     public Vector2 inputDir;
 
     void Start()
@@ -45,7 +45,6 @@ public class PlayerMovement_2 : MonoBehaviour
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = playerAnimNull.GetComponent<Animator>();
-        jumpHeight = jumpHeightMax;
     }
 
     void Update()
@@ -63,12 +62,10 @@ public class PlayerMovement_2 : MonoBehaviour
                 if (controller.isGrounded)
                 {
                     Jump(1);
-                    jumpHeight = jumpHeightMax;
                 }
                 else if (doubleJumpOn)
                 {
                     Jump(1.3f);
-                    jumpHeight = jumpHeightMax;
                 }
             }
 
@@ -139,6 +136,7 @@ public class PlayerMovement_2 : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
         velocityY += Time.deltaTime * gravity;
+        //print(velocityY);
         Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
         controller.Move(velocity * Time.deltaTime);

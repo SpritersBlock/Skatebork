@@ -78,6 +78,7 @@ public class BossController : MonoBehaviour {
         if (fullHealth)
         {
             fullHealth = false;
+            tutMan.txtDp.ShowText("Another Trolley Boy Spawned!");
         }
         StartCoroutine(cameraShake.Shake(.15f, .4f));
         bossHealth--;
@@ -92,11 +93,11 @@ public class BossController : MonoBehaviour {
         {
             tutMan.TurnOffThrow();
         }
-        if (bossHealth == 9 || bossHealth == 7 || bossHealth == 5 || bossHealth == 3 || bossHealth == 2 || bossHealth == 1)
-        {
+        //if (bossHealth == 9 || bossHealth == 7 || bossHealth == 5 || bossHealth == 3 || bossHealth == 2 || bossHealth == 1)
+        //{
             trSpawn.SpawnTrolleyBoy();
-            Debug.Log("NEWSPAWN");
-        }
+            //Debug.Log("NEWSPAWN");
+        //}
     }
 
     public void BossDie()

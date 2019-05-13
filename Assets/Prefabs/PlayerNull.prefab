@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 4241648253033968}
   - component: {fileID: 114063950792427186}
   - component: {fileID: 143947992978443136}
+  - component: {fileID: 114745860365054494}
   m_Layer: 9
   m_Name: PlayerNull
   m_TagString: Player
@@ -964,11 +965,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 18
   gravity: -15
-  jumpHeightMin: 1
-  jumpHeightMax: 3
+  jumpHeight: 3
   airControlPercent: 0.3
   invincible: 0
-  turnSmoothTime: 0.3
+  turnSmoothTime: 0.1
   hasFood: 0
   firstFood: 1
   speedSmoothTime: 0.1
@@ -979,6 +979,7 @@ MonoBehaviour:
   skidPFX2: {fileID: 198611471135158584}
   playerAnimNull: {fileID: 1605180535051382}
   poofSpawner: {fileID: 114113990381343722}
+  inputDir: {x: 0, y: 0}
 --- !u!114 &114113990381343722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -991,6 +992,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poofRing: {fileID: 1150487646362056, guid: 532f9346803258245b2688c3d1dad2e3, type: 2}
+--- !u!114 &114745860365054494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281494718588396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b65dcdaefbe0841bf450a39ce21256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRend: {fileID: 23522683854457754}
+  flashLength: 0.1
+  player: {fileID: 114063950792427186}
+  bc: {fileID: 0}
 --- !u!114 &114842517894728846
 MonoBehaviour:
   m_ObjectHideFlags: 1
