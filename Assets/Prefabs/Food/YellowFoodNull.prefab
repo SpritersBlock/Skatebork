@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 1810700295182030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4909408439879090}
   m_Father: {fileID: 0}
@@ -327,6 +327,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   pfxPrefab: {fileID: 1962571587479850, guid: 771536da76958f943a1d2827a71e011e, type: 2}
   gm: {fileID: 0}
+  boxC: {fileID: 65617756903919950}
   isHeld: 0
   beingFired: 0
   throwForce: 75

@@ -15,6 +15,8 @@ public class ItemController : MonoBehaviour {
     public JaeGameManager gm;
     TrailRenderer trail;
 
+    public BoxCollider boxC;
+
     [HideInInspector]
     public bool isHeld;
     public bool beingFired;
@@ -41,6 +43,10 @@ public class ItemController : MonoBehaviour {
         {
             transform.position = target.transform.position;
             transform.rotation = target.transform.rotation;
+            if (boxC.enabled)
+            {
+                boxC.enabled = false;
+            }
             if (Input.GetMouseButtonDown(0) && Time.timeScale > 0 && player.gm.gameOn)
             {
                 //Destroy(gameObject);
@@ -67,6 +73,10 @@ public class ItemController : MonoBehaviour {
                     player.firstFood = false;
                 }
             }
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            boxC.enabled = true;
         }
     }
 
