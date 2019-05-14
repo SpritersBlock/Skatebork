@@ -83,6 +83,7 @@ public class TrolleyBoyController : MonoBehaviour {
 
     public void FoodStun()
     {
+        anim.SetTrigger("FoodHit");
         agent.speed = 0;
     }
 

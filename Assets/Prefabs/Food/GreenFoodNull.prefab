@@ -346,7 +346,7 @@ MonoBehaviour:
   bossMagnet: {fileID: 0}
   playerMagnet: {fileID: 0}
   itemCont: {fileID: 114762768974253662}
-  bossForceFactor: 20
+  bossForceFactor: 25
   bossAttractRadius: 50
   playerForceFactor: 50
   playerAttractRadius: 5
