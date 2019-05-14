@@ -176,6 +176,7 @@ public class PlayerMovement_2 : MonoBehaviour
     {
         //print("AAHH");
         float jumpVelocity = Mathf.Sqrt(-1.6f * gravity * jumpHeight * jumpMult);
+        gravity = gravityMed;
         velocityY = jumpVelocity;
         if (jumpMult != 1)
         {

@@ -74,7 +74,7 @@ public class ItemController : MonoBehaviour {
                 }
             }
         }
-        if (collision.gameObject.tag == "Boss")
+        if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
         {
             boxC.enabled = true;
         }
