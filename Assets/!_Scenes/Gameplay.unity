@@ -2952,6 +2952,11 @@ Prefab:
       propertyPath: ColorModule.gradient.maxGradient.key0.b
       value: 0.32053223
       objectReference: {fileID: 0}
+    - target: {fileID: 114063950792427186, guid: cf47769bfe41294498e004aa11093195,
+        type: 2}
+      propertyPath: airControlPercent
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf47769bfe41294498e004aa11093195, type: 2}
   m_IsPrefabAsset: 0
