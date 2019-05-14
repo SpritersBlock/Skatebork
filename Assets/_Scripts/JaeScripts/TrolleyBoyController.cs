@@ -66,7 +66,7 @@ public class TrolleyBoyController : MonoBehaviour {
 
         if (!stunned && agent.speed < origSpeed)
         {
-            agent.speed += 0.05f;
+            agent.speed += 1f * Time.deltaTime;
         }
         if (agent.speed > origSpeed)
         {

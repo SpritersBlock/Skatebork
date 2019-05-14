@@ -34,9 +34,9 @@ public class ItemController : MonoBehaviour {
         trail = GetComponent<TrailRenderer>();
         trail.enabled = false;
     }
-	
-	// Update is called once per frame
-	void LateUpdate () {
+
+    // Update is called once per frame
+    void LateUpdate () {
 		if (isHeld)
         {
             transform.position = target.transform.position;
