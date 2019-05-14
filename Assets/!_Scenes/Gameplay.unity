@@ -20252,11 +20252,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 95949172625417758, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
         type: 2}
-      propertyPath: m_Controller
+      propertyPath: player
       value: 
-      objectReference: {fileID: 9100000, guid: ab216acc1b8d44649967385513cc387f, type: 2}
+      objectReference: {fileID: 775849654}
     - target: {fileID: 114610966791466450, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
         type: 2}
       propertyPath: player
@@ -20272,11 +20272,11 @@ Prefab:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 2137369254}
-    - target: {fileID: 114752549475303508, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
+    - target: {fileID: 95949172625417758, guid: a10255ae05bb95b4ca3ef98f85e64b3c,
         type: 2}
-      propertyPath: player
+      propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 775849654}
+      objectReference: {fileID: 9100000, guid: ab216acc1b8d44649967385513cc387f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a10255ae05bb95b4ca3ef98f85e64b3c, type: 2}
   m_IsPrefabAsset: 0

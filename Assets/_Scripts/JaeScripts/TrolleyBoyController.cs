@@ -63,6 +63,15 @@ public class TrolleyBoyController : MonoBehaviour {
             }
         }
         LockOn();
+
+        if (!stunned && agent.speed < origSpeed)
+        {
+            agent.speed += 0.05f;
+        }
+        if (agent.speed > origSpeed)
+        {
+            agent.speed = origSpeed;
+        }
     }
 
     void LockOn()
@@ -70,6 +79,11 @@ public class TrolleyBoyController : MonoBehaviour {
         //Debug.Log("A");
         agent.SetDestination(targetTransform.position);
         //Invoke("LockOn", 0.5f);
+    }
+
+    public void FoodStun()
+    {
+        agent.speed = 0;
     }
 
     public IEnumerator Stun(float stunTime)

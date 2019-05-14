@@ -129,7 +129,10 @@ public class PlayerMovement_2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(inputDir);
+        if (gm.gameOn)
+        {
+            Move(inputDir);
+        }
 
         if (velocityY <= 0.3f && velocityY >= -0.3f && !controller.isGrounded) //If the player is around about the apex of their jump.
         {

@@ -75,7 +75,7 @@ public class ItemController : MonoBehaviour {
         //print(collision.gameObject.name);
         if (beingFired)
         {
-            if (/*collision.gameObject.tag == "Trolley" || */collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
+            if (collision.gameObject.tag == "Trolley" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Obstacle")
             {
                 //FindObjectOfType<AudioPlayer>().Play("Splat");
                 //Instantiate UNPARENTED PFX
@@ -89,10 +89,10 @@ public class ItemController : MonoBehaviour {
             {
                 FindObjectOfType<BossController>().BossHit();
             }
-            if (collision.gameObject.tag == "Trolley")
-            {
-                FindObjectOfType<AudioPlayer>().Play("Stun");
-            }
+            //if (collision.gameObject.tag == "Trolley")
+            //{
+            //    FindObjectOfType<AudioPlayer>().Play("Stun");
+            //}
         }
     }
 

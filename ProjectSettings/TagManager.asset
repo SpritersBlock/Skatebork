@@ -11,6 +11,7 @@ TagManager:
   - PlayerHurt
   - TrolleyWP
   - JumpText
+  - Food
   layers:
   - Default
   - TransparentFX

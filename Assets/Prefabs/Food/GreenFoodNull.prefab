@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65617756903919950}
   m_Layer: 0
   m_Name: GreenFoodGeo
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 114570904606029924}
   m_Layer: 0
   m_Name: GreenFoodNull
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
