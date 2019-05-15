@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InvincibilityFlash : MonoBehaviour {
 
-    public Renderer playerRend;
+    public Renderer[] playerRend;
     private float flashCounter;
     public float flashLength = 0.1f;
 
@@ -18,13 +18,20 @@ public class InvincibilityFlash : MonoBehaviour {
         {
             if (flashCounter <= 0)
             {
-                playerRend.enabled = !playerRend.enabled;
+                for (int i = 0; i < playerRend.Length; i++)
+                {
+                    playerRend[i].enabled = !playerRend[i].enabled;
+                }
+                
                 flashCounter = flashLength;
             }
         }
         else
         {
-            playerRend.enabled = true;
+            for (int i = 0; i < playerRend.Length; i++)
+            {
+                playerRend[i].enabled = true;
+            }
         }
     }
 }
