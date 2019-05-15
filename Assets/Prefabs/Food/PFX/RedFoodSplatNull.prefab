@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4527660657668088}
   - component: {fileID: 198991411528202810}
   - component: {fileID: 199507232295583244}
-  - component: {fileID: 114001774395528070}
+  - component: {fileID: 114879944117153238}
   m_Layer: 0
-  m_Name: YellowFoodSplatPFX
+  m_Name: RedFoodSplatPFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4040208525413076}
   - component: {fileID: 82815142914178700}
   m_Layer: 0
-  m_Name: YellowFoodSplatNull
+  m_Name: RedFoodSplatNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114001774395528070
+--- !u!114 &114879944117153238
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,7 +392,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9339623, g: 0.89875853, b: 0.17181383, a: 1}
+      maxColor: {r: 0.8113208, g: 0.14575827, b: 0.11863652, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
