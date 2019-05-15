@@ -10,6 +10,7 @@ public class ButtonScripts : MonoBehaviour {
     public GameObject buttonNull;
     public GameObject optionsPanel;
     public GameObject confirmPanel;
+    public GameObject creditsPanel;
 
     public MenuTransitions mt;
 
@@ -20,6 +21,7 @@ public class ButtonScripts : MonoBehaviour {
             buttonNull.SetActive(true);
             optionsPanel.SetActive(false);
             confirmPanel.SetActive(false);
+            creditsPanel.SetActive(false);
         }
         //mt.buttonNullAnim.SetBool("OnScreen", true);
         //mt.quitConfirmAnim.SetBool("OnScreen", false);
@@ -56,6 +58,18 @@ public class ButtonScripts : MonoBehaviour {
         confirmPanel.SetActive(false);
         //mt.buttonNullAnim.SetBool("OnScreen", true);
         //mt.quitConfirmAnim.SetBool("OnScreen", false);
+    }
+
+    public void CreditsOpen()
+    {
+        buttonNull.SetActive(false);
+        creditsPanel.SetActive(true);
+    }
+
+    public void CreditsClose()
+    {
+        creditsPanel.SetActive(false);
+        buttonNull.SetActive(true);
     }
 
     public void QuitGame()
