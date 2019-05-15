@@ -58,13 +58,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565853917616390}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07571428, y: -0.6557142, z: -1.652857}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+  m_LocalPosition: {x: -0.089, y: -0.78, z: -1.652857}
   m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1.4285713}
   m_Children: []
   m_Father: {fileID: 4638499102555520}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
 --- !u!4 &4638499102555520
 Transform:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 1810700295182030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4394973410875990}
   m_Father: {fileID: 0}
@@ -346,7 +346,6 @@ MonoBehaviour:
   pfxPrefab: {fileID: 1962571587479850, guid: 771536da76958f943a1d2827a71e011e, type: 2}
   gm: {fileID: 0}
   boxC: {fileID: 65987663069531234}
-  boxC2: {fileID: 0}
   isHeld: 0
   beingFired: 0
   throwForce: 75
