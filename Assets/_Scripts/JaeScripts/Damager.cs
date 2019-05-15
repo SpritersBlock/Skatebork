@@ -25,15 +25,21 @@ public class Damager : MonoBehaviour {
     {
         if (other.tag == "PlayerHurt")
         {
-            if (!player.invincible && !trolley.stunned)
+            if (!player.invincible && trolley != null && !trolley.stunned)
             {
                 player.TakeDamage();
                 gm.CameraShake();
                 FindObjectOfType<AudioPlayer>().Play("Punch");
-                if (player.speedSmoothTime < 1f)
-                {
-                    player.speedSmoothTime = 1;
-                }
+                //if (player.speedSmoothTime < 1f)
+                //{
+                //    player.speedSmoothTime = 1;
+                //}
+            }
+            else if (!player.invincible && trolley == null)
+            {
+                player.TakeDamage();
+                gm.CameraShake();
+                FindObjectOfType<AudioPlayer>().Play("Punch");
             }
         }
     }
