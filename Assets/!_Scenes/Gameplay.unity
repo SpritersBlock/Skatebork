@@ -46212,7 +46212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 18
   gravity: -40
-  jumpHeight: 5
+  jumpHeight: 4.5
   airControlPercent: 0.5
   invincible: 0
   turnSmoothTime: 0.1
