@@ -17,7 +17,7 @@ public class TrolleySpawner : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.U))
         {
-            SpawnTrolleyBoy();
+            //SpawnTrolleyBoy();
         }
 	}
 
