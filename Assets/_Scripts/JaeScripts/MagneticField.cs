@@ -24,14 +24,20 @@ public class MagneticField : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (Vector3.Distance(transform.position, bossMagnet.transform.position) < bossAttractRadius && itemCont.beingFired)
+        if (bossMagnet != null)
         {
-            rb.AddForce((bossMagnet.transform.position - transform.position) * bossForceFactor * Time.smoothDeltaTime);
+            if (Vector3.Distance(transform.position, bossMagnet.transform.position) < bossAttractRadius && itemCont.beingFired)
+            {
+                rb.AddForce((bossMagnet.transform.position - transform.position) * bossForceFactor * Time.smoothDeltaTime);
+            }
         }
-
-        if (Vector3.Distance(transform.position, playerMagnet.transform.position) < playerAttractRadius && !itemCont.beingFired && !player.hasFood)
+        
+        if (playerMagnet != null)
         {
-            rb.AddForce((playerMagnet.transform.position - transform.position) * playerForceFactor * Time.smoothDeltaTime);
+            if (Vector3.Distance(transform.position, playerMagnet.transform.position) < playerAttractRadius && !itemCont.beingFired && !player.hasFood)
+            {
+                rb.AddForce((playerMagnet.transform.position - transform.position) * playerForceFactor * Time.smoothDeltaTime);
+            }
         }
     }
 }

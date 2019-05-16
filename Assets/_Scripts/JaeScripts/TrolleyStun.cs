@@ -18,7 +18,7 @@ public class TrolleyStun : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Food" && !trolleyCon.stunned && collision.transform.position.y > -1.5f)
+        if (collision.gameObject.tag == "Food" && !trolleyCon.stunned && /*collision.transform.position.y > -1.5f */collision.GetComponentInParent<ItemController>().beingFired)
         {   
             trolleyCon.FoodStun();
             Debug.Log("HIT WITH FOOD");
