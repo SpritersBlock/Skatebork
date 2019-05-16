@@ -14,6 +14,7 @@ public class ItemController : MonoBehaviour {
     public GameObject pfxPrefab;
     public JaeGameManager gm;
     TrailRenderer trail;
+    Animator anim;
 
     public BoxCollider boxC;
 
@@ -34,6 +35,8 @@ public class ItemController : MonoBehaviour {
         launcher = FindObjectOfType<FoodLauncher>();
         gm = FindObjectOfType<JaeGameManager>();
         trail = GetComponent<TrailRenderer>();
+        anim = GetComponent<Animator>();
+        anim.SetBool("Hover", true);
         trail.enabled = false;
     }
 
@@ -66,6 +69,7 @@ public class ItemController : MonoBehaviour {
                 //rb.useGravity = false;
                 rb.isKinematic = true;
                 FindObjectOfType<AudioPlayer>().Play("Pop");
+                anim.SetBool("Hover", false);
                 if (player.firstFood)
                 {
                     TutorialManager tutMan = FindObjectOfType<TutorialManager>();

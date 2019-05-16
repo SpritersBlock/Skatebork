@@ -13,7 +13,7 @@ public class OOBKill : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        yPos = transform.position.y;
+        yPos = transform.position.y + 5;
 	}
 	
 	// Update is called once per frame
@@ -25,8 +25,8 @@ public class OOBKill : MonoBehaviour {
         }
         if (transform.position.y <= -4)
         {
-            //transform.position += new Vector3 (0,3,0);
-            transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+            transform.position += new Vector3 (0,6,0);
+            //transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             //Analytics.CustomEvent("Item Respawned", new Dictionary<string, int> { {"Sew Time", variable } });
             at.TriggerEvent();
