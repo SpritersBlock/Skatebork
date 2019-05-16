@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 0c8f5a63cb592684099769d241b4494e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: tomato1_tomato
+    100004: tomato_polySurface1
+    100006: tomato_polySurface15
+    100008: tomato_polySurface16
+    100010: tomato_polySurface17
+    100012: tomato_polySurface18
+    100014: tomato_polySurface19
+    100016: tomato_polySurface2
+    100018: tomato_polySurface20
+    100020: tomato_polySurface3
+    100022: tomato_polySurface4
+    100024: tomato_polySurface5
+    100026: tomato_polySurface6
+    100028: tomato_tomato2
+    400000: //RootNode
+    400002: tomato1_tomato
+    400004: tomato_polySurface1
+    400006: tomato_polySurface15
+    400008: tomato_polySurface16
+    400010: tomato_polySurface17
+    400012: tomato_polySurface18
+    400014: tomato_polySurface19
+    400016: tomato_polySurface2
+    400018: tomato_polySurface20
+    400020: tomato_polySurface3
+    400022: tomato_polySurface4
+    400024: tomato_polySurface5
+    400026: tomato_polySurface6
+    400028: tomato_tomato2
+    2100000: tomato1_tomatoMat
+    2100002: tomato_polySurface1Mat
+    2100004: tomato_polySurface15Mat
+    2100006: tomato_polySurface16Mat
+    2100008: tomato_polySurface17Mat
+    2100010: tomato_polySurface18Mat
+    2100012: tomato_polySurface19Mat
+    2100014: tomato_polySurface2Mat
+    2100016: tomato_polySurface20Mat
+    2100018: tomato_polySurface3Mat
+    2100020: tomato_polySurface4Mat
+    2100022: tomato_polySurface5Mat
+    2100024: tomato_polySurface6Mat
+    2100026: tomato_tomato2Mat
+    2300000: tomato1_tomato
+    2300002: tomato_polySurface1
+    2300004: tomato_polySurface15
+    2300006: tomato_polySurface16
+    2300008: tomato_polySurface17
+    2300010: tomato_polySurface18
+    2300012: tomato_polySurface19
+    2300014: tomato_polySurface2
+    2300016: tomato_polySurface20
+    2300018: tomato_polySurface3
+    2300020: tomato_polySurface4
+    2300022: tomato_polySurface5
+    2300024: tomato_polySurface6
+    2300026: tomato_tomato2
+    3300000: tomato1_tomato
+    3300002: tomato_polySurface1
+    3300004: tomato_polySurface15
+    3300006: tomato_polySurface16
+    3300008: tomato_polySurface17
+    3300010: tomato_polySurface18
+    3300012: tomato_polySurface19
+    3300014: tomato_polySurface2
+    3300016: tomato_polySurface20
+    3300018: tomato_polySurface3
+    3300020: tomato_polySurface4
+    3300022: tomato_polySurface5
+    3300024: tomato_polySurface6
+    3300026: tomato_tomato2
+    4300000: tomato1_tomato
+    4300002: tomato_polySurface1
+    4300004: tomato_polySurface15
+    4300006: tomato_polySurface16
+    4300008: tomato_polySurface17
+    4300010: tomato_polySurface18
+    4300012: tomato_polySurface19
+    4300014: tomato_polySurface2
+    4300016: tomato_polySurface20
+    4300018: tomato_polySurface3
+    4300020: tomato_polySurface4
+    4300022: tomato_polySurface5
+    4300024: tomato_polySurface6
+    4300026: tomato_tomato2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
