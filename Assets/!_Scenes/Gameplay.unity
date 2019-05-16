@@ -19441,7 +19441,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P to Pause
+  m_Text: ESC to Pause
 --- !u!222 &289855936
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -118218,6 +118218,7 @@ MonoBehaviour:
   buttonNull: {fileID: 0}
   optionsPanel: {fileID: 0}
   confirmPanel: {fileID: 0}
+  creditsPanel: {fileID: 0}
   mt: {fileID: 0}
 --- !u!114 &2137369253
 MonoBehaviour:
