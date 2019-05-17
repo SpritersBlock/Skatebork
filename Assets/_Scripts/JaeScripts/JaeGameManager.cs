@@ -21,6 +21,7 @@ public class JaeGameManager : MonoBehaviour {
     public GameObject winCanvas;
     public GameObject qToMenuText;
     public GameObject aimReticle;
+    public GameObject healthCanvas;
     public TrolleyBoyController[] trolleyBoys;
 
     public int playerHealth = 3;
@@ -98,6 +99,7 @@ public class JaeGameManager : MonoBehaviour {
             aimReticle.SetActive(false);
             camFollow.mouseSensitivity = 0;
             qToMenuText.SetActive(false);
+            healthCanvas.SetActive(false);
             gameOn = false;
             playerDeathAT.TriggerEvent();
         }
@@ -111,6 +113,11 @@ public class JaeGameManager : MonoBehaviour {
     public void BossJustDied()
     {
         player.invincible = true;
+        camFollow.target = FindObjectOfType<BossCloneDeath>().transform;
+        camFollow.mouseSensitivity = 0;
+        camFollow.dstFromTarget = 20;
+        qToMenuText.SetActive(false);
+        aimReticle.SetActive(false);
     }
 
     public void BossIsNowDead()

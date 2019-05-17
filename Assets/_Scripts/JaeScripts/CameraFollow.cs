@@ -19,8 +19,10 @@ public class CameraFollow : MonoBehaviour {
     Vector3 rotationSmoothVelocity;
     Vector3 currentRotation;
 
-    float yaw;
-    float pitch;
+    public float yaw;
+    public float pitch;
+
+    public bool lockOnBoss;
 
     private void Start()
     {
@@ -46,9 +48,23 @@ public class CameraFollow : MonoBehaviour {
             pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
         }
 
-        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
-        transform.eulerAngles = currentRotation;
+        if (target != null && !lockOnBoss)
+        {
+            currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
+            transform.eulerAngles = currentRotation;
 
-        transform.position = target.position - transform.forward * dstFromTarget;
+            transform.position = target.position - transform.forward * dstFromTarget;
+        }
+        else if (target != null && lockOnBoss)
+        {
+            currentRotation = new Vector3(30, -90, 0);
+            transform.eulerAngles = currentRotation;
+
+            transform.position = target.position - transform.forward * dstFromTarget;
+        }
+        else
+        {
+            return;
+        }
     }
 }

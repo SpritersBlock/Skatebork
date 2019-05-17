@@ -20,6 +20,11 @@ public class BossCloneDeath : MonoBehaviour
         StartCoroutine("BossDie", killTime);
         gm = FindObjectOfType<JaeGameManager>();
         gm.BossJustDied();
+        CameraFollow camFol = FindObjectOfType<CameraFollow>();
+        camFol.target = transform;
+        camFol.yaw = -90;
+        camFol.pitch = 30;
+        camFol.lockOnBoss = true;
     }
 
     public IEnumerator BossDie(float killTime)
@@ -29,7 +34,7 @@ public class BossCloneDeath : MonoBehaviour
 
         while (timer < killTime)
         {
-            timer += (Time.realtimeSinceStartup - lastTime);
+            timer += (Time.realtimeSinceStartup - lastTime) * (Time.deltaTime * 60);
             lastTime = Time.realtimeSinceStartup;
             yield return null;
         }
