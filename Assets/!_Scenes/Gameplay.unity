@@ -117939,7 +117939,7 @@ MonoBehaviour:
   aimReticle: {fileID: 1861678735}
   healthCanvas: {fileID: 364146957}
   trolleyBoys: []
-  playerHealth: 1
+  playerHealth: 5
   gameOn: 1
   jumpTextOff: 0
   finalTarget: {fileID: 196831832}
