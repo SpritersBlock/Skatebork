@@ -56108,6 +56108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 983061663}
+  - component: {fileID: 983061664}
   m_Layer: 5
   m_Name: DeathCanvas
   m_TagString: Untagged
@@ -56136,6 +56137,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &983061664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983061662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847e442a745ba44469f00b8cb81d7a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomText:
+  - This game is now officially eligible for https://www.doesthedogdie.com. Great
+    going.
+  - '[Insert random death text here.]'
+  - So close! Try again?
+  - 'ERROR 404: VICTORY NOT FOUND.'
+  - GAME OVER
+  - You'll get 'em next time, champ.
+  - If it's any consolation, I'm pretty bad at this game too.
+  - Do you count as roadkill if you were run over by a shopping cart?
+  - Lose screen, brought to you by Trolley Boys!
+  - Psst, hey kid. Wanna buy a time machine? I've got one, in the form of this button
+    down here.
+  - Looks like you had a RUFF TIME.
+  - Looks like you were BARKING UP THE WRONG TREE.
+  - Looks like you need to dodge better. Or should I say, DOGdge better.
+  - Looks like Mr. Pig went HOGWILD on you.
+  deathText: {fileID: 1307199362}
 --- !u!1 &984753824
 GameObject:
   m_ObjectHideFlags: 0
@@ -117907,9 +117937,9 @@ MonoBehaviour:
   winCanvas: {fileID: 1648374416}
   qToMenuText: {fileID: 289855933}
   aimReticle: {fileID: 1861678735}
-  healthCanvas: {fileID: 0}
+  healthCanvas: {fileID: 364146957}
   trolleyBoys: []
-  playerHealth: 5
+  playerHealth: 1
   gameOn: 1
   jumpTextOff: 0
   finalTarget: {fileID: 196831832}
