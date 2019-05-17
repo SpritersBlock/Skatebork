@@ -16,6 +16,11 @@ public class TextDisplayer : MonoBehaviour {
 	
 	public void ShowText(string flavourText)
     {
+        if (anim.GetBool("ShowingText"))
+        {
+            anim.SetTrigger("StopText");
+            anim.SetBool("ShowingText", false);
+        }
         fxText.text = flavourText;
         anim.SetTrigger("ShowText");
         anim.SetBool("ShowingText", true);
