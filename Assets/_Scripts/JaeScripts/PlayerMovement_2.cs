@@ -285,6 +285,6 @@ public class PlayerMovement_2 : MonoBehaviour
             }
         }
         
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

@@ -13,6 +13,7 @@ public class JaeGameManager : MonoBehaviour {
     public TextDisplayer txtDp;
     public GameObject pauseCanvas;
     public TutorialManager tutMan;
+    public PlayerCloneDeath playerDeathPrefab;
     //public TutorialManager tutMan;
 
     //public Slider hpBar;
@@ -22,6 +23,7 @@ public class JaeGameManager : MonoBehaviour {
     public GameObject qToMenuText;
     public GameObject aimReticle;
     public GameObject healthCanvas;
+    public GameObject minimap;
     public TrolleyBoyController[] trolleyBoys;
 
     public int playerHealth = 3;
@@ -43,15 +45,16 @@ public class JaeGameManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 0)
+            if (gameOn)
             {
-                PauseMenuOff();
-                
-            }
-            else
-            {
-                PauseMenuOn();
-                
+                if (Time.timeScale == 0)
+                {
+                    PauseMenuOff();
+                }
+                else
+                {
+                    PauseMenuOn();
+                }
             }
         }
     }
@@ -100,8 +103,13 @@ public class JaeGameManager : MonoBehaviour {
             camFollow.mouseSensitivity = 0;
             qToMenuText.SetActive(false);
             healthCanvas.SetActive(false);
+            minimap.SetActive(false);
             gameOn = false;
             playerDeathAT.TriggerEvent();
+            PlayerCloneDeath pDeath = Instantiate(playerDeathPrefab);
+
+            camFollow.target = pDeath.GetComponentInChildren<Transform>();
+            
         }
     }
 
@@ -118,6 +126,7 @@ public class JaeGameManager : MonoBehaviour {
         camFollow.dstFromTarget = 20;
         qToMenuText.SetActive(false);
         aimReticle.SetActive(false);
+        minimap.SetActive(false);
     }
 
     public void BossIsNowDead()
