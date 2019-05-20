@@ -54,7 +54,7 @@ public class PlayerMovement_2 : MonoBehaviour
     void Update()
     {
         // input
-        if (gm.gameOn)
+        //if (gm.gameOn)
         {
             Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             inputDir = input/*.normalized*/; //Commented this out to get that gradual acceleration effect. 
@@ -129,7 +129,7 @@ public class PlayerMovement_2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gm.gameOn)
+        //if (gm.gameOn)
         {
             Move(inputDir);
         }
