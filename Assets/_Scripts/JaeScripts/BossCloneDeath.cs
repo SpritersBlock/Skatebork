@@ -15,8 +15,8 @@ public class BossCloneDeath : MonoBehaviour
     {
         cameraShake = FindObjectOfType<CameraShake>();
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(new Vector3(10, 5, 0), ForceMode.Impulse);
-        //rb.AddExplosionForce(100, transform.position += new Vector3(-10, -3, 0), 20);
+        rb.AddForce(new Vector3(10, 2, 0), ForceMode.Impulse);
+        //rb.AddExplosionForce(30000, transform.position += new Vector3(-3, 3, 0), 0, -1);
         StartCoroutine("BossDie", killTime);
         gm = FindObjectOfType<JaeGameManager>();
         gm.BossJustDied();
@@ -47,6 +47,7 @@ public class BossCloneDeath : MonoBehaviour
             pfxClone.Play();
             StartCoroutine(cameraShake.Shake(2f, .4f));
             FindObjectOfType<AudioPlayer>().Play("Explosion");
+            rb.isKinematic = true;
             yield return new WaitForSeconds(0.3f);
             gm.BossIsNowDead();
             Destroy(gameObject);
