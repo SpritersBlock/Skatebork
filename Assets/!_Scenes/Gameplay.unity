@@ -77476,6 +77476,7 @@ MonoBehaviour:
   bhd: {fileID: 2137369253}
   tutMan: {fileID: 2137369257}
   trSpawn: {fileID: 741666996}
+  gm: {fileID: 2137369250}
   targetTransform: {fileID: 0}
   bossHealth: 10
   bossClone: {fileID: 1739862638170196, guid: 2ac101da8e1d5e7419f0493a74014f2b, type: 2}
