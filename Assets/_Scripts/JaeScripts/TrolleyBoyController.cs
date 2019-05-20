@@ -20,6 +20,7 @@ public class TrolleyBoyController : MonoBehaviour {
     float origSpeed;
 
     public ItemSpawner spawner;
+    public AudioSource recoverSound;
 
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -134,6 +135,8 @@ public class TrolleyBoyController : MonoBehaviour {
             warningOn = false;
             agent.speed = origSpeed;
             stunned = false;
+            //FindObjectOfType<AudioPlayer>().Play("SlowPop");
+            recoverSound.Play();
             anim.SetBool("Stunned", false);
             yield return null;
         }
