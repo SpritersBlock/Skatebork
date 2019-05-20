@@ -45,7 +45,7 @@ public class BossCloneDeath : MonoBehaviour
             pfxClone = Instantiate(pfx, null);
             pfxClone.transform.position = transform.position;
             pfxClone.Play();
-            StartCoroutine(cameraShake.Shake(.3f, .4f));
+            StartCoroutine(cameraShake.Shake(2f, .4f));
             FindObjectOfType<AudioPlayer>().Play("Explosion");
             yield return new WaitForSeconds(0.3f);
             gm.BossIsNowDead();
