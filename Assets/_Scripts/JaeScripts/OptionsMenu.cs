@@ -8,7 +8,7 @@ public class OptionsMenu : MonoBehaviour {
 
     public AudioMixer audioMixer;
     public Image volumeBar;
-    public int localVolume;
+    public float localVolume;
     public Toggle fsToggle;
 
     public float volMin = -80;
@@ -25,9 +25,11 @@ public class OptionsMenu : MonoBehaviour {
             audioMixer.SetFloat("Volume", 0);
         }
         volumeBar.fillAmount = 1-(0.0625f * (Mathf.Abs(audioValue) / audioValueIncrement));
+        localVolume = 0 - (5f * (Mathf.Abs(audioValue) / audioValueIncrement));
         if (volumeBar.fillAmount > 0.9375)
         {
             volumeBar.fillAmount = 1;
+            localVolume = 0;
         }
         if (Screen.fullScreen)
         {
