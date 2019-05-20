@@ -10,6 +10,7 @@ public class BossController : MonoBehaviour {
     public BossHealthDisplayer bhd;
     public TutorialManager tutMan;
     public TrolleySpawner trSpawn;
+    public JaeGameManager gm;
 
     public Transform targetTransform;
 
@@ -75,29 +76,28 @@ public class BossController : MonoBehaviour {
 
     public void BossHit()
     {
-        if (fullHealth)
+        if (gm.gameOn)
         {
-            fullHealth = false;
-            tutMan.txtDp.ShowText("Another Trolley Boy Spawned!");
-        }
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
-        bossHealth--;
-        bhd.UpdateHealthText(bossHealth);
-        FindObjectOfType<AudioPlayer>().Play("Squeal");
-        bossHitAT.TriggerEvent();
-        if (bossHealth <= 0)
-        {
-            BossDie();
-        }
-        if (!fullHealth)
-        {
-            tutMan.TurnOffThrow();
-        }
-        //if (bossHealth == 9 || bossHealth == 7 || bossHealth == 5 || bossHealth == 3 || bossHealth == 2 || bossHealth == 1)
-        //{
+            if (fullHealth)
+            {
+                fullHealth = false;
+                tutMan.txtDp.ShowText("Another Trolley Boy Spawned!");
+            }
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
+            bossHealth--;
+            bhd.UpdateHealthText(bossHealth);
+            FindObjectOfType<AudioPlayer>().Play("Squeal");
+            bossHitAT.TriggerEvent();
+            if (bossHealth <= 0)
+            {
+                BossDie();
+            }
+            if (!fullHealth)
+            {
+                tutMan.TurnOffThrow();
+            }
             trSpawn.SpawnTrolleyBoy();
-            //Debug.Log("NEWSPAWN");
-        //}
+        }
     }
 
     public void BossDie()
