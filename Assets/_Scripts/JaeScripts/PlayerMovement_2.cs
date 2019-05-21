@@ -134,14 +134,13 @@ public class PlayerMovement_2 : MonoBehaviour
             Move(inputDir);
         }
 
-        if (velocityY <= 0.3f && velocityY >= -0.3f && !controller.isGrounded) //If the player is around about the apex of their jump.
+        if (velocityY <= 0.2f && velocityY >= -0.2f && !controller.isGrounded) //If the player is around about the apex of their jump.
         {
-            //Debug.Log("WORKING");
-            //velocityY = -2;
+            //print(gravity);
             if (gravity != gravityMin)
             {
                 gravity = gravityMin;
-                print("SHRUNKDOWN");
+                //print("SHRUNKDOWN");
             }
         } else if (gravity != gravityMed)
         {
@@ -177,37 +176,33 @@ public class PlayerMovement_2 : MonoBehaviour
     public void Jump(float jumpMult)
     {
         //print("AAHH");
-        float jumpVelocity = Mathf.Sqrt(-1.6f * gravity * jumpHeight * jumpMult);
         gravity = gravityMed;
+        float jumpVelocity = Mathf.Sqrt(-1.6f * gravity * jumpHeight * jumpMult);
         velocityY = jumpVelocity;
-        if (jumpMult != 1)
+        canCancelJump = false;
+        if (jumpMult != 1) // If Not Regular Jump
         {
-            if (doubleJumpOn && jumpMult == 1.3f)
+            if (doubleJumpOn && jumpMult == 1.3f) // Double Jump
             {
                 doubleJumpOn = false;
-                canCancelJump = false;
                 FindObjectOfType<AudioPlayer>().Play("DJump");
                 poofSpawner.SpawnPoofRing(transform.position, gameObject.transform);
                 anim.SetTrigger("DoubleJump");
             }
-            else
+            else // Enemy Jump
             {
-                canCancelJump = false;
                 FindObjectOfType<AudioPlayer>().Play("Stun");
                 FindObjectOfType<AudioPlayer>().Play("SquealFast");
                 FindObjectOfType<AudioPlayer>().Play("Splat");
                 doubleJumpOn = true;
                 anim.SetTrigger("Jump");
-                //print(doubleJumpOn);
             }
         }
-        else
+        else // Regular Jump
         {
             FindObjectOfType<AudioPlayer>().Play("Jump");
             anim.SetTrigger("Jump");
         }
-        
-        //print(jumpVelocity);
     }
 
     float GetModifiedSmoothTime(float smoothTime)

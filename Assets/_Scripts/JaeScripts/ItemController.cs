@@ -98,7 +98,6 @@ public class ItemController : MonoBehaviour {
                 pfxClone.transform.position = transform.position;
                 Destroy(gameObject);
                 gm.foodCount--;
-                print(collision.gameObject.tag);
             }
             if (collision.gameObject.tag == "Boss")
             {
