@@ -72,6 +72,11 @@ public class ButtonScripts : MonoBehaviour {
         buttonNull.SetActive(true);
     }
 
+    public void PlayButtonSound()
+    {
+        FindObjectOfType<AudioPlayer>().Play("ButtonSound");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
