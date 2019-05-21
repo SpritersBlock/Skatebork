@@ -6,6 +6,7 @@ using UnityEngine.Analytics;
 public class OOBKill : MonoBehaviour {
 
     public float yLevelKill;
+    public ItemController ic;
 
     float yPos;
 
@@ -17,11 +18,10 @@ public class OOBKill : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (transform.position.y <= yLevelKill)
         {
-            Destroy(gameObject);
-            FindObjectOfType<JaeGameManager>().foodCount--;
+            DestroyFood();
         }
         if (transform.position.y <= -4)
         {
@@ -31,6 +31,16 @@ public class OOBKill : MonoBehaviour {
             //Analytics.CustomEvent("Item Respawned", new Dictionary<string, int> { {"Sew Time", variable } });
             at.TriggerEvent();
             //print("RESPAWN");
+            if (ic.beingFired)
+            {
+                DestroyFood();
+            }
         }
 	}
+
+    void DestroyFood()
+    {
+        Destroy(gameObject);
+        FindObjectOfType<JaeGameManager>().foodCount--;
+    }
 }

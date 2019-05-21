@@ -1039,7 +1039,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65524882818255158
 BoxCollider:
@@ -1261,6 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yLevelKill: -20
+  ic: {fileID: 114718495099024004}
   at: {fileID: 114066616821251168}
 --- !u!198 &198989209333420418
 ParticleSystem:

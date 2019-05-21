@@ -138,14 +138,16 @@ public class PlayerMovement_2 : MonoBehaviour
         {
             //Debug.Log("WORKING");
             //velocityY = -2;
-            gravity = gravityMin;
-        } else
-        {
-            if (gravity != gravityMed)
+            if (gravity != gravityMin)
             {
-                gravity = gravityMed;
+                gravity = gravityMin;
+                print("SHRUNKDOWN");
             }
+        } else if (gravity != gravityMed)
+        {
+            gravity = gravityMed;
         }
+
     }
 
     void Move(Vector2 inputDir)
