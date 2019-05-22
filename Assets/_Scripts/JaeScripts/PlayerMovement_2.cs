@@ -185,22 +185,31 @@ public class PlayerMovement_2 : MonoBehaviour
             if (doubleJumpOn && jumpMult == 1.3f) // Double Jump
             {
                 doubleJumpOn = false;
-                FindObjectOfType<AudioPlayer>().Play("DJump");
+                if (gm.gameOn)
+                {
+                    FindObjectOfType<AudioPlayer>().Play("DJump");
+                }
                 poofSpawner.SpawnPoofRing(transform.position, gameObject.transform);
                 anim.SetTrigger("DoubleJump");
             }
             else // Enemy Jump
             {
-                FindObjectOfType<AudioPlayer>().Play("Stun");
-                FindObjectOfType<AudioPlayer>().Play("SquealFast");
-                FindObjectOfType<AudioPlayer>().Play("Splat");
+                if (gm.gameOn)
+                {
+                    FindObjectOfType<AudioPlayer>().Play("Stun");
+                    FindObjectOfType<AudioPlayer>().Play("SquealFast");
+                    FindObjectOfType<AudioPlayer>().Play("Splat");
+                }
                 doubleJumpOn = true;
                 anim.SetTrigger("Jump");
             }
         }
         else // Regular Jump
         {
-            FindObjectOfType<AudioPlayer>().Play("Jump");
+            if (gm.gameOn)
+            {
+                FindObjectOfType<AudioPlayer>().Play("Jump");
+            }
             anim.SetTrigger("Jump");
         }
     }

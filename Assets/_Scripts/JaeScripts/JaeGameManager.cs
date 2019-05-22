@@ -137,6 +137,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public void BossJustDied()
     {
+        gameOn = false;
         player.invincible = true;
         camFollow.target = FindObjectOfType<BossCloneDeath>().transform;
         camFollow.mouseSensitivity = 0;
@@ -148,7 +149,7 @@ public class JaeGameManager : MonoBehaviour {
 
     public void BossIsNowDead()
     {
-        gameOn = false;
+        //gameOn = false;
         ChangeTrolleyTargetsToBoss();
         Invoke("DisplayWinCanvas", 1);
     }
