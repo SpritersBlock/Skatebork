@@ -430,7 +430,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3927392b64f6be14da34324a111f4616, type: 2}
+  - {fileID: 2100000, guid: b765d3d9a22e1bf4889088df2e226e41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -788,7 +788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  playerClonePrefab: {fileID: 0}
 --- !u!136 &136451056796270656
 CapsuleCollider:
   m_ObjectHideFlags: 1
