@@ -35,7 +35,9 @@ public class JaeGameManager : MonoBehaviour {
     public int foodCount;
     public int foodMax;
 
-	void Start () {
+    public float speedIncrease;
+
+    void Start () {
         cameraShake = FindObjectOfType<CameraShake>();
         deathCanvas.SetActive(false);
         winCanvas.SetActive(false);
@@ -67,6 +69,7 @@ public class JaeGameManager : MonoBehaviour {
     public void PauseMenuOn()
     {
         //gameOn = false;
+        FindObjectOfType<AudioPlayer>().Play("ButtonSound");
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -76,6 +79,7 @@ public class JaeGameManager : MonoBehaviour {
     public void PauseMenuOff()
     {
         //gameOn = true;
+        FindObjectOfType<AudioPlayer>().Play("ButtonSound");
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -88,6 +92,19 @@ public class JaeGameManager : MonoBehaviour {
         for (int i = 0; i < trolleyBoys.Length; i++)
         {
             trolleyBoys[i].targetTransform = finalTarget.transform;
+        }
+    }
+
+    public void UpdateTrolleyBoySpeed()
+    {
+        trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
+        for (int i = 0; i < trolleyBoys.Length; i++)
+        {
+            if (!trolleyBoys[i].stunned)
+            {
+                trolleyBoys[i].agent.speed += speedIncrease;
+            }
+            trolleyBoys[i].origSpeed += speedIncrease;
         }
     }
 

@@ -17,7 +17,7 @@ public class TrolleyBoyController : MonoBehaviour {
     public Transform targetTransform;
 
     public bool stunned;
-    float origSpeed;
+    public float origSpeed;
 
     public ItemSpawner spawner;
     public AudioSource recoverSound;
@@ -26,7 +26,7 @@ public class TrolleyBoyController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         gm = FindObjectOfType<JaeGameManager>();
-        origSpeed = agent.speed;
+        UpdateOrigSpeed();
         player = FindObjectOfType<PlayerMovement_2>();
         targetTransform = player.transform;
         spawner = FindObjectOfType<ItemSpawner>();
@@ -73,6 +73,11 @@ public class TrolleyBoyController : MonoBehaviour {
         {
             agent.speed = origSpeed;
         }
+    }
+
+    public void UpdateOrigSpeed()
+    {
+        origSpeed = agent.speed;
     }
 
     void LockOn()

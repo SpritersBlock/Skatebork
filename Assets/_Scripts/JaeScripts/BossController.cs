@@ -97,6 +97,8 @@ public class BossController : MonoBehaviour {
                 tutMan.TurnOffThrow();
             }
             trSpawn.SpawnTrolleyBoy();
+            //gm.UpdateTrolleyBoySpeed();
+            gm.Invoke("UpdateTrolleyBoySpeed", 0.5f);
         }
     }
 
