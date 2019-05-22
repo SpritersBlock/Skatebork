@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 7a0f97511a1d8c0458239c65855280da
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: door1_supermarket
+    100002: //RootNode
+    100004: supermarket_angle
+    100006: supermarket_base
+    100008: supermarket_handles1
+    100010: supermarket_roof
+    100012: supermarket_smallwindows
+    100014: supermarket_smallwindows1
+    100016: supermarket_smallwindows2
+    100018: supermarket_supermarketfloorbase
+    100020: supermarket_title
+    100022: supermarket_window
+    100024: supermarket_window1
+    100026: supermarket_window7
+    100028: supermarket_window8
+    400000: door1_supermarket
+    400002: //RootNode
+    400004: supermarket_angle
+    400006: supermarket_base
+    400008: supermarket_handles1
+    400010: supermarket_roof
+    400012: supermarket_smallwindows
+    400014: supermarket_smallwindows1
+    400016: supermarket_smallwindows2
+    400018: supermarket_supermarketfloorbase
+    400020: supermarket_title
+    400022: supermarket_window
+    400024: supermarket_window1
+    400026: supermarket_window7
+    400028: supermarket_window8
+    2100000: door1_supermarketMat
+    2100002: supermarket_angleMat
+    2100004: supermarket_baseMat
+    2100006: supermarket_handles1Mat
+    2100008: supermarket_roofMat
+    2100010: supermarket_smallwindowsMat
+    2100012: supermarket_smallwindows1Mat
+    2100014: supermarket_smallwindows2Mat
+    2100016: supermarket_supermarketfloorbaseMat
+    2100018: supermarket_titleMat
+    2100020: supermarket_windowMat
+    2100022: supermarket_window1Mat
+    2100024: supermarket_window7Mat
+    2100026: supermarket_window8Mat
+    2300000: door1_supermarket
+    2300002: supermarket_angle
+    2300004: supermarket_base
+    2300006: supermarket_handles1
+    2300008: supermarket_roof
+    2300010: supermarket_smallwindows
+    2300012: supermarket_smallwindows1
+    2300014: supermarket_smallwindows2
+    2300016: supermarket_supermarketfloorbase
+    2300018: supermarket_title
+    2300020: supermarket_window
+    2300022: supermarket_window1
+    2300024: supermarket_window7
+    2300026: supermarket_window8
+    3300000: door1_supermarket
+    3300002: supermarket_angle
+    3300004: supermarket_base
+    3300006: supermarket_handles1
+    3300008: supermarket_roof
+    3300010: supermarket_smallwindows
+    3300012: supermarket_smallwindows1
+    3300014: supermarket_smallwindows2
+    3300016: supermarket_supermarketfloorbase
+    3300018: supermarket_title
+    3300020: supermarket_window
+    3300022: supermarket_window1
+    3300024: supermarket_window7
+    3300026: supermarket_window8
+    4300000: door1_supermarket
+    4300002: supermarket_angle
+    4300004: supermarket_base
+    4300006: supermarket_handles1
+    4300008: supermarket_roof
+    4300010: supermarket_smallwindows
+    4300012: supermarket_smallwindows1
+    4300014: supermarket_smallwindows2
+    4300016: supermarket_supermarketfloorbase
+    4300018: supermarket_title
+    4300020: supermarket_window
+    4300022: supermarket_window1
+    4300024: supermarket_window7
+    4300026: supermarket_window8
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
