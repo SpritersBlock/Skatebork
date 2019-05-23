@@ -19,19 +19,6 @@ public class RandomSpin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (spinSpeed != 1)
-        {
-            if (!anim.GetBool("Spinning"))
-            {
-                anim.SetBool("Spinning", true);
-            }
-        } else
-        {
-            if (anim.GetBool("Spinning"))
-            {
-                anim.SetBool("Spinning", false);
-            }
-        }
 
         playerNull.transform.eulerAngles += new Vector3(0, spinSpeed * Time.timeScale, 0);
     }
