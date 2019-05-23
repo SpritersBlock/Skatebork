@@ -24,7 +24,7 @@ public class JaeGameManager : MonoBehaviour {
     public GameObject aimReticle;
     public GameObject healthCanvas;
     public GameObject minimap;
-    public TrolleyBoyController[] trolleyBoys;
+    //public TrolleyBoyController[] trolleyBoys;
 
     public int playerHealth = 3;
     public bool gameOn = true;
@@ -35,6 +35,7 @@ public class JaeGameManager : MonoBehaviour {
     public int foodCount;
     public int foodMax;
 
+    float currentTrolleySpeed;
     public float speedIncrease;
 
     void Start () {
@@ -42,6 +43,7 @@ public class JaeGameManager : MonoBehaviour {
         deathCanvas.SetActive(false);
         winCanvas.SetActive(false);
         pauseCanvas.SetActive(false);
+        currentTrolleySpeed = 16;
     }
 	
 	void Update () {
@@ -88,23 +90,33 @@ public class JaeGameManager : MonoBehaviour {
 
     public void ChangeTrolleyTargetsToBoss()
     {
-        trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
-        for (int i = 0; i < trolleyBoys.Length; i++)
+        TrolleyBoyController[] allTrolleyBoys = FindObjectsOfType<TrolleyBoyController>();
+        for (int i = 0; i < allTrolleyBoys.Length; i++)
         {
-            trolleyBoys[i].targetTransform = finalTarget.transform;
+            allTrolleyBoys[i].targetTransform = finalTarget.transform;
         }
     }
 
     public void UpdateTrolleyBoySpeed()
     {
-        trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
+        StartCoroutine("SpeedUpAllTrolleysInScene");
+        
+    }
+
+    IEnumerator SpeedUpAllTrolleysInScene()
+    {
+        currentTrolleySpeed += speedIncrease;
+
+        TrolleyBoyController[] trolleyBoys = FindObjectsOfType<TrolleyBoyController>();
         for (int i = 0; i < trolleyBoys.Length; i++)
         {
             if (!trolleyBoys[i].stunned)
             {
-                trolleyBoys[i].agent.speed += speedIncrease;
+                trolleyBoys[i].agent.speed = currentTrolleySpeed;
             }
-            trolleyBoys[i].origSpeed += speedIncrease;
+            trolleyBoys[i].origSpeed = currentTrolleySpeed;
+
+            yield return null;
         }
     }
 
