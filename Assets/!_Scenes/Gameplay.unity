@@ -15704,6 +15704,14 @@ Prefab:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 1565251190788782, guid: 4b2bc4c0fed6e1045aff6cb023a5f97b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192804575265092, guid: 4b2bc4c0fed6e1045aff6cb023a5f97b, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2bc4c0fed6e1045aff6cb023a5f97b, type: 2}
   m_IsPrefabAsset: 0
