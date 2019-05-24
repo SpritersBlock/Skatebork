@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 529709098}
   m_Layer: 9
   m_Name: PlayerAnimNull
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1727,7 +1727,7 @@ GameObject:
   - component: {fileID: 538532439}
   m_Layer: 0
   m_Name: Skateboard
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4692,7 +4692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Punch
   clip: {fileID: 8300000, guid: df334a1e2ef19fb4892915ff4f0e455d, type: 3}
-  volume: 1
+  volume: 0.3
   pitch: 1
   source: {fileID: 0}
 --- !u!4 &1441299355

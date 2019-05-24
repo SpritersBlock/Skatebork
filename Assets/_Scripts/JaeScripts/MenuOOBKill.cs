@@ -20,4 +20,12 @@ public class MenuOOBKill : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            FindObjectOfType<AudioPlayer>().Play("Punch");
+        }
+    }
 }
