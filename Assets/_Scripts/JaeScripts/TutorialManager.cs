@@ -6,6 +6,7 @@ public class TutorialManager : MonoBehaviour {
 
     public GameObject[] jumpTexts;
     public GameObject throwText;
+    public GameObject throwArrow;
     public TextDisplayer txtDp;
     
     public JaeGameManager gm;
@@ -13,7 +14,8 @@ public class TutorialManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TurnOffThrow();
-	}
+        throwArrow.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -51,5 +53,6 @@ public class TutorialManager : MonoBehaviour {
     public void TurnOffThrow()
     {
         throwText.SetActive(false);
+        throwArrow.SetActive(true);
     }
 }
