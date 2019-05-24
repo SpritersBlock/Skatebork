@@ -1120,8 +1120,8 @@ MonoBehaviour:
   - {fileID: 1166695242455600, guid: 5cd1cd3c4088816408d5ed2942715611, type: 2}
   - {fileID: 1286254684605926, guid: b4ae22e3717bf2040bdd5f078228cdd6, type: 2}
   - {fileID: 1429574059001698, guid: 5bc0fec4dedc61545b9288c8af6fbc16, type: 2}
-  itemSpawnSpeed: 0
-  itemLaunchSpeed: 0
+  itemSpawnSpeed: -10
+  itemLaunchSpeed: 0.1
   timerMax: 0.5
 --- !u!4 &341212985
 Transform:
