@@ -28,7 +28,7 @@ public class MagneticField : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, bossMagnet.transform.position) < bossAttractRadius && itemCont.beingFired)
             {
-                rb.AddForce((bossMagnet.transform.position - transform.position) * bossForceFactor * Time.smoothDeltaTime);
+                //rb.AddForce((bossMagnet.transform.position - transform.position) * bossForceFactor * Time.smoothDeltaTime);
             }
         }
         
