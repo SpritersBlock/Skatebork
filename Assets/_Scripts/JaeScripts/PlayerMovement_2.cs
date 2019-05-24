@@ -233,6 +233,7 @@ public class PlayerMovement_2 : MonoBehaviour
         if (!invincible)
         {
             //health--;
+            FindObjectOfType<AudioPlayer>().Play("DogBark");
             gm.playerHealth--;
             gm.UpdateHealth();
             if (gm.playerHealth > 0)

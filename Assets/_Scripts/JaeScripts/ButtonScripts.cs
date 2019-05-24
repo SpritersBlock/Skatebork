@@ -74,6 +74,7 @@ public class ButtonScripts : MonoBehaviour {
 
     public void PlayButtonSound()
     {
+        FindObjectOfType<AudioPlayer>().Play("DogBark");
         FindObjectOfType<AudioPlayer>().Play("ButtonSound");
     }
 

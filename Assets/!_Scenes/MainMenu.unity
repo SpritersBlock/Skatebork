@@ -6662,6 +6662,7 @@ MonoBehaviour:
   - {fileID: 1362868105}
   - {fileID: 1224626406}
   - {fileID: 232222958}
+  - {fileID: 1883786640}
   mixer: {fileID: 24300002, guid: 5627f3de5b2a0da4b9fdc6bc03f2ba44, type: 2}
 --- !u!4 &1858484465
 Transform:
@@ -6684,6 +6685,7 @@ Transform:
   - {fileID: 1362868106}
   - {fileID: 1224626407}
   - {fileID: 232222959}
+  - {fileID: 1883786639}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6924,6 +6926,51 @@ Transform:
   m_Father: {fileID: 1858484465}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1883786638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883786639}
+  - component: {fileID: 1883786640}
+  m_Layer: 0
+  m_Name: DogBark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1883786639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1883786638}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858484465}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883786640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1883786638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0715b2154b79f04782ba62a7659c1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: DogBark
+  clip: {fileID: 8300000, guid: 7f2ab5b0ba7e7d8438106d12bbf7088b, type: 3}
+  volume: 1
+  pitch: 1
+  source: {fileID: 0}
 --- !u!1 &1958132791
 GameObject:
   m_ObjectHideFlags: 0
