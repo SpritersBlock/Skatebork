@@ -39,6 +39,5 @@ public class MenuFoodSpawner : MonoBehaviour {
         Rigidbody rb = itemClone.GetComponent<Rigidbody>();
         rb.velocity += (Vector3.up * itemSpawnSpeed);
         rb.velocity += new Vector3(Random.Range(-itemLaunchSpeed, itemLaunchSpeed) * itemSpawnSpeed, 0, Random.Range(-itemLaunchSpeed, itemLaunchSpeed) * itemSpawnSpeed);
-        
     }
 }
